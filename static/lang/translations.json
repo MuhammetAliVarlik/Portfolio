@@ -1,0 +1,410 @@
+{
+  "en": {
+    "about": {
+      "title": "About Me",
+      "text": "Currently pursuing a master’s in <span class=\"highlight\">data science</span>, with a strong background in <span class=\"highlight\">Artificial Intelligence</span>, <span class=\"highlight\">Machine Learning</span>, <span class=\"highlight\">Natural Language Processing</span>, and <span class=\"highlight\">Computer Vision</span>.Seeking to leverage technical expertise and problem-solving skills in AI, natural language processing and computer vision to contribute to innovative, high-impact projects in a professional environment. "
+    },
+    "skills": {
+      "title": "Skills",
+      "groups": {
+        "programming": {
+          "name": "Programming Languages",
+          "items": ["Python", "SQL", "JavaScript", "HTML", "CSS"]
+        },
+        "datascience": {
+          "name": "Data Science & ML",
+          "items": ["Pandas", "NumPy", "Scikit-learn", "TensorFlow", "PyTorch", "Flask", "FastAPI", "LLMs", "LangChain", "LangGraph"]
+        },
+        "databases": {
+          "name": "Databases",
+          "items": ["MySQL", "SQLite"]
+        },
+        "data_analysis": {
+          "name": "Data Analysis",
+          "items": ["Tableau", "Power BI", "Matplotlib", "Seaborn"]
+        },
+        "others": {
+          "name": "Others",
+          "items": ["Git", "Docker", "Jupyter","Postman","Power Apps","Power Automate"]
+        }
+      }
+    },
+    "experience": {
+      "title": "Work Experience",
+      "items": [
+        {
+          "companyLogo": "https://berelenerji.com/wp-content/uploads/2022/06/logo.png",
+          "title": "Data Scientist Intern – Berel Enerji",
+          "date": "July 2024 – August 2024",
+          "description": [
+            "Preprocessed wind turbine SCADA data and trained an <span class=\"highlight\">LSTM model</span> with <span class=\"highlight\">TensorFlow</span>, achieving an <span class=\"highlight\">R²-score of 0.91</span> for power generation forecasting",
+            "Created and integrated a <span class=\"highlight\">PVGIS API</span> webpage using <span class=\"highlight\">Flask</span> and <span class=\"highlight\">JavaScript</span>, enhancing data accessibility and enabling customers to preview offers, which significantly streamlined decision-making and reduced response time."
+          ],
+          "link":{
+              "title":"",
+              "repo":""
+          }
+        },
+        {
+          "companyLogo": "https://divvydrive.com/web/Content/img/logo/Logo.png",
+          "title": "Computer Vision Intern – Divvy Drive",
+          "date": "July 2023 – August 2023",
+          "description": [
+            "Fine-tuned a <span class=\"highlight\">VGG16</span> model using <span class=\"highlight\">Keras</span> for image classification, achieving <span class=\"highlight\">92.1%</span> accuracy and optimizing performance for reliable predictions.",
+            "Retrieved and processed data from Divvy Drive’s <span class=\"highlight\">API</span> using <span class=\"highlight\">Postman</span>, and developed an interactive UI with <span class=\"highlight\">Flask</span>, <span class=\"highlight\">HTML</span>, <span class=\"highlight\">CSS</span, and <span class=\"highlight\">JavaScript.</span>",
+            "Built a secure communication app with the PGP algorithm, enabling encrypted email exchanges for data confidentiality and integrity."
+          ],
+          "link":{
+              "title":"",
+              "repo":""
+          }
+        },
+        {
+          "companyLogo": "https://upload.wikimedia.org/wikipedia/commons/5/5f/Siemens-logo.svg",
+          "title": "PART-TIME RPA ENGINEER – SIEMENS",
+          "date": "October 2022 – July 2023",
+          "description": [
+            "Developed an offering app with <span class=\"highlight\">Microsoft Power Apps</span>, processing data from <span class=\"highlight\">SharePoint</span> and automating email notifications via <span class=\"highlight\">Power Automate</span>, improving customer efficiency in obtaining offers.",
+            "Created a planning app with <span class=\"highlight\">Power Apps</span>, managing tasks from <span class=\"highlight\">SharePoint</span>. Designed separate UIs for admins and end-users, reducing the planning phase from <span class=\"highlight\">2 weeks to 1 hour</span>, boosting operational efficiency."
+          ],
+          "link":{
+              "title":"",
+              "repo":""
+          }
+        },
+        {
+          "companyLogo": "https://212.vc/wp-content/uploads/2024/04/triomobil.png",
+          "title": "COMPUTER VISION INTERN – TRIOMOBIL",
+          "date": "April 2022 – October 2022",
+          "description": [
+            "Volunteered at <span class=\"highlight\">YZ Academy</span>, developing <span class=\"highlight\">computer vision</span> projects (April Tag, object tracking, contour detection) and researching <span class=\"highlight\">SLAM</span> and <span class=\"highlight\">Monocular Visual Odometry</span> for 3D spatial awareness."
+          ],
+          "link":{
+              "title":"YZ_Akademi",
+              "repo":"https://github.com/MuhammetAliVarlik/YZ_Akademi"
+          }
+        }
+      ]
+    },
+    "education": {
+      "title": "Education",
+      "items": [
+        {
+          "companyLogo": "https://upload.wikimedia.org/wikipedia/tr/4/4e/Gazi_%C3%9Cniversitesi_logo.png",
+          "title": "Master's Degree – Data Science",
+          "date": "June 2025 – Present | Gazi University",
+          "majors":"",
+          "gpa":""
+        },
+        {
+          "companyLogo": "https://upload.wikimedia.org/wikipedia/commons/a/a6/Ankara_Y%C4%B1ld%C4%B1r%C4%B1m_Beyaz%C4%B1t_University_logo.svg",
+          "title": "Bachelor's Degree – Electrical Electronics Engineering",
+          "date": "September 2019 - August 2024   | Ankara Yildirim Beyazit University",
+          "majors":"Computational Neuroscience, Digital Image Processing, Machine Learning and Data Mining",
+          "gpa":"3.09"
+        }
+      ]
+    },
+    "projects": {
+      "title": "Projects",
+      "items": [
+        {
+          "image": "https://github.com/MuhammetAliVarlik/RealEstateAI/blob/main/docs/screenshoots/MainScreen.png?raw=true",
+          "title": "Real Estate AI",
+          "tech": "Python, Regression, Outlier Detection, Clustering, LLM's, Docker",
+          "description": [
+            "Implemented a containerized real estate advisory system using FastAPI and Docker. Integrated ML models for price prediction, anomaly detection, and investment classification using Istanbul housing data. Created a Streamlit UI to visualize predictions and enable interactive user exploration."
+          ],
+          "link":{
+              "title":"RealEstateAI",
+              "repo":"https://github.com/MuhammetAliVarlik/RealEstateAI"
+          }
+        },
+        {
+          "image": "https://raw.githubusercontent.com/MuhammetAliVarlik/AgenticInvestingEngine/bdd44ce4df7192220d5281ffb440e2bdc8e93d9b/documents/project_plan.svg",
+          "title": "Agentic Investing Engine",
+          "tech": "Python, XGBoost, FastAPI, Langchain, Docker",
+          "description": [
+            "Built a containerized AI-powered financial analysis system using FastAPI and Docker, designed to generate investment strategies for BIST100 stocks. Implemented multi-agent architecture with tool calling and a supervisor agent that coordinates outputs from technical analysis, news sentiment, and regulatory filing agents."
+          ],
+          "link":{
+              "title":"AgenticInvestingEngine",
+              "repo":"https://github.com/MuhammetAliVarlik/AgenticInvestingEngine"
+          }
+        
+        },
+        {
+          "image": "https://github.com/MuhammetAliVarlik/StockPriceAnalysis/blob/main/documents/dashboard.png?raw=true",
+          "title": "Stock Price Analysis",
+          "tech": "Power BI, XGBoost, Local LLM",
+          "description": [
+            "Developed a stock price prediction and market risk analysis system using XGBoost, achieving a 0.96 R² score, with Local LLM for sentiment analysis and Power BI for interactive visualization"
+          ],
+          "link":{
+              "title":"StockPriceAnalysis",
+              "repo":"https://github.com/MuhammetAliVarlik/StockPriceAnalysis"
+          }
+        },
+        {
+          "image": "https://github.com/MuhammetAliVarlik/MovieScout/blob/main/docs/demo/home.png?raw=true",
+          "title": "MovieScout",
+          "tech": "Python, HTML5, CSS3, SCSS, Javascript, Bootstrap, Flask, Langchain",
+          "description": [
+            "Designed a personalized movie recommendation web application using the TMDB dataset, semantic search, content-based filtering, and a local LLM for tailored suggestions, featuring a swipe interface, local storage, and a responsive frontend with Flask, HTML5, CSS3, JavaScript, and Bootstrap"
+          ],
+          "link":{
+              "title":"MovieScout",
+              "repo":"https://github.com/MuhammetAliVarlik/MovieScout"
+          }
+        },
+        {
+          "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTyGLtb5S3HTxTmU8MmXBZkKMNyXUWDUiN5_w&s",
+          "title": "BTC/USDT Price Movement Classification",
+          "tech": "Python, CNN-LSTM, Tensorflow",
+          "description": [
+            "BTC/USDT price movement over a 6-hour horizon is classified using technical indicators derived from historical OHLCV data.",
+            "A hybrid CNN-LSTM model is implemented with TensorFlow, and data is collected via the ccxt library."
+          ],
+          "link":{
+              "title":"BTC-USDT-Price-Movement-Classification",
+              "repo":"https://github.com/MuhammetAliVarlik/BTC-USDT-Price-Movement-Classification"
+          }
+        },
+        {
+          "image": "https://raw.githubusercontent.com/MuhammetAliVarlik/PathOptimization-BFSvsAStar/706c52faf0fceb074d85143b8be3317743263ae3/diagrams/istasyonlar.svg",
+          "title": "PathOptimization-BFSvsAStar",
+          "tech": "Python, BFS, A*",
+          "description": [
+            " A metro network was simulated using graph structures, where BFS and A* algorithms were applied to find optimal routes.",
+            " BFS was used for minimum-transfer paths, while A* provided the fastest routes considering travel time."
+          ],
+          "link":{
+              "title":"PathOptimization-BFSvsAStar",
+              "repo":"https://github.com/MuhammetAliVarlik/PathOptimization-BFSvsAStar"
+          }
+        },
+        {
+          "image": "https://images.unsplash.com/photo-1644325349124-d1756b79dd42?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8ZGF0YSUyMHNjaWVuY2V8ZW58MHx8MHx8fDA%3D",
+          "title": "Data Scientist Roadmap",
+          "tech": "Python, SQL, PowerBI, Tableau, ML, DL, AWS, PySpark, MLOps",
+          "description": [
+            " This repository offers a structured, topic-based roadmap for learning Data Science, covering areas like programming, machine learning, deep learning, and cloud computing.",
+            " It is organized into folders and sections with notes and references gathered from various online resources, and will continue to be updated as learning progresses."
+
+          ],
+          "link":{
+              "title":"Data Scientist Roadmap",
+              "repo":"https://github.com/MuhammetAliVarlik/DataScientistRoadmap"
+          }
+        },
+        {
+          "image": "https://media.istockphoto.com/id/2069310354/vector/basic-animal-groups-and-biological-nature-categories-division-outline-diagram.jpg?s=612x612&w=0&k=20&c=G7Hkj-R5fGGNRkbMelO-DLQgcqIqBxAVaAbHn61A2XM=",
+          "title": "Animal Classification",
+          "tech": "Python, Tensorflow, DL",
+          "description": [
+            "Animal classification was performed using a CNN-based deep learning model trained on both original and color-manipulated images to test robustness.",
+            "Data augmentation and Bayesian hyperparameter optimization were applied to improve model performance, which was evaluated using various metrics and visualizations."
+          ],
+          "link":{
+              "title":"AnimalClassification",
+              "repo":"https://github.com/MuhammetAliVarlik/AnimalClassification"
+          }
+        }
+      ]
+    }
+  },
+  "tr": {
+    "about": {
+      "title": "Hakkımda",
+      "text": "Şu anda <span class=\"highlight\">veri bilimi</span> alanında yüksek lisans yapıyorum. <span class=\"highlight\">Yapay Zeka</span>, <span class=\"highlight\">Makine Öğrenimi</span>, <span class=\"highlight\">Doğal Dil İşleme</span> ve <span class=\"highlight\">Bilgisayarla Görü</span> konularında sağlam bir altyapıya sahibim. Teknik uzmanlığımı ve problem çözme becerilerimi, yenilikçi ve yüksek etki yaratan projelerde kullanarak profesyonel ortamlara katkı sağlamayı hedefliyorum."
+    },
+    "skills": {
+      "title": "Yetkinlikler",
+      "groups": {
+        "programming": {
+          "name": "Programlama Dilleri",
+          "items": ["Python", "SQL", "JavaScript", "HTML", "CSS"]
+        },
+        "datascience": {
+          "name": "Veri Bilimi & Makine Öğrenimi",
+          "items": ["Pandas", "NumPy", "Scikit-learn", "TensorFlow", "PyTorch", "Flask", "FastAPI", "LLM'ler", "LangChain", "LangGraph"]
+        },
+        "databases": {
+          "name": "Veritabanları",
+          "items": ["MySQL", "SQLite"]
+        },
+        "data_analysis": {
+          "name": "Veri Analizi",
+          "items": ["Tableau", "Power BI", "Matplotlib", "Seaborn"]
+        },
+        "others": {
+          "name": "Diğer Araçlar",
+          "items": ["Git", "Docker", "Jupyter", "Postman", "Power Apps", "Power Automate"]
+        }
+      }
+    },
+    "experience": {
+      "title": "İş Deneyimi",
+      "items": [
+        {
+          "companyLogo": "https://berelenerji.com/wp-content/uploads/2022/06/logo.png",
+          "title": "Veri Bilimi Stajyeri – Berel Enerji",
+          "date": "Temmuz 2024 – Ağustos 2024",
+          "description": [
+            "Rüzgar türbini SCADA verisini ön işleyerek <span class=\"highlight\">TensorFlow</span> ile bir <span class=\"highlight\">LSTM modeli</span> eğitildi ve <span class=\"highlight\">0.91 R²</span> skoru elde edildi.",
+            "<span class=\"highlight\">Flask</span> ve <span class=\"highlight\">JavaScript</span> kullanılarak <span class=\"highlight\">PVGIS API</span> arayüzü geliştirildi, müşteri karar süreçlerini hızlandırarak yanıt süresini önemli ölçüde azalttı."
+          ]
+        },
+        {
+          "companyLogo": "https://divvydrive.com/web/Content/img/logo/Logo.png",
+          "title": "Bilgisayarla Görü Stajyeri – Divvy Drive",
+          "date": "Temmuz 2023 – Ağustos 2023",
+          "description": [
+            "<span class=\"highlight\">VGG16</span> modeli <span class=\"highlight\">Keras</span> ile yeniden eğitilerek %92.1 doğruluk elde edildi.",
+            "Divvy Drive’ın <span class=\"highlight\">API</span>'si ile <span class=\"highlight\">Postman</span> üzerinden veri alınıp işlendi; <span class=\"highlight\">Flask</span>, <span class=\"highlight\">HTML</span>, <span class=\"highlight\">CSS</span> ve <span class=\"highlight\">JavaScript</span> ile etkileşimli kullanıcı arayüzü geliştirildi.",
+            "<span class=\"highlight\">PGP algoritması</span> kullanılarak veri güvenliği için şifreli e-posta iletişimi sağlayan bir uygulama geliştirildi."
+          ]
+        },
+        {
+          "companyLogo": "https://upload.wikimedia.org/wikipedia/commons/5/5f/Siemens-logo.svg",
+          "title": "Yarı Zamanlı RPA Mühendisi – Siemens",
+          "date": "Ekim 2022 – Temmuz 2023",
+          "description": [
+            "<span class=\"highlight\">Microsoft Power Apps</span> ile teklif uygulaması geliştirildi; <span class=\"highlight\">SharePoint</span> verileri kullanılarak e-posta bildirimleri <span class=\"highlight\">Power Automate</span> ile otomatikleştirildi.",
+            "<span class=\"highlight\">Power Apps</span> ile planlama uygulaması geliştirildi, yönetici ve kullanıcı için ayrı arayüzler sunularak planlama süresi <span class=\"highlight\">2 haftadan 1 saate</span> indirildi."
+          ]
+        },
+        {
+          "companyLogo": "https://212.vc/wp-content/uploads/2024/04/triomobil.png",
+          "title": "Bilgisayarla Görü Stajyeri – Triomobil",
+          "date": "Nisan 2022 – Ekim 2022",
+          "description": [
+            "<span class=\"highlight\">YZ Akademi</span> gönüllüsü olarak April Tag, nesne takibi ve kontur tespiti gibi <span class=\"highlight\">bilgisayarla görü</span> projeleri geliştirildi. <span class=\"highlight\">SLAM</span> ve <span class=\"highlight\">Monocular Visual Odometry</span> üzerine araştırmalar yapıldı."
+          ]
+        }
+      ]
+    },
+    "education": {
+      "title": "Eğitim",
+      "items": [
+        {
+          "companyLogo": "https://upload.wikimedia.org/wikipedia/tr/4/4e/Gazi_%C3%9Cniversitesi_logo.png",
+          "title": "Yüksek Lisans – Veri Bilimi",
+          "date": "Haziran 2025 – Devam Ediyor | Gazi Üniversitesi"
+        },
+        {
+          "companyLogo": "https://upload.wikimedia.org/wikipedia/commons/a/a6/Ankara_Y%C4%B1ld%C4%B1r%C4%B1m_Beyaz%C4%B1t_University_logo.svg",
+          "title": "Lisans – Elektrik Elektronik Mühendisliği",
+          "date": "Eylül 2019 – Ağustos 2024 | Ankara Yıldırım Beyazıt Üniversitesi",
+          "majors": "Hesaplamalı Sinirbilim, Sayısal Görüntü İşleme, Makine Öğrenimi ve Veri Madenciliği",
+          "gpa": "3.09"
+        }
+      ]
+    },
+    "projects": {
+  "title": "Projeler",
+  "items": [
+    {
+      "image": "https://github.com/MuhammetAliVarlik/RealEstateAI/blob/main/docs/screenshoots/MainScreen.png?raw=true",
+      "title": "Real Estate AI",
+      "tech": "Python, Regresyon, Aykırı Değer Tespiti, Kümeleme, LLM'ler, Docker",
+      "description": [
+        "FastAPI ve Docker kullanarak konteynerleştirilmiş bir emlak danışmanlık sistemi uygulandı. İstanbul konut verileri kullanılarak fiyat tahmini, anomali tespiti ve yatırım sınıflandırması için makine öğrenmesi modelleri entegre edildi. Tahminleri görselleştirmek ve kullanıcı etkileşimini sağlamak için Streamlit arayüzü oluşturuldu."
+      ],
+      "link":{
+              "title":"RealEstateAI",
+              "repo":"https://github.com/MuhammetAliVarlik/RealEstateAI"
+          }
+    },
+    {
+      "image": "https://raw.githubusercontent.com/MuhammetAliVarlik/AgenticInvestingEngine/bdd44ce4df7192220d5281ffb440e2bdc8e93d9b/documents/project_plan.svg",
+      "title": "Agentic Yatırım Motoru",
+      "tech": "Python, XGBoost, FastAPI, Langchain, Docker",
+      "description": [
+        "FastAPI ve Docker kullanarak konteynerleştirilmiş AI destekli finansal analiz sistemi geliştirildi. BIST100 hisseleri için yatırım stratejileri üretmek amacıyla çok ajanlı mimari uygulandı. Teknik analiz, haber duyarlılığı ve düzenleyici dosya ajanlarından gelen çıktıları koordine eden bir süpervizör ajanı yer aldı."
+      ],
+      "link":{
+              "title":"AgenticInvestingEngine",
+              "repo":"https://github.com/MuhammetAliVarlik/AgenticInvestingEngine"
+          }
+    },
+    {
+      "image": "https://github.com/MuhammetAliVarlik/StockPriceAnalysis/blob/main/documents/dashboard.png?raw=true",
+      "title": "Hisse Senedi Fiyat Analizi",
+      "tech": "Power BI, XGBoost, Yerel LLM",
+      "description": [
+        "XGBoost kullanılarak hisse senedi fiyat tahmini ve piyasa risk analizi sistemi geliştirildi, 0.96 R² skoruna ulaşıldı. Duyarlılık analizi için Yerel LLM ve interaktif görselleştirme için Power BI kullanıldı."
+      ],
+      "link":{
+              "title":"StockPriceAnalysis",
+              "repo":"https://github.com/MuhammetAliVarlik/StockPriceAnalysis"
+          }
+    },
+    {
+      "image": "https://github.com/MuhammetAliVarlik/MovieScout/blob/main/docs/demo/home.png?raw=true",
+      "title": "MovieScout",
+      "tech": "Python, HTML5, CSS3, SCSS, Javascript, Bootstrap, Flask, Langchain",
+      "description": [
+        "TMDB veri seti kullanarak kişiselleştirilmiş film öneri web uygulaması tasarlandı. Anlamsal arama, içerik tabanlı filtreleme ve yerel LLM ile kişiye özel öneriler sağlandı. Kaydırma arayüzü, yerel depolama ve Flask, HTML5, CSS3, Javascript, Bootstrap ile responsive frontend özellikleri sunuldu."
+      ],
+      "link":{
+              "title":"MovieScout",
+              "repo":"https://github.com/MuhammetAliVarlik/MovieScout"
+          }
+    },
+    {
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTyGLtb5S3HTxTmU8MmXBZkKMNyXUWDUiN5_w&s",
+      "title": "BTC/USDT Fiyat Hareketi Sınıflandırması",
+      "tech": "Python, CNN-LSTM, Tensorflow",
+      "description": [
+        "BTC/USDT fiyat hareketi 6 saatlik bir periyotta teknik göstergeler kullanılarak sınıflandırıldı.",
+        "TensorFlow ile hibrit CNN-LSTM modeli uygulandı, veriler ccxt kütüphanesi aracılığıyla toplandı."
+      ],
+      "link":{
+              "title":"BTC-USDT-Price-Movement-Classification",
+              "repo":"https://github.com/MuhammetAliVarlik/BTC-USDT-Price-Movement-Classification"
+          }
+    },
+    {
+      "image": "https://raw.githubusercontent.com/MuhammetAliVarlik/PathOptimization-BFSvsAStar/706c52faf0fceb074d85143b8be3317743263ae3/diagrams/istasyonlar.svg",
+      "title": "Rota Optimizasyonu - BFS ve A* Karşılaştırması",
+      "tech": "Python, BFS, A*",
+      "description": [
+        "Bir metro ağı grafik yapıları kullanılarak simüle edildi. BFS ve A* algoritmaları optimal rotaları bulmak için uygulandı.",
+        "BFS minimum aktarma sayısını, A* ise seyahat süresini dikkate alarak en hızlı rotaları bulmak için kullanıldı."
+      ],
+      "link":{
+              "title":"PathOptimization-BFSvsAStar",
+              "repo":"https://github.com/MuhammetAliVarlik/PathOptimization-BFSvsAStar"
+          }
+    },
+    {
+      "image": "https://images.unsplash.com/photo-1644325349124-d1756b79dd42?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8ZGF0YSUyMHNjaWVuY2V8ZW58MHx8MHx8fDA%3D",
+      "title": "Veri Bilimci Yol Haritası",
+      "tech": "Python, SQL, PowerBI, Tableau, ML, DL, AWS, PySpark, MLOps",
+      "description": [
+        "Bu depo, programlama, makine öğrenmesi, derin öğrenme ve bulut bilişim gibi alanları kapsayan yapılandırılmış, konu bazlı bir Veri Bilimi öğrenme yol haritası sunar.",
+        "Çevrimiçi kaynaklardan derlenen notlar ve referanslarla klasörler ve bölümler halinde organize edilmiştir ve öğrenme ilerledikçe güncellenmeye devam edecektir."
+      ],
+      "link":{
+              "title":"Data Scientist Roadmap",
+              "repo":"https://github.com/MuhammetAliVarlik/DataScientistRoadmap"
+          }
+    },
+    {
+      "image": "https://media.istockphoto.com/id/2069310354/vector/basic-animal-groups-and-biological-nature-categories-division-outline-diagram.jpg?s=612x612&w=0&k=20&c=G7Hkj-R5fGGNRkbMelO-DLQgcqIqBxAVaAbHn61A2XM=",
+      "title": "Hayvan Sınıflandırması",
+      "tech": "Python, Tensorflow, Derin Öğrenme",
+      "description": [
+        "Orijinal ve renk değiştirilmiş görüntüler kullanılarak CNN tabanlı derin öğrenme modeli ile hayvan sınıflandırması yapıldı.",
+        "Model performansını artırmak için veri artırımı ve Bayesyen hiperparametre optimizasyonu uygulandı; çeşitli metrikler ve görselleştirmelerle değerlendirildi."
+      ],
+      "link":{
+              "title":"AnimalClassification",
+              "repo":"https://github.com/MuhammetAliVarlik/AnimalClassification"
+          }
+    }
+  ]
+}
+  }
+}
