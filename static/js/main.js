@@ -60,7 +60,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   async function loadData(lang = "en") {
     try {
-      const res = await fetch('../static/lang/translations.json');
+      const res = await fetch('static/lang/translations.json');
       const data = await res.json();
       const content = data[lang];
   
