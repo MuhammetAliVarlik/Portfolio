@@ -333,26 +333,6 @@
     background-color: var(--accent-main);
     border-radius: 4px;
   }
-
-  @media screen and (max-width: 1024px) {
-    .container {
-      flex-direction: column;
-    }
-
-    .sidebar, .main-section {
-      width: 100%;
-    }
-
-    .project-card {
-      flex-direction: column;
-      align-items: center;
-    }
-
-    .project-card img {
-      width: 100%;
-      height: auto;
-    }
-  }
   .contact-info {
     margin-top: 2rem;
     text-align: center;
@@ -437,8 +417,33 @@
     transform: scale(1.1);
   }
   
-
   @media screen and (max-width: 1024px) {
+    .container {
+      flex-direction: column;
+    }
+
+    .sidebar, .main-section {
+      width: 100%;
+    }
+
+    .project-card {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .project-card img {
+      width: 100%;
+      height: auto;
+    }
+    .timeline-item {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    .company-logo {
+      margin-bottom: 0.5rem;
+    }
+  
     .sidebar {
       position: relative;
       width: 100%;
