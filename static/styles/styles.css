@@ -32,6 +32,7 @@
   p, li, small {
     color: var(--text-light);
   }
+
   a {
     color: var(--accent-main);
     text-decoration: none;

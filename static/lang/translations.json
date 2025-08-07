@@ -1,9 +1,14 @@
 {
   "en": {
     "about": {
-      "title": "About Me",
-      "text": "Currently pursuing a master’s in <span class=\"highlight\">data science</span>, with a strong background in <span class=\"highlight\">Artificial Intelligence</span>, <span class=\"highlight\">Machine Learning</span>, <span class=\"highlight\">Natural Language Processing</span>, and <span class=\"highlight\">Computer Vision</span>.Seeking to leverage technical expertise and problem-solving skills in AI, natural language processing and computer vision to contribute to innovative, high-impact projects in a professional environment. "
-    },
+      "title": "Professional Background & Aspirations",
+      "text": [
+        "I am a <span class=\"highlight\">graduate student in Data Science</span> with a <span class=\"highlight\">strong interest in artificial intelligence</span> and its practical applications. Over the past three years, I have consistently focused my academic work, personal projects, and internships on understanding and <span class=\"highlight\">applying AI concepts to real-world problems</span>. This journey has allowed me to build a <span class=\"highlight\">solid foundation</span> in the field, not just through coursework, but also through continuous self-driven learning and hands-on experience.",
+        "Although I do not have full-time industry experience in this field yet, I have <span class=\"highlight\">actively sought out opportunities to grow</span>—participating in internships, contributing to project-based work, and staying up to date with current developments in the AI ecosystem. I have gained experience in <span class=\"highlight\">financial time series analysis</span>, <span class=\"highlight\">large language models (LLMs)</span>, and <span class=\"highlight\">computer vision</span>.",
+        "I am proficient in programming languages such as <span class=\"highlight\">Python</span> and <span class=\"highlight\">SQL</span>, and skilled with libraries and frameworks including <span class=\"highlight\">TensorFlow</span>, <span class=\"highlight\">PyTorch</span>, <span class=\"highlight\">FastAPI</span>, and <span class=\"highlight\">Docker</span>. Additionally, I use data visualization tools like <span class=\"highlight\">Power BI</span> and <span class=\"highlight\">Tableau</span> at a basic level.",
+        "My goal is to join a <span class=\"highlight\">collaborative team</span> where I can both <span class=\"highlight\">contribute meaningfully</span> and <span class=\"highlight\">continue to grow by</span> learning from experienced professionals."
+      ]
+  },
     "skills": {
       "title": "Skills",
       "groups": {
@@ -215,9 +220,17 @@
   },
   "tr": {
     "about": {
-      "title": "Hakkımda",
-      "text": "Şu anda <span class=\"highlight\">veri bilimi</span> alanında yüksek lisans yapıyorum. <span class=\"highlight\">Yapay Zeka</span>, <span class=\"highlight\">Makine Öğrenimi</span>, <span class=\"highlight\">Doğal Dil İşleme</span> ve <span class=\"highlight\">Bilgisayarla Görü</span> konularında sağlam bir altyapıya sahibim. Teknik uzmanlığımı ve problem çözme becerilerimi, yenilikçi ve yüksek etki yaratan projelerde kullanarak profesyonel ortamlara katkı sağlamayı hedefliyorum."
-    },
+      "title": "Profesyonel Geçmişim ve Hedeflerim",
+      "text": [
+        "Ben bir <span class=\"highlight\">Veri Bilimi yüksek lisans öğrencisiyim</span> ve <span class=\"highlight\">yapay zekâya ve onun pratik uygulamalarına güçlü bir ilgi duyuyorum</span>. Son üç yıldır, akademik çalışmalarımı, kişisel projelerimi ve stajlarımı, <span class=\"highlight\">yapay zekâ kavramlarını gerçek dünya problemlerine uygulamak</span> üzerine yoğunlaştırdım. Bu süreç, sadece derslerle değil, aynı zamanda sürekli kendi kendine öğrenme ve uygulamalı deneyimle de <span class=\"highlight\">alanımda sağlam bir temel oluşturmamı sağladı</span>.",
+        
+        "Bu alanda henüz tam zamanlı bir iş deneyimim olmasa da, <span class=\"highlight\">kendimi geliştirmek için aktif bir şekilde fırsatlar aradım</span>—stajlara katıldım, proje bazlı çalışmalarda yer aldım ve yapay zekâ ekosistemindeki güncel gelişmeleri yakından takip ettim. <span class=\"highlight\">Finansal zaman serisi analizi</span>, <span class=\"highlight\">büyük dil modelleri (LLM)</span> ve <span class=\"highlight\">bilgisayarla görme</span> konularında deneyim kazandım.",
+        
+        "<span class=\"highlight\">Python</span> ve <span class=\"highlight\">SQL</span> gibi programlama dillerinde yetkinim ve <span class=\"highlight\">TensorFlow</span>, <span class=\"highlight\">PyTorch</span>, <span class=\"highlight\">FastAPI</span> ve <span class=\"highlight\">Docker</span> gibi kütüphane ve framework'lerle çalışabiliyorum. Ayrıca, <span class=\"highlight\">Power BI</span> ve <span class=\"highlight\">Tableau</span> gibi veri görselleştirme araçlarını temel seviyede kullanabiliyorum.",
+        
+        "Hedefim, <span class=\"highlight\">iş birliğine dayalı bir ekipte</span> yer almak; hem <span class=\"highlight\">anlamlı katkılar sağlamak</span> hem de <span class=\"highlight\">deneyimli profesyonellerden öğrenerek gelişmeye devam etmek</span> istiyorum."
+      ]
+  },
     "skills": {
       "title": "Yetkinlikler",
       "groups": {

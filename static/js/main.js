@@ -65,9 +65,14 @@ document.addEventListener("DOMContentLoaded", () => {
       const content = data[lang];
   
       // Hakkımda
-const aboutSection = document.querySelector("#about");
-aboutSection.querySelector("h2").textContent = content.about.title;
-aboutSection.querySelector("p").innerHTML = content.about.text;
+      const aboutSection = document.querySelector("#about");
+      aboutSection.querySelector("h2").textContent = content.about.title;
+      
+      // Mevcut <p> öğesini seç ve içine tüm paragrafları <br><br> ile ekle
+      const textContainer = aboutSection.querySelector("p");
+      if (textContainer) {
+        textContainer.innerHTML = content.about.text.join("<br><br>");
+      }
 
 // Yetkinlikler
 const skillsSection = document.querySelector("#skills");
