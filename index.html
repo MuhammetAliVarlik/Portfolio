@@ -1,124 +1,241 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Muhammet Ali Varlık</title>
-  
-  <link rel="stylesheet" href="static/styles/styles.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-  <link rel="icon" href="../Portfolio/static/img/cvImage.png" type="image/png" />
-
-  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-
-
-</head>
-
-<body>
-  <div class="container">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Muhammet Ali Varlık | AI Engineer & Data Scientist</title>
+    <meta name="description" content="Portfolio of Muhammet Ali Varlık - AI Engineer specializing in LLMs, Neuro-Symbolic AI, and scalable MLOps systems.">
     
-    <!-- SOL PANEL -->
-      
-    <div class="sidebar" data-aos="fade-right">
-        <img src="static/img/cvImage.png" alt="Muhammet Ali Varlık">
-        <h1>Muhammet Ali Varlık</h1>
-        <h3>Data Scientist</h3>
-      
-        <div class="contact-info">
-          <p class="email">
-            <i class="fas fa-envelope"></i>
-            <a href="mailto:iletisim.muhammetalivarlik@gmail.com">iletisim.muhammetalivarlik@gmail.com</a>
-          </p>
-      
-          <div class="social-icons">
-            <a href="https://github.com/MuhammetAliVarlik" target="_blank" aria-label="GitHub">
-              <i class="fab fa-github"></i>
-            </a>
-            <a href="https://www.linkedin.com/in/muhammet-ali-varlik/" target="_blank" aria-label="LinkedIn">
-              <i class="fab fa-linkedin"></i>
-            </a>
-            <a href="https://medium.com/@muhammetalivarlik" target="_blank" aria-label="Medium">
-              <i class="fab fa-medium"></i>
-            </a>
-          </div>
-        </div>
-      </div>
-      
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;500;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="static/styles/styles.css">
+    <link rel="icon" href="static/img/cvImage.png" type="image/png">
+</head>
+<body>
 
-    <!-- SAĞ PANEL -->
-    <div class="main-section">
-      <div class="language-switcher">
-          <button onclick="setLanguage('en')" id="lang-en" aria-label="English">
-              <img src="https://flagcdn.com/w40/gb.png" alt="England Flag" />
-            </button>
-          <button onclick="setLanguage('tr')" id="lang-tr" aria-label="Türkçe">
-            <img src="https://flagcdn.com/w40/tr.png" alt="Türkiye Bayrak" />
-          </button>
-          
+    <canvas id="bg-canvas"></canvas>
+    
+    <nav class="floating-nav">
+        <div class="nav-content">
+            <a href="#" class="logo">MAV.</a>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Stack</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#projects">Work</a></li>
+            </ul>
+            <div class="nav-actions">
+                <a id="contact-btn" href="#" class="btn-primary">Contact</a>
+            </div>
         </div>
-        <nav class="side-icon-menu">
-          <ul>
-            <li><a href="#about" aria-label="Hakkımda"><i class="fas fa-user"></i></a></li>
-            <li><a href="#skills" aria-label="Yetkinlikler"><i class="fas fa-cogs"></i></a></li>
-            <li><a href="#experience" aria-label="İş Deneyimi"><i class="fas fa-briefcase"></i></a></li>
-            <li><a href="#education" aria-label="Eğitim"><i class="fas fa-graduation-cap"></i></a></li>
-            <li><a href="#projects" aria-label="Projeler"><i class="fas fa-clipboard-list"></i></a></li>
+    </nav>
+
+    <main class="container">
+        
+        <section id="about" class="hero-section">
+            <div class="hero-grid">
+                <div class="hero-text">
+                    <div class="profile-badge">
+                        <span class="status-dot"></span> Available for new opportunities
+                    </div>
+                    <h1>Engineering <span class="gradient-text">Scalable AI</span><br> for the Real World.</h1>
+                    <p class="hero-subtitle"></p>
+                    <div class="hero-buttons">
+                        <a href="#projects" class="btn-primary">View Projects <i class="fas fa-arrow-right"></i></a>
+                        <a href="https://github.com/MuhammetAliVarlik" target="_blank" class="btn-secondary"><i class="fab fa-github"></i> GitHub</a>
+                        <a href="https://www.linkedin.com/in/muhammet-ali-varlik/" target="_blank" class="btn-secondary"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                    </div>
+                </div>
+
+                <div class="hero-image">
+                    <div class="profile-card">
+                        <div class="profile-img-wrapper">
+                            <img src="static/img/cvImage.png" alt="Muhammet Ali Varlık" class="profile-img">
+                        </div>
+                        <div class="card-glow"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills" class="skills-section">
+            <h2 class="section-heading">Technical Arsenal</h2>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <i class="fas fa-brain"></i>
+                    <h3>AI & Machine Learning</h3>
+                    <p>TensorFlow, PyTorch, Scikit-learn, OpenCV, Time-Series Forecasting, Pandas, NumPy</p>
+                </div>
+                <div class="skill-card">
+                    <i class="fas fa-magic"></i>
+                    <h3>Generative AI & LLMs</h3>
+                    <p>Llama 3, Mistral, LangChain, LangGraph, RAG, Agentic Systems, Semantic Search, Fine Tuning</p>
+                </div>
+                <div class="skill-card">
+                    <i class="fas fa-code-branch"></i>
+                    <h3>Software Eng. & DevOps</h3>
+                    <p>FastAPI, Docker, CI/CD (GitHub Actions), Clean Architecture, MLOps (MLflow), Grafana, Loki</p>
+                </div>
+                <div class="skill-card">
+                    <i class="fas fa-database"></i>
+                    <h3>Data & Visualization</h3>
+                    <p>PostgreSQL, MySQL, Redis, Vue.js, React.js, Streamlit, Power BI</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="experience" class="experience-section">
+             <h2 class="section-heading">Career Trajectory</h2>
+            <div class="timeline">
+                
+                <div class="timeline-item">
+                    <div class="timeline-date">Sep 2025 - Present</div>
+                    <div class="timeline-content">
+                        <h3>Software Engineer</h3>
+                        <h4>TRK Technology</h4>
+                        <p>Developing an internal <strong>MLOps Platform</strong> and workflow orchestration engine (Vue Flow). Optimized backend data mapping algorithms and built scalable FastAPI services.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-date">Jul 2024 - Aug 2024</div>
+                    <div class="timeline-content">
+                        <h3>Data Scientist Intern</h3>
+                        <h4>Berel Enerji</h4>
+                        <p>Trained LSTM models for wind power forecasting (0.91 R²) and developed a PVGIS API-driven webpage using Flask.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-date">Jul 2023 - Aug 2023</div>
+                    <div class="timeline-content">
+                        <h3>Computer Vision Intern</h3>
+                        <h4>Divvy Drive</h4>
+                        <p>Fine-tuned VGG16 models (92.1% accuracy) for image classification and developed secure API integrations.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-date">Oct 2022 - Jul 2023</div>
+                    <div class="timeline-content">
+                        <h3>RPA Engineer</h3>
+                        <h4>Siemens</h4>
+                        <p>Automated workflow processes using Power Apps & Automate, reducing project planning time from 2 weeks to 1 hour.</p>
+                    </div>
+                </div>
+
+                 <div class="timeline-item">
+                    <div class="timeline-date">Apr 2022 - Oct 2022</div>
+                    <div class="timeline-content">
+                        <h3>Computer Vision Intern</h3>
+                        <h4>Triomobil</h4>
+                        <p>Researched SLAM and Monocular Visual Odometry; developed object tracking and detection modules.</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="projects" class="projects-section">
+            <h2 class="section-heading">Selected Works</h2>
+            <p class="section-subheading">Click on any project to view architecture details and outcomes.</p>
             
-          </ul>
-        </nav>
-          
-  <!-- Hakkımda -->
-  <section id="about" class="section-block">
-    <h2 class="section-title"></h2> <!-- about_title -->
-    <p></p>   <!-- about_text -->
-  </section>
+            <div class="bento-grid">
+                
+                <article class="bento-card large clickable" data-project-id="finwise">
+                    <div class="card-content">
+                        <div class="card-tags">
+                            <span>Neuro-Symbolic AI</span><span>MLOps</span><span>FastAPI</span>
+                        </div>
+                        <h3>Finwise Scribe</h3>
+                        <p>A microservices-based AI engine fusing LSTM trend analysis with fine-tuned Llama 3 for hybrid market signals.</p>
+                    </div>
+                    <div class="card-image-wrapper gradient-bg">
+                        <i class="fas fa-network-wired"></i>
+                    </div>
+                </article>
 
-  <section id="skills" class="section-block" data-aos="fade-up">
-    <h3  class="section-title"></h3> <!-- skills_title -->
-    <div class="skills-grid">
-      <div class="skill-group">
-        <h4 data-skill-group="programming"></h4>
-        <ul></ul>
-      </div>
-      <div class="skill-group">
-        <h4 data-skill-group="datascience"></h4>
-        <ul></ul>
-      </div>
-      <div class="skill-group">
-        <h4 data-skill-group="databases"></h4>
-        <ul></ul>
-      </div>
-      <div class="skill-group">
-        <h4 data-skill-group="data_analysis"></h4>
-        <ul></ul>
-      </div>
-      <div class="skill-group">
-        <h4 data-skill-group="others"></h4>
-        <ul></ul>
-      </div>
+                <article class="bento-card clickable" data-project-id="agentic">
+                    <div class="card-content">
+                        <div class="card-tags"><span>LangGraph</span><span>Llama 3</span></div>
+                        <h3>Agentic Investing Engine</h3>
+                        <p>Multi-agent system coordinating specialist AI agents for investment strategies.</p>
+                    </div>
+                </article>
+
+                <article class="bento-card clickable" data-project-id="moviescout">
+                    <div class="card-content">
+                        <div class="card-tags"><span>RAG</span><span>Flask</span></div>
+                        <h3>Movie Scout</h3>
+                        <p>Conversational recommender system using Retrieval-Augmented Generation and semantic search.</p>
+                    </div>
+                </article>
+
+                <article class="bento-card clickable" data-project-id="realestate">
+                    <div class="card-content">
+                        <div class="card-tags"><span>Anomaly Detection</span><span>GenAI Agent</span></div>
+                        <h3>Real Estate AI</h3>
+                        <p>Full-stack system integrating regression, clustering, and anomaly detection as tools for a GenAI agent.</p>
+                    </div>
+                </article>
+
+                <article class="bento-card clickable" data-project-id="btc">
+                    <div class="card-content">
+                        <div class="card-tags"><span>CNN-LSTM</span><span>TensorFlow</span></div>
+                        <h3>BTC/USDT Classifier</h3>
+                        <p>Crypto price movement classification using hybrid Deep Learning models on OHLCV data.</p>
+                    </div>
+                </article>
+                
+            </div>
+        </section>
+
+        <section id="education" class="experience-section">
+            <h2 class="section-heading">Education</h2>
+            <div class="timeline">
+                 <div class="timeline-item">
+                    <div class="timeline-date">Jun 2025 - Present</div>
+                    <div class="timeline-content">
+                        <h3>Master's Degree in Data Science</h3>
+                        <h4>Gazi University</h4>
+                        <p><strong>GPA: 4.00/4.00</strong><br>Focus: Statistical Deep Learning, Time-Series Forecasting.</p>
+                    </div>
+                </div>
+                 <div class="timeline-item">
+                    <div class="timeline-date">Sep 2019 - Aug 2024</div>
+                    <div class="timeline-content">
+                        <h3>B.S. Electrical Electronics Engineering</h3>
+                        <h4>Ankara Yildirim Beyazit University</h4>
+                        <p>GPA: 3.09/4.00<br>Relevant Coursework: Machine Learning, Digital Image Processing.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <div class="footer-content">
+                <p>&copy; 2026 Muhammet Ali Varlık. Built with ☕ and Code.</p>
+                <div class="social-links">
+                    <a href="https://github.com/MuhammetAliVarlik" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/muhammet-ali-varlik/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+        </footer>
+
+    </main>
+
+    <div id="project-modal" class="modal-overlay" role="dialog" aria-modal="true">
+        <div class="modal-content">
+            <button id="close-modal" aria-label="Close modal">&times;</button>
+            <div class="modal-body" id="modal-body-content">
+                </div>
+        </div>
     </div>
-  </section>
-  
-  <section id="experience" class="section-block" data-aos="fade-up">
-    <h2></h2>
-    <div id="experience-list"></div>
-  </section>
-  
-  <section id="education" class="section-block" data-aos="fade-up">
-    <h2></h2>
-    <div id="education-list"></div>
-  </section>
-  
-  <section id="projects" class="section-block" data-aos="fade-up">
-    <h2></h2>
-    <div id="projects-list"></div>
-  </section>
 
-</div>
-
-  </div>
-  <script type="text/javascript" src="static/js/main.js"></script>
-  <script>AOS.init();</script>
+    <script src="static/js/main.js"></script>
 </body>
 </html>
