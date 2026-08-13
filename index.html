@@ -3,49 +3,60 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Muhammet Ali Varlık | AI Engineer & Data Scientist</title>
-    <meta name="description" content="Portfolio of Muhammet Ali Varlık - AI Engineer specializing in LLMs, Neuro-Symbolic AI, and scalable MLOps systems.">
-    
+    <title>Muhammet Ali Varlık | AI Systems Engineer · LLMOps</title>
+    <meta id="meta-description" name="description" content="Portfolio of Muhammet Ali Varlık - AI Systems Engineer specializing in LLM applications, LLMOps & MLOps, and agentic AI systems.">
+
+    <meta property="og:type" content="website">
+    <meta id="og-title" property="og:title" content="Muhammet Ali Varlık | AI Systems Engineer · LLMOps">
+    <meta id="og-description" property="og:description" content="AI Systems Engineer specializing in LLM applications, LLMOps & MLOps, and agentic AI systems.">
+    <meta property="og:image" content="https://muhammetalivarlik.github.io/Portfolio/static/img/cvImage.png">
+    <meta property="og:url" content="https://muhammetalivarlik.github.io/Portfolio/">
+    <meta name="twitter:card" content="summary">
+    <meta id="twitter-title" name="twitter:title" content="Muhammet Ali Varlık | AI Systems Engineer · LLMOps">
+    <meta id="twitter-description" name="twitter:description" content="AI Systems Engineer specializing in LLM applications, LLMOps & MLOps, and agentic AI systems.">
+    <meta name="twitter:image" content="https://muhammetalivarlik.github.io/Portfolio/static/img/cvImage.png">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;500;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
-    
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
+
     <link rel="stylesheet" href="static/styles/styles.css">
-    <link rel="icon" href="static/img/cvImage.png" type="image/png">
+    <link rel="icon" href="static/img/favicon.png" type="image/png">
 </head>
 <body>
 
     <canvas id="bg-canvas"></canvas>
-    
+
     <nav class="floating-nav">
         <div class="nav-content">
             <a href="#" class="logo">MAV.</a>
             <ul class="nav-links">
-                <li><a href="#about">About</a></li>
-                <li><a href="#skills">Stack</a></li>
-                <li><a href="#experience">Experience</a></li>
-                <li><a href="#projects">Work</a></li>
+                <li><a href="#about" data-i18n="nav.about">About</a></li>
+                <li><a href="#skills" data-i18n="nav.skills">Stack</a></li>
+                <li><a href="#experience" data-i18n="nav.experience">Experience</a></li>
+                <li><a href="#projects" data-i18n="nav.projects">Work</a></li>
             </ul>
             <div class="nav-actions">
-                <a id="contact-btn" href="#" class="btn-primary">Contact</a>
+                <button id="lang-toggle" class="btn-secondary" type="button" aria-label="Switch language">TR</button>
+                <a id="contact-btn" href="#" class="btn-primary" data-i18n="nav.contact">Contact</a>
             </div>
         </div>
     </nav>
 
     <main class="container">
-        
+
         <section id="about" class="hero-section">
             <div class="hero-grid">
                 <div class="hero-text">
                     <div class="profile-badge">
-                        <span class="status-dot"></span> Available for new opportunities
+                        <span class="status-dot"></span> <span data-i18n="hero.badge">Available for new opportunities</span>
                     </div>
-                    <h1>Engineering <span class="gradient-text">Scalable AI</span><br> for the Real World.</h1>
+                    <h1 data-i18n-html="hero.title">Engineering <span class="gradient-text">Scalable AI</span><br> for the Real World.</h1>
                     <p class="hero-subtitle"></p>
                     <div class="hero-buttons">
-                        <a href="#projects" class="btn-primary">View Projects <i class="fas fa-arrow-right"></i></a>
+                        <a href="#projects" class="btn-primary"><span data-i18n="hero.viewProjects">View Projects</span> <i class="fas fa-arrow-right"></i></a>
                         <a href="https://github.com/MuhammetAliVarlik" target="_blank" class="btn-secondary"><i class="fab fa-github"></i> GitHub</a>
                         <a href="https://www.linkedin.com/in/muhammet-ali-varlik/" target="_blank" class="btn-secondary"><i class="fab fa-linkedin"></i> LinkedIn</a>
                     </div>
@@ -62,78 +73,101 @@
             </div>
         </section>
 
+        <section id="currently" class="currently-section">
+            <div class="currently-bar">
+                <div class="currently-item">
+                    <i class="fas fa-flask"></i>
+                    <span data-i18n="currently.thesis">Writing my Master's thesis on domain-agnostic symbolic time-series representation</span>
+                </div>
+                <div class="currently-item">
+                    <i class="fas fa-briefcase"></i>
+                    <span data-i18n="currently.jobsearch">Actively interviewing for AI / LLM Engineer roles</span>
+                </div>
+            </div>
+        </section>
+
         <section id="skills" class="skills-section">
-            <h2 class="section-heading">Technical Arsenal</h2>
+            <h2 class="section-heading" data-i18n="skills.heading">Technical Arsenal</h2>
             <div class="skills-grid">
                 <div class="skill-card">
-                    <i class="fas fa-brain"></i>
-                    <h3>AI & Machine Learning</h3>
-                    <p>TensorFlow, PyTorch, Scikit-learn, OpenCV, Time-Series Forecasting, Pandas, NumPy</p>
+                    <i class="fas fa-vial"></i>
+                    <h3 data-i18n="skills.card1.title">LLMOps & Evaluation</h3>
+                    <p>LLM-as-Judge, RAG Benchmarking, Prompt Ops, Model Evaluation Pipelines, Hallucination Detection, Shadow Mode Deployment, Divergence Tracking</p>
                 </div>
                 <div class="skill-card">
                     <i class="fas fa-magic"></i>
-                    <h3>Generative AI & LLMs</h3>
-                    <p>Llama 3, Mistral, LangChain, LangGraph, RAG, Agentic Systems, Semantic Search, Fine Tuning</p>
+                    <h3 data-i18n="skills.card2.title">Generative AI & LLMs</h3>
+                    <p>Llama 3, Mistral, Phi-3, Qwen2.5, LangChain, LangGraph, RAG, Agentic Systems, Semantic Search, LoRA Fine-Tuning, Ollama, GGUF Quantization</p>
+                </div>
+                <div class="skill-card">
+                    <i class="fas fa-brain"></i>
+                    <h3 data-i18n="skills.card3.title">AI & Machine Learning</h3>
+                    <p>TensorFlow, PyTorch, Scikit-learn, OpenCV, Time-Series Forecasting, Pandas, NumPy</p>
                 </div>
                 <div class="skill-card">
                     <i class="fas fa-code-branch"></i>
-                    <h3>Software Eng. & DevOps</h3>
-                    <p>FastAPI, Docker, CI/CD (GitHub Actions), Clean Architecture, MLOps (MLflow), Grafana, Loki</p>
+                    <h3 data-i18n="skills.card4.title">Software Eng. & DevOps</h3>
+                    <p>FastAPI, Celery, Docker, CI/CD (GitHub Actions), Clean Architecture, MLOps (MLflow), Grafana, Loki</p>
                 </div>
                 <div class="skill-card">
                     <i class="fas fa-database"></i>
-                    <h3>Data & Visualization</h3>
-                    <p>PostgreSQL, MySQL, Redis, Vue.js, React.js, Streamlit, Power BI</p>
+                    <h3 data-i18n="skills.card5.title">Data & Vector Stores</h3>
+                    <p>PostgreSQL, MySQL, Redis, ChromaDB, Qdrant, FAISS, Vue.js, React.js, Streamlit, Power BI</p>
+                </div>
+                <div class="skill-card">
+                    <i class="fas fa-microchip"></i>
+                    <h3 data-i18n="skills.card6.title">Systems & Languages</h3>
+                    <p>Rust (WebAssembly), TypeScript, C, C++, R, SQL</p>
                 </div>
             </div>
         </section>
 
         <section id="experience" class="experience-section">
-             <h2 class="section-heading">Career Trajectory</h2>
+             <h2 class="section-heading" data-i18n="experience.heading">Career Trajectory</h2>
             <div class="timeline">
-                
+
                 <div class="timeline-item">
-                    <div class="timeline-date">Sep 2025 - Present</div>
+                    <div class="timeline-date" data-i18n="exp1.date">Sep 2025 - Jun 2026</div>
                     <div class="timeline-content">
-                        <h3>Software Engineer</h3>
+                        <h3 data-i18n="exp1.title">Software Engineer (AI Systems & MLOps Platform)</h3>
                         <h4>TRK Technology</h4>
-                        <p>Developing an internal <strong>MLOps Platform</strong> and workflow orchestration engine (Vue Flow). Optimized backend data mapping algorithms and built scalable FastAPI services.</p>
+                        <p data-i18n-html="exp1.desc">Built an internal <strong>MLOps platform</strong> (FastAPI + PostgreSQL + Vue.js) from scratch, cutting pipeline setup time from days to <strong>~10 minutes</strong> for a team of 5+ data scientists. Designed a <strong>DAG-based workflow orchestration engine</strong> (Vue Flow) that cut pipeline configuration time by an estimated <strong>&gt;60%</strong>, and compiled 5 ML model types to <strong>Rust/WebAssembly</strong> for native browser inference.</p>
                     </div>
                 </div>
 
                 <div class="timeline-item">
-                    <div class="timeline-date">Jul 2024 - Aug 2024</div>
+                    <div class="timeline-date" data-i18n="exp2.date">Jul 2024 - Aug 2024</div>
                     <div class="timeline-content">
-                        <h3>Data Scientist Intern</h3>
+                        <h3 data-i18n="exp2.title">Data Scientist Intern</h3>
                         <h4>Berel Enerji</h4>
-                        <p>Trained LSTM models for wind power forecasting (0.91 R²) and developed a PVGIS API-driven webpage using Flask.</p>
+                        <p data-i18n-html="exp2.desc">Trained LSTM models for wind power forecasting (0.91 R²) and developed a PVGIS API-driven webpage using Flask.</p>
                     </div>
                 </div>
 
                 <div class="timeline-item">
-                    <div class="timeline-date">Jul 2023 - Aug 2023</div>
+                    <div class="timeline-date" data-i18n="exp3.date">Jul 2023 - Aug 2023</div>
                     <div class="timeline-content">
-                        <h3>Computer Vision Intern</h3>
+                        <h3 data-i18n="exp3.title">Computer Vision Intern</h3>
                         <h4>Divvy Drive</h4>
-                        <p>Fine-tuned VGG16 models (92.1% accuracy) for image classification and developed secure API integrations.</p>
+                        <p data-i18n-html="exp3.desc">Fine-tuned VGG16 models (92.1% accuracy) for image classification and developed secure API integrations.</p>
                     </div>
                 </div>
 
                 <div class="timeline-item">
-                    <div class="timeline-date">Oct 2022 - Jul 2023</div>
+                    <div class="timeline-date" data-i18n="exp4.date">Oct 2022 - Jul 2023</div>
                     <div class="timeline-content">
-                        <h3>RPA Engineer</h3>
+                        <h3 data-i18n="exp4.title">RPA Engineer</h3>
                         <h4>Siemens</h4>
-                        <p>Automated workflow processes using Power Apps & Automate, reducing project planning time from 2 weeks to 1 hour.</p>
+                        <p data-i18n-html="exp4.desc">Automated workflow processes using Power Apps & Automate, reducing project planning time from 2 weeks to 1 hour.</p>
                     </div>
                 </div>
 
                  <div class="timeline-item">
-                    <div class="timeline-date">Apr 2022 - Oct 2022</div>
+                    <div class="timeline-date" data-i18n="exp5.date">Apr 2022 - Oct 2022</div>
                     <div class="timeline-content">
-                        <h3>Computer Vision Intern</h3>
+                        <h3 data-i18n="exp5.title">Computer Vision Intern</h3>
                         <h4>Triomobil</h4>
-                        <p>Researched SLAM and Monocular Visual Odometry; developed object tracking and detection modules.</p>
+                        <p data-i18n-html="exp5.desc">Researched SLAM and Monocular Visual Odometry; developed object tracking and detection modules.</p>
                     </div>
                 </div>
 
@@ -141,18 +175,31 @@
         </section>
 
         <section id="projects" class="projects-section">
-            <h2 class="section-heading">Selected Works</h2>
-            <p class="section-subheading">Click on any project to view architecture details and outcomes.</p>
-            
+            <h2 class="section-heading" data-i18n="projects.heading">Selected Works</h2>
+            <p class="section-subheading" data-i18n="projects.subheading">Click on any project to view architecture details and outcomes.</p>
+
             <div class="bento-grid">
-                
+
+                <article class="bento-card large clickable" data-project-id="llmops-studio">
+                    <div class="card-content">
+                        <div class="card-tags">
+                            <span>Open-Source</span><span>LLMOps</span><span>Docker</span>
+                        </div>
+                        <h3>LLMOps Studio</h3>
+                        <p data-i18n="proj.llmops.desc">Self-initiated 9-repository open-source platform for RAG benchmarking, prompt operations, and LLM evaluation & orchestration.</p>
+                    </div>
+                    <div class="card-image-wrapper gradient-bg">
+                        <i class="fas fa-layer-group"></i>
+                    </div>
+                </article>
+
                 <article class="bento-card large clickable" data-project-id="finwise">
                     <div class="card-content">
                         <div class="card-tags">
-                            <span>Neuro-Symbolic AI</span><span>MLOps</span><span>FastAPI</span>
+                            <span>Master's Thesis</span><span>MLOps</span><span>FastAPI</span>
                         </div>
                         <h3>Finwise Scribe</h3>
-                        <p>A microservices-based AI engine fusing LSTM trend analysis with fine-tuned Llama 3 for hybrid market signals.</p>
+                        <p data-i18n="proj.finwise.desc">A microservices-based AI engine fusing LSTM trend analysis with a fine-tuned LLM for hybrid market signals. Thesis in progress — direction actively evolving.</p>
                     </div>
                     <div class="card-image-wrapper gradient-bg">
                         <i class="fas fa-network-wired"></i>
@@ -163,7 +210,7 @@
                     <div class="card-content">
                         <div class="card-tags"><span>LangGraph</span><span>Llama 3</span></div>
                         <h3>Agentic Investing Engine</h3>
-                        <p>Multi-agent system coordinating specialist AI agents for investment strategies.</p>
+                        <p data-i18n="proj.agentic.desc">Multi-agent system coordinating specialist AI agents for investment strategies.</p>
                     </div>
                 </article>
 
@@ -171,7 +218,7 @@
                     <div class="card-content">
                         <div class="card-tags"><span>RAG</span><span>Flask</span></div>
                         <h3>Movie Scout</h3>
-                        <p>Conversational recommender system using Retrieval-Augmented Generation and semantic search.</p>
+                        <p data-i18n="proj.moviescout.desc">Conversational recommender system using Retrieval-Augmented Generation and semantic search.</p>
                     </div>
                 </article>
 
@@ -179,7 +226,7 @@
                     <div class="card-content">
                         <div class="card-tags"><span>Anomaly Detection</span><span>GenAI Agent</span></div>
                         <h3>Real Estate AI</h3>
-                        <p>Full-stack system integrating regression, clustering, and anomaly detection as tools for a GenAI agent.</p>
+                        <p data-i18n="proj.realestate.desc">Full-stack system integrating regression, clustering, and anomaly detection as tools for a GenAI agent.</p>
                     </div>
                 </article>
 
@@ -187,38 +234,48 @@
                     <div class="card-content">
                         <div class="card-tags"><span>CNN-LSTM</span><span>TensorFlow</span></div>
                         <h3>BTC/USDT Classifier</h3>
-                        <p>Crypto price movement classification using hybrid Deep Learning models on OHLCV data.</p>
+                        <p data-i18n="proj.btc.desc">Crypto price movement classification using hybrid Deep Learning models on OHLCV data.</p>
                     </div>
                 </article>
-                
+
             </div>
         </section>
 
         <section id="education" class="experience-section">
-            <h2 class="section-heading">Education</h2>
+            <h2 class="section-heading" data-i18n="education.heading">Education</h2>
             <div class="timeline">
                  <div class="timeline-item">
-                    <div class="timeline-date">Jun 2025 - Present</div>
+                    <div class="timeline-date" data-i18n="edu1.date">Jun 2025 - Present</div>
                     <div class="timeline-content">
-                        <h3>Master's Degree in Data Science</h3>
+                        <h3 data-i18n="edu1.title">Master's Degree in Data Science</h3>
                         <h4>Gazi University</h4>
-                        <p><strong>GPA: 4.00/4.00</strong><br>Focus: Statistical Deep Learning, Time-Series Forecasting.</p>
+                        <p data-i18n-html="edu1.desc"><strong>GPA: 4.00/4.00</strong><br>Focus: Statistical Deep Learning, Time-Series Forecasting.</p>
                     </div>
                 </div>
                  <div class="timeline-item">
-                    <div class="timeline-date">Sep 2019 - Aug 2024</div>
+                    <div class="timeline-date" data-i18n="edu2.date">Sep 2019 - Aug 2024</div>
                     <div class="timeline-content">
-                        <h3>B.S. Electrical Electronics Engineering</h3>
+                        <h3 data-i18n="edu2.title">B.S. Electrical Electronics Engineering</h3>
                         <h4>Ankara Yildirim Beyazit University</h4>
-                        <p>GPA: 3.09/4.00<br>Relevant Coursework: Machine Learning, Digital Image Processing.</p>
+                        <p data-i18n-html="edu2.desc">GPA: 3.09/4.00<br>Relevant Coursework: Machine Learning, Digital Image Processing.</p>
                     </div>
                 </div>
+            </div>
+        </section>
+
+        <section id="certificates" class="skills-section">
+            <h2 class="section-heading" data-i18n="certificates.heading">Certificates</h2>
+            <div class="certs-list">
+                <a href="https://www.coursera.org/account/accomplishments/verify/MFSSSMLJY4H5" target="_blank" class="cert-item"><i class="fas fa-certificate"></i> Introduction to Embedded Machine Learning <span class="cert-source">Coursera</span></a>
+                <a href="https://www.coursera.org/account/accomplishments/verify/JWQGTYTA3N97" target="_blank" class="cert-item"><i class="fas fa-certificate"></i> Computer Vision with Embedded Machine Learning <span class="cert-source">Coursera</span></a>
+                <a href="https://www.udemy.com/certificate/UC-b761b119-0cc6-4852-aaaa-b6dfbc22b70b/" target="_blank" class="cert-item"><i class="fas fa-certificate"></i> Learn Python Programming From A-Z <span class="cert-source">Udemy</span></a>
+                <a href="https://www.udemy.com/certificate/UC-0537525b-8a17-4479-b277-c3f44c416b56/" target="_blank" class="cert-item"><i class="fas fa-certificate"></i> AI & Deep Learning A-Z: TensorFlow <span class="cert-source">Udemy</span></a>
             </div>
         </section>
 
         <footer>
             <div class="footer-content">
-                <p>&copy; 2026 Muhammet Ali Varlık. Built with ☕ and Code.</p>
+                <p>&copy; 2026 Muhammet Ali Varlık. <span data-i18n="footer.text">Built with ☕ and Code.</span></p>
                 <div class="social-links">
                     <a href="https://github.com/MuhammetAliVarlik" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
                     <a href="https://www.linkedin.com/in/muhammet-ali-varlik/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
