@@ -149,29 +149,11 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outlin
 .hero-subtitle strong { color: var(--text-primary); font-weight: 600; }
 .hero-buttons { display: flex; gap: 12px; flex-wrap: wrap; }
 
-/* Hero visual: photo with orbiting chips */
+/* Hero visual: profile photo */
 .hero-visual { position: relative; display: grid; place-items: center; aspect-ratio: 1; max-width: 460px; width: 100%; justify-self: center; }
-.orbit { position: absolute; z-index: 3; pointer-events: none; border-radius: 50%; border: 1px dashed rgba(255,255,255,0.12); animation: spin 40s linear infinite; }
-.orbit-outer { inset: 0; }
-.orbit-inner { inset: 14%; animation-duration: 28s; animation-direction: reverse; border-color: rgba(212,255,0,0.15); }
-@keyframes spin { to { transform: rotate(360deg); } }
-.orbit-chip {
-    position: absolute; padding: 5px 12px; border-radius: 20px; font-size: 0.75rem; font-family: var(--font-heading);
-    background: rgba(12,12,15,0.9); border: 1px solid var(--card-border); color: var(--text-primary); white-space: nowrap;
-    animation: counter-spin 40s linear infinite;
-}
-.orbit-inner .orbit-chip { animation-duration: 28s; animation-direction: reverse; border-color: rgba(212,255,0,0.3); color: var(--accent); }
-@keyframes counter-spin { to { transform: rotate(-360deg); } }
-.c1 { top: -12px; left: 50%; margin-left: -40px; }
-.c2 { top: 50%; right: -18px; margin-top: -14px; }
-.c3 { bottom: -12px; left: 50%; margin-left: -20px; }
-.c4 { top: 50%; left: -26px; margin-top: -14px; }
-.c5 { top: 4%; right: 6%; }
-.c6 { bottom: 4%; right: 6%; }
-.c7 { top: 46%; left: -24px; }
 
 .profile-card {
-    position: relative; width: 54%; aspect-ratio: 1; border-radius: 28px; padding: 8px; z-index: 2;
+    position: relative; width: 78%; aspect-ratio: 1; border-radius: 28px; padding: 8px; z-index: 2;
     background: linear-gradient(145deg, rgba(212,255,0,0.25), rgba(56,189,248,0.15) 50%, rgba(255,255,255,0.02));
     transition: transform 0.5s var(--ease-out);
 }
@@ -184,6 +166,8 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outlin
 .scroll-cue { position: absolute; bottom: 24px; left: 50%; transform: translateX(-50%); width: 26px; height: 42px; border: 2px solid var(--card-border); border-radius: 20px; }
 .scroll-cue span { position: absolute; top: 8px; left: 50%; width: 4px; height: 8px; margin-left: -2px; border-radius: 2px; background: var(--accent); animation: scrolldot 1.8s ease-in-out infinite; }
 @keyframes scrolldot { 0% { transform: translateY(0); opacity: 1; } 70% { transform: translateY(14px); opacity: 0; } 100% { opacity: 0; } }
+
+@keyframes spin { to { transform: rotate(360deg); } }
 
 /* =========================================
    5. SHARED SECTION STYLES
@@ -411,7 +395,6 @@ footer { border-top: 1px solid var(--card-border); padding: 36px 0; margin-top: 
     .timeline-content { padding: 18px; }
     .cert-item { flex-wrap: wrap; }
     .cert-source { margin-left: 0; }
-    .orbit-chip { font-size: 0.66rem; padding: 3px 8px; }
     .cta-card { padding: 50px 20px; }
 }
 

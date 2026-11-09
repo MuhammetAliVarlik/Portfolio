@@ -384,12 +384,9 @@ document.addEventListener("DOMContentLoaded", () => {
     // ------------------------------------------------------------------
     const contactBtn = document.getElementById("contact-btn");
     if (contactBtn) {
-        contactBtn.addEventListener("click", e => {
-            e.preventDefault();
-            const user = ["iletisim", "muhammetalivarlik"].join(".");
-            const domain = ["gmail", "com"].join(".");
-            window.location.href = `mailto:${user}@${domain}`;
-        });
+        const user = ["iletisim", "muhammetalivarlik"].join(".");
+        const domain = ["gmail", "com"].join(".");
+        contactBtn.setAttribute("href", `mailto:${user}@${domain}`);
     }
     const printBtn = document.getElementById("print-cv");
     if (printBtn) printBtn.addEventListener("click", () => window.print());
