@@ -56,108 +56,168 @@
 <body>
 
     <canvas id="bg-canvas" aria-hidden="true"></canvas>
+    <div class="aurora" aria-hidden="true"><span class="blob b1"></span><span class="blob b2"></span><span class="blob b3"></span></div>
+    <div class="cursor-glow" aria-hidden="true"></div>
 
     <nav class="floating-nav" aria-label="Main">
         <div class="nav-content">
-            <a href="#about" class="logo" aria-label="Home">MAV.</a>
+            <a href="#about" class="logo" aria-label="Home">MAV<span class="logo-dot">.</span></a>
             <ul class="nav-links">
-                <li><a href="#skills" data-i18n="nav.skills">Skills</a></li>
+                <li><a href="#focus" data-i18n="nav.focus">Focus</a></li>
                 <li><a href="#experience" data-i18n="nav.experience">Experience</a></li>
                 <li><a href="#projects" data-i18n="nav.projects">Projects</a></li>
+                <li><a href="#skills" data-i18n="nav.skills">Skills</a></li>
                 <li><a href="#education" data-i18n="nav.education">Education</a></li>
-                <li><a href="projects/index.html" data-i18n="nav.book">Deep dives</a></li>
             </ul>
             <div class="nav-actions">
                 <button id="lang-toggle" class="btn-secondary" type="button" aria-label="Switch language">TR</button>
-                <a id="contact-btn" href="https://www.linkedin.com/in/muhammet-ali-varlik/" class="btn-primary" data-i18n="nav.contact">Contact</a>
+                <a href="#contact" class="btn-primary" data-i18n="nav.contact">Contact</a>
             </div>
         </div>
     </nav>
 
     <main class="container">
 
+        <!-- ============ HERO ============ -->
         <section id="about" class="hero-section" aria-labelledby="hero-name">
             <div class="hero-grid">
                 <div class="hero-text">
-                    <div class="profile-badge">
+                    <div class="profile-badge reveal">
                         <span class="status-dot"></span> <span data-i18n="hero.badge">I am open to AI / LLM Engineer roles.</span>
                     </div>
-                    <h1 id="hero-name">Muhammet Ali <span class="gradient-text">Varlık</span></h1>
-                    <p class="hero-role">AI / LLM Engineer · Agentic Systems · LLM Evaluation &amp; Guardrails · MLOps</p>
-                    <p class="hero-location"><i class="fas fa-location-dot" aria-hidden="true"></i> <span data-i18n="hero.location">Ankara, Turkey</span></p>
-                    <p class="hero-subtitle" data-i18n-html="hero.summary">AI/LLM Engineer building agentic systems, RAG pipelines, and LLM evaluation tooling end to end, with a foundation in classical ML and MLOps. At TRK Technology, built an enterprise MLOps platform from scratch that <strong>cut pipeline setup time from days to ~10 minutes</strong> for a team of 5+ data scientists. Recent work includes an MCP-native multi-agent research system with prompt-injection guardrails and numeric grounding, and an M.Sc. thesis (GPA 4.00) on modelling time series as a symbolic language for small language models on edge hardware.</p>
-                    <div class="hero-buttons">
-                        <a href="projects/index.html" class="btn-primary"><i class="fas fa-book-open" aria-hidden="true"></i> <span data-i18n="hero.readBook">Project deep dives</span></a>
-                        <a href="https://github.com/MuhammetAliVarlik" target="_blank" rel="noopener noreferrer" class="btn-secondary"><i class="fab fa-github" aria-hidden="true"></i> GitHub</a>
-                        <a href="https://www.linkedin.com/in/muhammet-ali-varlik/" target="_blank" rel="noopener noreferrer" class="btn-secondary"><i class="fab fa-linkedin" aria-hidden="true"></i> LinkedIn</a>
-                        <button id="print-cv" type="button" class="btn-secondary"><i class="fas fa-print" aria-hidden="true"></i> <span data-i18n="hero.printCv">Print-friendly CV</span></button>
+                    <h1 id="hero-name" class="reveal">Muhammet Ali <span class="shimmer">Varlık</span></h1>
+                    <p class="hero-role reveal">AI / LLM Engineer · Agentic Systems · LLM Evaluation &amp; Guardrails · MLOps</p>
+                    <p class="hero-rotator reveal" aria-hidden="true"><span class="rot-prefix" data-i18n="hero.rotPrefix">I build</span> <span id="rotator" class="rot-word">agentic systems</span><span class="caret"></span></p>
+                    <p class="hero-location reveal"><i class="fas fa-location-dot" aria-hidden="true"></i> <span data-i18n="hero.location">Ankara, Turkey</span></p>
+                    <p class="hero-subtitle reveal" data-i18n-html="hero.summary">AI/LLM Engineer building agentic systems, RAG pipelines, and LLM evaluation tooling end to end, with a foundation in classical ML and MLOps. At TRK Technology, built an enterprise MLOps platform from scratch that <strong>cut pipeline setup time from days to ~10 minutes</strong> for a team of 5+ data scientists. Recent work includes an MCP-native multi-agent research system with prompt-injection guardrails and numeric grounding, and an M.Sc. thesis (GPA 4.00) on modelling time series as a symbolic language for small language models on edge hardware.</p>
+                    <div class="hero-buttons reveal">
+                        <a href="#projects" class="btn-primary magnetic"><span data-i18n="hero.viewProjects">See my projects</span> <i class="fas fa-arrow-down" aria-hidden="true"></i></a>
+                        <a href="https://github.com/MuhammetAliVarlik" target="_blank" rel="noopener noreferrer" class="btn-secondary magnetic"><i class="fab fa-github" aria-hidden="true"></i> GitHub</a>
+                        <a href="https://www.linkedin.com/in/muhammet-ali-varlik/" target="_blank" rel="noopener noreferrer" class="btn-secondary magnetic"><i class="fab fa-linkedin" aria-hidden="true"></i> LinkedIn</a>
+                        <button id="print-cv" type="button" class="btn-ghost"><i class="fas fa-print" aria-hidden="true"></i> <span data-i18n="hero.printCv">Print-friendly CV</span></button>
                     </div>
                 </div>
 
-                <div class="hero-image">
+                <div class="hero-visual reveal" aria-hidden="true">
+                    <div class="orbit orbit-outer">
+                        <span class="orbit-chip c1">LangGraph</span>
+                        <span class="orbit-chip c2">MCP</span>
+                        <span class="orbit-chip c3">RAG</span>
+                        <span class="orbit-chip c4">MLflow</span>
+                    </div>
+                    <div class="orbit orbit-inner">
+                        <span class="orbit-chip c5">FastAPI</span>
+                        <span class="orbit-chip c6">PyTorch</span>
+                        <span class="orbit-chip c7">Ollama</span>
+                    </div>
                     <div class="profile-card">
                         <div class="profile-img-wrapper">
-                            <img src="static/img/cvImage.png" alt="Portrait of Muhammet Ali Varlık" class="profile-img" width="320" height="320">
+                            <img src="static/img/cvImage.png" alt="" class="profile-img" width="320" height="320">
                         </div>
                         <div class="card-glow"></div>
                     </div>
                 </div>
             </div>
+            <a href="#impact" class="scroll-cue" aria-label="Scroll down"><span></span></a>
         </section>
 
-        <section id="currently" class="currently-section" aria-label="Currently">
-            <div class="currently-bar">
-                <div class="currently-item">
-                    <i class="fas fa-flask" aria-hidden="true"></i>
-                    <span data-i18n="currently.thesis">My M.Sc. thesis completed its feasibility phase. I now build its core symbolic time-series library.</span>
+        <!-- ============ IMPACT NUMBERS ============ -->
+        <section id="impact" class="impact-section" aria-label="Impact in numbers">
+            <div class="impact-grid">
+                <div class="impact-card reveal">
+                    <span class="impact-num"><span class="count" data-to="10" data-prefix="~">~10</span><small> min</small></span>
+                    <span class="impact-lbl" data-i18n="impact.l1">pipeline setup time, down from days</span>
                 </div>
-                <div class="currently-item">
-                    <i class="fas fa-shield-halved" aria-hidden="true"></i>
-                    <span data-i18n="currently.agentic">The Agentic Investing Engine is release-ready. Its cloud release waits for a KVKK data protection review.</span>
+                <div class="impact-card reveal">
+                    <span class="impact-num"><span class="count" data-to="19">19</span><small>/19</small></span>
+                    <span class="impact-lbl" data-i18n="impact.l2">red-team attacks detected, zero false positives</span>
                 </div>
-                <div class="currently-item">
-                    <i class="fas fa-briefcase" aria-hidden="true"></i>
-                    <span data-i18n="currently.jobsearch">I am open to AI / LLM Engineer roles.</span>
+                <div class="impact-card reveal">
+                    <span class="impact-num"><span class="count" data-to="220">220</span><small>+</small></span>
+                    <span class="impact-lbl" data-i18n="impact.l3">automated tests in one agentic system</span>
+                </div>
+                <div class="impact-card reveal">
+                    <span class="impact-num"><span class="count" data-to="4.00" data-decimals="2">4.00</span><small>/4</small></span>
+                    <span class="impact-lbl" data-i18n="impact.l4">M.Sc. Data Science GPA</span>
                 </div>
             </div>
         </section>
 
-        <section id="skills" class="skills-section" aria-labelledby="skills-heading">
-            <h2 id="skills-heading" class="section-heading" data-i18n="skills.heading">Skills</h2>
-            <div class="skills-grid">
-                <div class="skill-card">
-                    <i class="fas fa-diagram-project" aria-hidden="true"></i>
-                    <h3 data-i18n="skills.card1.title">Agentic AI &amp; LLMs</h3>
-                    <p>LangGraph (StateGraph, supervisor routing), LangChain, Model Context Protocol (MCP server &amp; client), ReAct, Multi-Agent Orchestration, Tool/Function Calling, Prompt Engineering, LoRA Fine-tuning, GGUF Quantization, Ollama, Groq, Llama 3, Qwen, Mistral</p>
-                </div>
-                <div class="skill-card">
-                    <i class="fas fa-shield-halved" aria-hidden="true"></i>
-                    <h3 data-i18n="skills.card2.title">RAG, Evaluation &amp; Guardrails</h3>
-                    <p>Retrieval-Augmented Generation, Semantic Search, Embeddings, Vector Databases (ChromaDB, FAISS), Sentence-Transformers, Chunking Strategies, LLM-as-Judge, RAG Benchmarking, Prompt Ops, Hallucination Detection, Prompt-Injection Screening, Numeric Grounding, Red-Team Evaluation, Shadow Mode Deployment</p>
-                </div>
-                <div class="skill-card">
-                    <i class="fas fa-chart-line" aria-hidden="true"></i>
-                    <h3 data-i18n="skills.card3.title">ML &amp; Time Series</h3>
-                    <p>Python, PyTorch, TensorFlow, Keras, Scikit-learn, XGBoost, Pandas, NumPy, LSTM Forecasting, Time-Series Tokenization, Stationarity Analysis (ADF, KPSS, ACF/PACF), Walk-Forward Validation, Statistical Testing (Wilson, McNemar, Diebold-Mariano), Computer Vision (OpenCV), Tesseract OCR, SQL, PostgreSQL, SQLAlchemy</p>
-                </div>
-                <div class="skill-card">
-                    <i class="fas fa-code-branch" aria-hidden="true"></i>
-                    <h3 data-i18n="skills.card4.title">Engineering &amp; MLOps</h3>
-                    <p>FastAPI, Flask, REST APIs, Microservices, Asynchronous Processing (Celery, Redis), Git, Docker, Docker Compose, MLflow, Langfuse, CI/CD (GitHub Actions with OIDC), Bicep (IaC), Pytest, Linux, Grafana, Loki, Clean Architecture, OOP, SOLID</p>
-                </div>
-                <div class="skill-card">
-                    <i class="fas fa-laptop-code" aria-hidden="true"></i>
-                    <h3 data-i18n="skills.card5.title">Frontend &amp; Other</h3>
-                    <p>React.js, TypeScript, Tailwind CSS, Vue.js (Vue Flow), JavaScript, Streamlit. <span data-i18n="skills.familiar">Familiar with</span> Kubernetes, Rust/WASM, C++, R</p>
-                </div>
+        <!-- ============ MARQUEE ============ -->
+        <div class="marquee" aria-hidden="true">
+            <div class="marquee-track">
+                <span>LangGraph</span><span>Model Context Protocol</span><span>RAG</span><span>LLM-as-Judge</span><span>Prompt-Injection Screening</span><span>LoRA</span><span>Ollama</span><span>Groq</span><span>ChromaDB</span><span>FAISS</span><span>Langfuse</span><span>MLflow</span>
+                <span>LangGraph</span><span>Model Context Protocol</span><span>RAG</span><span>LLM-as-Judge</span><span>Prompt-Injection Screening</span><span>LoRA</span><span>Ollama</span><span>Groq</span><span>ChromaDB</span><span>FAISS</span><span>Langfuse</span><span>MLflow</span>
+            </div>
+            <div class="marquee-track reverse">
+                <span>FastAPI</span><span>Celery</span><span>Redis</span><span>PostgreSQL</span><span>Docker</span><span>GitHub Actions</span><span>Bicep</span><span>PyTorch</span><span>TensorFlow</span><span>XGBoost</span><span>React</span><span>TypeScript</span><span>Rust/WASM</span>
+                <span>FastAPI</span><span>Celery</span><span>Redis</span><span>PostgreSQL</span><span>Docker</span><span>GitHub Actions</span><span>Bicep</span><span>PyTorch</span><span>TensorFlow</span><span>XGBoost</span><span>React</span><span>TypeScript</span><span>Rust/WASM</span>
+            </div>
+        </div>
+
+        <!-- ============ FOCUS AREAS ============ -->
+        <section id="focus" class="focus-section" aria-labelledby="focus-heading">
+            <p class="eyebrow reveal" data-i18n="focus.eyebrow">What I do</p>
+            <h2 id="focus-heading" class="section-heading reveal" data-i18n="focus.heading">Three areas, one goal: AI systems you can trust</h2>
+            <div class="focus-grid">
+                <article class="focus-card tilt reveal">
+                    <span class="focus-icon"><i class="fas fa-diagram-project" aria-hidden="true"></i></span>
+                    <h3 data-i18n="focus.c1.title">Agentic systems</h3>
+                    <p data-i18n="focus.c1.text">I design multi-agent systems with LangGraph and expose their tools through the Model Context Protocol. Each agent gets only the tools that it needs.</p>
+                    <a class="focus-link" href="projects/agentic-investing-engine.html"><span data-i18n="focus.c1.link">Agentic Investing Engine</span> →</a>
+                </article>
+                <article class="focus-card tilt reveal">
+                    <span class="focus-icon"><i class="fas fa-shield-halved" aria-hidden="true"></i></span>
+                    <h3 data-i18n="focus.c2.title">LLM evaluation &amp; guardrails</h3>
+                    <p data-i18n="focus.c2.text">I measure LLM output with statistics, not with impressions. I screen untrusted input and check every number in the output against its source.</p>
+                    <a class="focus-link" href="projects/llmops-studio.html"><span data-i18n="focus.c2.link">LLMOps Studio</span> →</a>
+                </article>
+                <article class="focus-card tilt reveal">
+                    <span class="focus-icon"><i class="fas fa-gears" aria-hidden="true"></i></span>
+                    <h3 data-i18n="focus.c3.title">MLOps &amp; platforms</h3>
+                    <p data-i18n="focus.c3.text">I build the platforms that make experiments fast and safe: orchestration, dataset versioning, queues, observability and CI/CD.</p>
+                    <a class="focus-link" href="projects/trk-mlops-platform.html"><span data-i18n="focus.c3.link">TRK MLOps platform</span> →</a>
+                </article>
             </div>
         </section>
 
+        <!-- ============ PRINCIPLES ============ -->
+        <section id="principles" class="principles-section" aria-labelledby="principles-heading">
+            <p class="eyebrow reveal" data-i18n="principles.eyebrow">How I work</p>
+            <h2 id="principles-heading" class="section-heading reveal" data-i18n="principles.heading">Three principles behind every project</h2>
+            <ol class="principles">
+                <li class="principle reveal">
+                    <span class="p-num">01</span>
+                    <div>
+                        <h3 data-i18n="principles.p1.title">I do not trust model output blindly</h3>
+                        <p data-i18n-html="principles.p1.text">Numeric grounding checks each figure in a report. A Cohen's kappa test checks the LLM judge. <a href="projects/agentic-investing-engine.html">See the guardrails</a>.</p>
+                    </div>
+                </li>
+                <li class="principle reveal">
+                    <span class="p-num">02</span>
+                    <div>
+                        <h3 data-i18n="principles.p2.title">I look for silent failures</h3>
+                        <p data-i18n-html="principles.p2.text">I found a judge that scored empty strings, embeddings that ignored films and a prototype that leaked future data. I fixed each one before it changed a result. <a href="projects/symbolic-ts.html">See the leakage fix</a>.</p>
+                    </div>
+                </li>
+                <li class="principle reveal">
+                    <span class="p-num">03</span>
+                    <div>
+                        <h3 data-i18n="principles.p3.title">I ship responsibly</h3>
+                        <p data-i18n-html="principles.p3.text">I use read-only tools, CSP and OIDC deployments, and I document the limits of each project. I kept a ready release on hold for a KVKK data protection review. <a href="projects/finwise-scribe.html">See the correctness pass</a>.</p>
+                    </div>
+                </li>
+            </ol>
+        </section>
+
+        <!-- ============ EXPERIENCE ============ -->
         <section id="experience" class="experience-section" aria-labelledby="experience-heading">
-            <h2 id="experience-heading" class="section-heading" data-i18n="experience.heading">Work Experience</h2>
+            <p class="eyebrow reveal" data-i18n="experience.eyebrow">Career</p>
+            <h2 id="experience-heading" class="section-heading reveal" data-i18n="experience.heading">Work Experience</h2>
             <div class="timeline">
+                <span class="timeline-progress" aria-hidden="true"></span>
 
-                <article class="timeline-item">
+                <article class="timeline-item reveal">
                     <p class="timeline-date"><time datetime="2025-09">Sep 2025</time> – <time datetime="2026-06">Jun 2026</time></p>
                     <div class="timeline-content">
                         <h3 data-i18n="exp1.title">Software Engineer (AI Systems &amp; MLOps Platform)</h3>
@@ -172,7 +232,7 @@
                     </div>
                 </article>
 
-                <article class="timeline-item">
+                <article class="timeline-item reveal">
                     <p class="timeline-date"><time datetime="2024-07">Jul 2024</time> – <time datetime="2024-08">Aug 2024</time></p>
                     <div class="timeline-content">
                         <h3 data-i18n="exp2.title">Data Scientist Intern</h3>
@@ -183,7 +243,7 @@
                     </div>
                 </article>
 
-                <article class="timeline-item">
+                <article class="timeline-item reveal">
                     <p class="timeline-date"><time datetime="2023-07">Jul 2023</time> – <time datetime="2023-08">Aug 2023</time></p>
                     <div class="timeline-content">
                         <h3 data-i18n="exp3.title">Computer Vision Intern</h3>
@@ -194,7 +254,7 @@
                     </div>
                 </article>
 
-                <article class="timeline-item">
+                <article class="timeline-item reveal">
                     <p class="timeline-date"><time datetime="2022-10">Oct 2022</time> – <time datetime="2023-07">Jul 2023</time></p>
                     <div class="timeline-content">
                         <h3 data-i18n="exp4.title">RPA Engineer</h3>
@@ -206,7 +266,7 @@
                     </div>
                 </article>
 
-                <article class="timeline-item">
+                <article class="timeline-item reveal">
                     <p class="timeline-date"><time datetime="2022-04">Apr 2022</time> – <time datetime="2022-10">Oct 2022</time></p>
                     <div class="timeline-content">
                         <h3 data-i18n="exp5.title">Computer Vision Intern</h3>
@@ -216,17 +276,25 @@
                         </ul>
                     </div>
                 </article>
-
             </div>
         </section>
 
+        <!-- ============ PROJECTS ============ -->
         <section id="projects" class="projects-section" aria-labelledby="projects-heading">
-            <h2 id="projects-heading" class="section-heading" data-i18n="projects.heading">Projects</h2>
-            <p class="section-subheading" data-i18n="projects.subheading">Each project has a deep-dive page with Mermaid architecture diagrams, design decisions, trade-offs and results.</p>
+            <p class="eyebrow reveal" data-i18n="projects.eyebrow">Selected work</p>
+            <h2 id="projects-heading" class="section-heading reveal" data-i18n="projects.heading">Projects</h2>
+            <p class="section-subheading reveal" data-i18n="projects.subheading">Each project has a deep-dive page with Mermaid architecture diagrams, design decisions, trade-offs and results.</p>
+
+            <div class="filters reveal" role="group" aria-label="Filter projects">
+                <button type="button" class="filter active" data-filter="all" data-i18n="filter.all">All</button>
+                <button type="button" class="filter" data-filter="agentic" data-i18n="filter.agentic">Agentic &amp; LLM</button>
+                <button type="button" class="filter" data-filter="thesis" data-i18n="filter.thesis">Thesis</button>
+                <button type="button" class="filter" data-filter="applied" data-i18n="filter.applied">Applied ML</button>
+            </div>
 
             <div class="bento-grid">
 
-                <a class="bento-card large" href="projects/agentic-investing-engine.html">
+                <a class="bento-card large tilt reveal" data-cat="agentic" href="projects/agentic-investing-engine.html">
                     <div class="card-content">
                         <div class="card-tags"><span>LangGraph</span><span>MCP</span><span>Guardrails</span><span>React/TS</span></div>
                         <h3>Agentic Investing Engine</h3>
@@ -237,10 +305,10 @@
                             <li><strong>USD 0.003</strong> <span data-i18n="proj.agentic.m3">per analysis</span></li>
                         </ul>
                     </div>
-                    <div class="card-image-wrapper gradient-bg" aria-hidden="true"><i class="fas fa-diagram-project"></i></div>
+                    <div class="card-diagram" aria-hidden="true"><img src="projects/diagrams/agentic-architecture.svg" alt="" loading="lazy" width="1114" height="1201"></div>
                 </a>
 
-                <a class="bento-card" href="projects/symbolic-ts.html">
+                <a class="bento-card tilt reveal" data-cat="thesis" href="projects/symbolic-ts.html">
                     <div class="card-content">
                         <div class="card-tags"><span data-i18n="tag.thesis">M.Sc. Thesis</span><span>Time Series</span><span>SLM</span></div>
                         <h3>Symbolic-TS</h3>
@@ -248,7 +316,7 @@
                     </div>
                 </a>
 
-                <a class="bento-card" href="projects/llmops-studio.html">
+                <a class="bento-card tilt reveal" data-cat="agentic" href="projects/llmops-studio.html">
                     <div class="card-content">
                         <div class="card-tags"><span>Open-Source</span><span>LLMOps</span><span>React Flow</span></div>
                         <h3>LLMOps Studio</h3>
@@ -256,7 +324,7 @@
                     </div>
                 </a>
 
-                <a class="bento-card large" href="projects/finwise-scribe.html">
+                <a class="bento-card large tilt reveal" data-cat="thesis" href="projects/finwise-scribe.html">
                     <div class="card-content">
                         <div class="card-tags"><span data-i18n="tag.thesisDemo">Applied Thesis Demo</span><span>Celery/Redis</span><span>LoRA</span><span>Shadow Mode</span></div>
                         <h3>Finwise Scribe</h3>
@@ -267,10 +335,10 @@
                             <li><strong>20s → 0</strong> <span data-i18n="proj.finwise.m3">cold starts removed</span></li>
                         </ul>
                     </div>
-                    <div class="card-image-wrapper gradient-bg" aria-hidden="true"><i class="fas fa-network-wired"></i></div>
+                    <div class="card-diagram" aria-hidden="true"><img src="projects/diagrams/finwise-architecture.svg" alt="" loading="lazy" width="659" height="531"></div>
                 </a>
 
-                <a class="bento-card" href="projects/moviescout.html">
+                <a class="bento-card tilt reveal" data-cat="applied" href="projects/moviescout.html">
                     <div class="card-content">
                         <div class="card-tags"><span>RAG</span><span>ChromaDB</span><span>Flask</span></div>
                         <h3>MovieScout</h3>
@@ -278,7 +346,7 @@
                     </div>
                 </a>
 
-                <a class="bento-card" href="projects/real-estate-ai.html">
+                <a class="bento-card tilt reveal" data-cat="applied" href="projects/real-estate-ai.html">
                     <div class="card-content">
                         <div class="card-tags"><span>LangChain</span><span>Qwen2.5</span><span>XGBoost</span></div>
                         <h3>Real Estate AI</h3>
@@ -286,15 +354,7 @@
                     </div>
                 </a>
 
-                <a class="bento-card" href="projects/from-zero-to-hero.html">
-                    <div class="card-content">
-                        <div class="card-tags"><span>Open-Source</span><span data-i18n="tag.curriculum">Curriculum</span></div>
-                        <h3>FromZeroToHero</h3>
-                        <p data-i18n="proj.fzth.desc">This free curriculum has 27 sections and more than 355 notebooks for data science, AI and cloud. Six role-based paths show the order for each job.</p>
-                    </div>
-                </a>
-
-                <a class="bento-card" href="projects/animal-classification.html">
+                <a class="bento-card tilt reveal" data-cat="applied" href="projects/animal-classification.html">
                     <div class="card-content">
                         <div class="card-tags"><span>CNN</span><span data-i18n="tag.robustness">Robustness</span></div>
                         <h3>Animal Classification</h3>
@@ -302,48 +362,82 @@
                     </div>
                 </a>
 
+                <a class="bento-card tilt reveal" data-cat="community" href="projects/from-zero-to-hero.html">
+                    <div class="card-content">
+                        <div class="card-tags"><span>Open-Source</span><span data-i18n="tag.curriculum">Curriculum</span></div>
+                        <h3>FromZeroToHero</h3>
+                        <p data-i18n="proj.fzth.desc">This free curriculum has 27 sections and more than 355 notebooks for data science, AI and cloud. Six role-based paths show the order for each job.</p>
+                    </div>
+                </a>
+
             </div>
 
-            <p class="book-cta"><a href="projects/index.html" class="btn-secondary"><i class="fas fa-book-open" aria-hidden="true"></i> <span data-i18n="projects.allChapters">Open all project deep dives</span></a></p>
+            <p class="book-cta reveal"><a href="projects/index.html" class="btn-secondary magnetic"><i class="fas fa-layer-group" aria-hidden="true"></i> <span data-i18n="projects.allChapters">Open all project deep dives</span></a></p>
         </section>
 
-        <section id="education" class="experience-section" aria-labelledby="education-heading">
-            <h2 id="education-heading" class="section-heading" data-i18n="education.heading">Education</h2>
-            <div class="timeline">
-                <article class="timeline-item">
+        <!-- ============ SKILLS ============ -->
+        <section id="skills" class="skills-section" aria-labelledby="skills-heading">
+            <p class="eyebrow reveal" data-i18n="skills.eyebrow">Toolbox</p>
+            <h2 id="skills-heading" class="section-heading reveal" data-i18n="skills.heading">Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-card reveal">
+                    <i class="fas fa-diagram-project" aria-hidden="true"></i>
+                    <h3 data-i18n="skills.card1.title">Agentic AI &amp; LLMs</h3>
+                    <ul class="chips"><li>LangGraph (StateGraph, supervisor routing)</li><li>LangChain</li><li>Model Context Protocol (MCP server &amp; client)</li><li>ReAct</li><li>Multi-Agent Orchestration</li><li>Tool/Function Calling</li><li>Prompt Engineering</li><li>LoRA Fine-tuning</li><li>GGUF Quantization</li><li>Ollama</li><li>Groq</li><li>Llama 3</li><li>Qwen</li><li>Mistral</li></ul>
+                </div>
+                <div class="skill-card reveal">
+                    <i class="fas fa-shield-halved" aria-hidden="true"></i>
+                    <h3 data-i18n="skills.card2.title">RAG, Evaluation &amp; Guardrails</h3>
+                    <ul class="chips"><li>Retrieval-Augmented Generation</li><li>Semantic Search</li><li>Embeddings</li><li>Vector Databases (ChromaDB, FAISS)</li><li>Sentence-Transformers</li><li>Chunking Strategies</li><li>LLM-as-Judge</li><li>RAG Benchmarking</li><li>Prompt Ops</li><li>Hallucination Detection</li><li>Prompt-Injection Screening</li><li>Numeric Grounding</li><li>Red-Team Evaluation</li><li>Shadow Mode Deployment</li></ul>
+                </div>
+                <div class="skill-card reveal">
+                    <i class="fas fa-chart-line" aria-hidden="true"></i>
+                    <h3 data-i18n="skills.card3.title">ML &amp; Time Series</h3>
+                    <ul class="chips"><li>Python</li><li>PyTorch</li><li>TensorFlow</li><li>Keras</li><li>Scikit-learn</li><li>XGBoost</li><li>Pandas</li><li>NumPy</li><li>LSTM Forecasting</li><li>Time-Series Tokenization</li><li>Stationarity Analysis (ADF, KPSS, ACF/PACF)</li><li>Walk-Forward Validation</li><li>Statistical Testing (Wilson, McNemar, Diebold-Mariano)</li><li>Computer Vision (OpenCV)</li><li>Tesseract OCR</li><li>SQL</li><li>PostgreSQL</li><li>SQLAlchemy</li></ul>
+                </div>
+                <div class="skill-card reveal">
+                    <i class="fas fa-code-branch" aria-hidden="true"></i>
+                    <h3 data-i18n="skills.card4.title">Engineering &amp; MLOps</h3>
+                    <ul class="chips"><li>FastAPI</li><li>Flask</li><li>REST APIs</li><li>Microservices</li><li>Asynchronous Processing (Celery, Redis)</li><li>Git</li><li>Docker</li><li>Docker Compose</li><li>MLflow</li><li>Langfuse</li><li>CI/CD (GitHub Actions with OIDC)</li><li>Bicep (IaC)</li><li>Pytest</li><li>Linux</li><li>Grafana</li><li>Loki</li><li>Clean Architecture</li><li>OOP</li><li>SOLID</li></ul>
+                </div>
+                <div class="skill-card reveal">
+                    <i class="fas fa-laptop-code" aria-hidden="true"></i>
+                    <h3 data-i18n="skills.card5.title">Frontend &amp; Other</h3>
+                    <ul class="chips"><li>React.js</li><li>TypeScript</li><li>Tailwind CSS</li><li>Vue.js (Vue Flow)</li><li>JavaScript</li><li>Streamlit</li><li class="muted"><span data-i18n="skills.familiar">Familiar with</span> Kubernetes, Rust/WASM, C++, R</li></ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============ EDUCATION + LANGUAGES ============ -->
+        <section id="education" class="education-section" aria-labelledby="education-heading">
+            <p class="eyebrow reveal" data-i18n="education.eyebrow">Background</p>
+            <h2 id="education-heading" class="section-heading reveal" data-i18n="education.heading">Education</h2>
+            <div class="edu-grid">
+                <article class="edu-card tilt reveal">
                     <p class="timeline-date"><time datetime="2025-06">Jun 2025</time> – <span data-i18n="edu.present">Present</span></p>
-                    <div class="timeline-content">
-                        <h3 data-i18n="edu1.title">M.Sc. Data Science</h3>
-                        <p class="timeline-org">Gazi University</p>
-                        <ul>
-                            <li data-i18n-html="edu1.b1">Completing an M.Sc. with a <strong>GPA of 4.00/4.00</strong>. The thesis, <em>Modelling Time Series as a Symbolic Language: Small Language Models for Cross-Domain Transfer on Edge Hardware</em>, has completed its feasibility phase and is now building its core library.</li>
-                        </ul>
-                    </div>
+                    <h3 data-i18n="edu1.title">M.Sc. Data Science</h3>
+                    <p class="timeline-org">Gazi University</p>
+                    <p class="edu-gpa">GPA <strong>4.00</strong>/4.00</p>
+                    <p data-i18n-html="edu1.b1">Completing an M.Sc. with a <strong>GPA of 4.00/4.00</strong>. The thesis, <em>Modelling Time Series as a Symbolic Language: Small Language Models for Cross-Domain Transfer on Edge Hardware</em>, has completed its feasibility phase and is now building its core library.</p>
                 </article>
-                <article class="timeline-item">
+                <article class="edu-card tilt reveal">
                     <p class="timeline-date"><time datetime="2019-09">Sep 2019</time> – <time datetime="2024-08">Aug 2024</time></p>
-                    <div class="timeline-content">
-                        <h3 data-i18n="edu2.title">B.Sc. Electrical &amp; Electronics Engineering</h3>
-                        <p class="timeline-org">Ankara Yildirim Beyazit University</p>
-                        <ul>
-                            <li data-i18n-html="edu2.b1">Graduated with a GPA of 3.09/4.00. Capstone project simulated Monocular Visual-Inertial SLAM for autonomous ground-robot navigation in ROS.</li>
-                        </ul>
-                    </div>
+                    <h3 data-i18n="edu2.title">B.Sc. Electrical &amp; Electronics Engineering</h3>
+                    <p class="timeline-org">Ankara Yildirim Beyazit University</p>
+                    <p class="edu-gpa">GPA <strong>3.09</strong>/4.00</p>
+                    <p data-i18n-html="edu2.b1">Graduated with a GPA of 3.09/4.00. Capstone project simulated Monocular Visual-Inertial SLAM for autonomous ground-robot navigation in ROS.</p>
                 </article>
             </div>
-        </section>
 
-        <section id="languages-certificates" class="skills-section" aria-labelledby="langcert-heading">
-            <h2 id="langcert-heading" class="section-heading" data-i18n="langcert.heading">Languages &amp; Certificates</h2>
-            <div class="langcert-grid">
-                <div>
+            <div class="langcert-grid reveal" id="languages-certificates">
+                <div class="langcert-card">
                     <h3 class="sub-heading" data-i18n="languages.heading">Languages</h3>
                     <ul class="plain-list">
                         <li><strong data-i18n="lang.english">English</strong> — <span data-i18n="lang.englishLevel">Professional Proficiency</span></li>
                         <li><strong data-i18n="lang.turkish">Turkish</strong> — <span data-i18n="lang.turkishLevel">Native</span></li>
                     </ul>
                 </div>
-                <div>
+                <div class="langcert-card">
                     <h3 class="sub-heading" data-i18n="certificates.heading">Certificates</h3>
                     <div class="certs-list">
                         <a href="https://www.coursera.org/account/accomplishments/verify/MFSSSMLJY4H5" target="_blank" rel="noopener noreferrer" class="cert-item"><i class="fas fa-certificate" aria-hidden="true"></i> Introduction to Embedded Machine Learning <span class="cert-source">Coursera</span></a>
@@ -353,14 +447,25 @@
             </div>
         </section>
 
+        <!-- ============ CONTACT CTA ============ -->
+        <section id="contact" class="contact-section" aria-labelledby="contact-heading">
+            <div class="cta-card reveal">
+                <span class="cta-glow" aria-hidden="true"></span>
+                <p class="eyebrow" data-i18n="contact.eyebrow">Contact</p>
+                <h2 id="contact-heading" data-i18n="contact.heading">Do you build AI systems that must be correct?</h2>
+                <p data-i18n="contact.text">I am open to AI / LLM Engineer roles. Send me a message about a role or a project.</p>
+                <div class="cta-buttons">
+                    <a id="contact-btn" href="https://www.linkedin.com/in/muhammet-ali-varlik/" class="btn-primary magnetic"><i class="fas fa-envelope" aria-hidden="true"></i> <span data-i18n="contact.email">Send an email</span></a>
+                    <a href="https://www.linkedin.com/in/muhammet-ali-varlik/" target="_blank" rel="noopener noreferrer" class="btn-secondary magnetic"><i class="fab fa-linkedin" aria-hidden="true"></i> LinkedIn</a>
+                    <a href="https://github.com/MuhammetAliVarlik" target="_blank" rel="noopener noreferrer" class="btn-secondary magnetic"><i class="fab fa-github" aria-hidden="true"></i> GitHub</a>
+                </div>
+            </div>
+        </section>
+
         <footer>
             <div class="footer-content">
                 <p class="print-only">muhammetalivarlik.github.io/Portfolio · github.com/MuhammetAliVarlik · linkedin.com/in/muhammet-ali-varlik · github.com/LLMOps-Studio</p>
                 <p>&copy; 2026 Muhammet Ali Varlık. <span data-i18n="footer.text">Built with ☕ and Code.</span></p>
-                <div class="social-links">
-                    <a href="https://github.com/MuhammetAliVarlik" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fab fa-github" aria-hidden="true"></i></a>
-                    <a href="https://www.linkedin.com/in/muhammet-ali-varlik/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin" aria-hidden="true"></i></a>
-                </div>
             </div>
         </footer>
 
