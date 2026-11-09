@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en" data-title-en="Chapter 9: What would one continuous path from Python to GPU kernels look like? — FromZeroToHero | Engineering Notebook" data-title-tr="Bölüm 9: Python&#x27;dan GPU kernel&#x27;larına tek ve kesintisiz bir yol neye benzerdi? — FromZeroToHero | Mühendislik Defteri">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://raw.githubusercontent.com; connect-src 'none'; object-src 'none'; base-uri 'self'; form-action 'none'; upgrade-insecure-requests">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <title>Chapter 9: What would one continuous path from Python to GPU kernels look like? — FromZeroToHero | Engineering Notebook</title>
+    <meta name="description" content="FromZeroToHero: a free, MIT-licensed 27-section curriculum of 355+ Jupyter notebooks covering Data Science, AI and Cloud, with role-based learning paths.">
+    <meta name="author" content="Muhammet Ali Varlık">
+    <link rel="canonical" href="https://muhammetalivarlik.github.io/Portfolio/book/from-zero-to-hero.html">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Chapter 9: What would one continuous path from Python to GPU kernels look like? — FromZeroToHero | Engineering Notebook">
+    <meta property="og:description" content="FromZeroToHero: a free, MIT-licensed 27-section curriculum of 355+ Jupyter notebooks covering Data Science, AI and Cloud, with role-based learning paths.">
+    <meta property="og:url" content="https://muhammetalivarlik.github.io/Portfolio/book/from-zero-to-hero.html">
+    <meta property="og:image" content="https://muhammetalivarlik.github.io/Portfolio/static/img/cvImage.png">
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "headline": "FromZeroToHero: What would one continuous path from Python to GPU kernels look like?", "description": "FromZeroToHero: a free, MIT-licensed 27-section curriculum of 355+ Jupyter notebooks covering Data Science, AI and Cloud, with role-based learning paths.", "author": {"@type": "Person", "name": "Muhammet Ali Varlık", "url": "https://muhammetalivarlik.github.io/Portfolio/", "jobTitle": "AI / LLM Engineer"}, "inLanguage": ["en", "tr"], "url": "https://muhammetalivarlik.github.io/Portfolio/book/from-zero-to-hero.html", "isPartOf": {"@type": "Book", "name": "Engineering Notebook", "url": "https://muhammetalivarlik.github.io/Portfolio/book/"}, "about": {"@type": "SoftwareSourceCode", "name": "FromZeroToHero", "codeRepository": "https://github.com/MuhammetAliVarlik/FromZeroToHero-DataScience-AI-Cloud"}}</script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Inter:wght@400;600&family=Space+Grotesk:wght@500;700&display=swap">
+    <link rel="stylesheet" href="book.css">
+    <link rel="icon" href="../static/img/favicon.png" type="image/png">
+    <script src="book.js"></script>
+    <link rel="prev" href="trk-mlops-platform.html">
+</head>
+<body>
+<div class="progress" aria-hidden="true"></div>
+<header class="topbar">
+    <a class="brand" href="../index.html">MAV. <span>/ notebook</span></a>
+    <nav aria-label="Notebook">
+        <a href="index.html">index</a>
+        <a href="../index.html">home</a>
+        <button id="lang-toggle" type="button" aria-label="Switch language">TR</button>
+    </nav>
+</header>
+<a class="side-nav prev" href="trk-mlops-platform.html">← <span lang="en">Chapter</span><span lang="tr">Bölüm</span> 8: TRK Technology</a>
+<main class="notebook">
+<div class="nb-header">
+    <div><span class="label"><span lang="en">date</span><span lang="tr">tarih</span></span><span class="value">aug / 26</span></div>
+    <span class="status-chip"><span lang="en">open-source · MIT</span><span lang="tr">açık kaynak · MIT</span></span>
+</div>
+<article class="nb-box">
+<div class="nb-title-row">
+    <span><span class="prefix"><span lang="en">Industry & Community</span><span lang="tr">Endüstri ve Topluluk</span> — </span><span lang="en">Chapter</span><span lang="tr">Bölüm</span> 9</span>
+    <span class="meta">~2 <span lang="en">min read</span><span lang="tr">dk okuma</span></span>
+</div>
+<div class="nb-content">
+<p class="kicker">FromZeroToHero</p>
+<h1><span class="hl"><span lang="en">What would one continuous path from Python to GPU kernels look like?</span><span lang="tr">Python'dan GPU kernel'larına tek ve kesintisiz bir yol neye benzerdi?</span></span></h1>
+<span class="annotation"><span lang="en">*a free 27-section, 355+ notebook curriculum for Data Science, AI and Cloud*</span><span lang="tr">*Veri Bilimi, AI ve Cloud için ücretsiz, 27 bölümlük, 355+ notebook'luk bir müfredat*</span></span>
+<div class="metrics"><div class="metric"><span class="num">27</span><span class="lbl"><span lang="en">sections, each building on the last</span><span lang="tr">bölüm, her biri bir öncekinin üzerine</span></span></div><div class="metric"><span class="num">355+</span><span class="lbl"><span lang="en">runnable Jupyter notebooks</span><span lang="tr">çalıştırılabilir Jupyter notebook</span></span></div><div class="metric"><span class="num">6</span><span class="lbl"><span lang="en">role-based learning paths</span><span lang="tr">rol bazlı öğrenme yolu</span></span></div></div>
+<h2><span lang="en">Why it exists</span><span lang="tr">Neden var</span></h2>
+<div lang="en"><p>Most DS/AI material is fragmented: one course covers pandas, another a single algorithm, a bootcamp covers "AI" but skips the SQL and infrastructure underneath. This repository is <span class='hl'>one ordered pipeline</span> — Python → statistics → SQL → NumPy/Pandas → ML → deep learning → LLM engineering → MLOps → GPU programming — with every lesson tagged from beginner to expert.</p></div>
+<div lang="tr"><p>Çoğu Veri Bilimi/AI materyali parçalı: bir kurs pandas'ı, bir diğeri tek bir algoritmayı anlatıyor; bir bootcamp "AI"yi anlatıp altındaki SQL ve altyapıyı atlıyor. Bu repo <span class='hl'>tek ve sıralı bir pipeline</span> — Python → istatistik → SQL → NumPy/Pandas → ML → deep learning → LLM mühendisliği → MLOps → GPU programlama — ve her ders başlangıçtan uzmana kadar etiketli.</p></div>
+<h2><span lang="en">Role-based paths</span><span lang="tr">Rol bazlı yollar</span></h2>
+<div lang="en"><p>The same 27 sections, different routes: <strong>Data Analyst</strong>, <strong>Data Scientist</strong>, <strong>Data Engineer</strong>, <strong>AI/ML Engineer</strong>, <strong>LLM/GenAI Engineer</strong> and <strong>MLOps/Platform Engineer</strong>.</p></div>
+<div lang="tr"><p>Aynı 27 bölüm, farklı rotalar: <strong>Veri Analisti</strong>, <strong>Veri Bilimci</strong>, <strong>Veri Mühendisi</strong>, <strong>AI/ML Mühendisi</strong>, <strong>LLM/GenAI Mühendisi</strong> ve <strong>MLOps/Platform Mühendisi</strong>.</p></div>
+<div class="note"><span class="hand"><span lang="en">How it was made — stated openly:</span><span lang="tr">Nasıl yapıldı — açıkça belirtilmiş:</span></span><div lang="en"><p>Lesson content was generated with AI assistance and then reviewed, curated and structured by me. I use it as my own study material and share it free, with no paywall or sign-up.</p></div>
+<div lang="tr"><p>Ders içerikleri AI desteğiyle üretildi, ardından benim tarafımdan gözden geçirildi, seçildi ve yapılandırıldı. Kendi çalışma materyalim olarak kullanıyorum ve ödeme duvarı veya kayıt olmadan ücretsiz paylaşıyorum.</p></div>
+</div>
+<ul class="tags"><li>Curriculum</li><li>Data Science</li><li>Machine Learning</li><li>Deep Learning</li><li>LLM Engineering</li><li>MLOps</li><li>Cloud</li><li>Jupyter</li><li>Open Source</li></ul>
+<p class="links"><a class="btn" href="https://github.com/MuhammetAliVarlik/FromZeroToHero-DataScience-AI-Cloud" target="_blank" rel="noopener noreferrer"><span lang="en">View the repository</span><span lang="tr">Repoyu görüntüle</span> ↗</a></p>
+
+</div>
+</article>
+<nav class="chapter-nav" aria-label="Chapters">
+<a class="prev" href="trk-mlops-platform.html"><span class="dir">← <span lang="en">Previous</span><span lang="tr">Önceki</span></span><span class="ttl">8. TRK Technology</span></a>
+<a class="next" href="index.html"><span class="dir"><span lang="en">Index</span><span lang="tr">İçindekiler</span> →</span><span class="ttl"><span lang="en">Back to contents</span><span lang="tr">İçindekilere dön</span></span></a>
+</nav>
+</main>
+<footer class="book-footer">
+    <p>© 2026 Muhammet Ali Varlık · <a href="https://github.com/MuhammetAliVarlik" target="_blank" rel="noopener noreferrer">GitHub</a> · <a href="https://www.linkedin.com/in/muhammet-ali-varlik/" target="_blank" rel="noopener noreferrer">LinkedIn</a></p>
+    <p><span lang="en">Every number in this notebook comes from the project's own README, tests or CV — nothing is estimated for effect.</span><span lang="tr">Bu defterdeki her sayı projenin kendi README'sinden, testlerinden veya CV'den gelir — etki için uydurulmuş rakam yoktur.</span></p>
+</footer>
+</body>
+</html>

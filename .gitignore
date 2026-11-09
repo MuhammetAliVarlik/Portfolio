@@ -1,0 +1,10 @@
+# Personal documents — never publish (contain private contact data)
+*.pdf
+*Resume*
+*resume*
+*CV*.docx
+*.tex
+.env
+.env.*
+.DS_Store
+Thumbs.db

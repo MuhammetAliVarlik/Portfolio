@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en" data-title-en="Chapter 8: How do you take a team from days of setup to ten minutes? — TRK Technology | Engineering Notebook" data-title-tr="Bölüm 8: Bir ekibi günlerce süren kurulumdan on dakikaya nasıl indirirsiniz? — TRK Technology | Mühendislik Defteri">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://raw.githubusercontent.com; connect-src 'none'; object-src 'none'; base-uri 'self'; form-action 'none'; upgrade-insecure-requests">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <title>Chapter 8: How do you take a team from days of setup to ten minutes? — TRK Technology | Engineering Notebook</title>
+    <meta name="description" content="Case study: building an internal MLOps platform at TRK Technology (FastAPI, PostgreSQL, Vue.js) that cut pipeline setup from days to ~10 minutes for 5+ data scientists.">
+    <meta name="author" content="Muhammet Ali Varlık">
+    <link rel="canonical" href="https://muhammetalivarlik.github.io/Portfolio/book/trk-mlops-platform.html">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Chapter 8: How do you take a team from days of setup to ten minutes? — TRK Technology | Engineering Notebook">
+    <meta property="og:description" content="Case study: building an internal MLOps platform at TRK Technology (FastAPI, PostgreSQL, Vue.js) that cut pipeline setup from days to ~10 minutes for 5+ data scientists.">
+    <meta property="og:url" content="https://muhammetalivarlik.github.io/Portfolio/book/trk-mlops-platform.html">
+    <meta property="og:image" content="https://muhammetalivarlik.github.io/Portfolio/static/img/cvImage.png">
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "headline": "TRK Technology: How do you take a team from days of setup to ten minutes?", "description": "Case study: building an internal MLOps platform at TRK Technology (FastAPI, PostgreSQL, Vue.js) that cut pipeline setup from days to ~10 minutes for 5+ data scientists.", "author": {"@type": "Person", "name": "Muhammet Ali Varlık", "url": "https://muhammetalivarlik.github.io/Portfolio/", "jobTitle": "AI / LLM Engineer"}, "inLanguage": ["en", "tr"], "url": "https://muhammetalivarlik.github.io/Portfolio/book/trk-mlops-platform.html", "isPartOf": {"@type": "Book", "name": "Engineering Notebook", "url": "https://muhammetalivarlik.github.io/Portfolio/book/"}}</script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Inter:wght@400;600&family=Space+Grotesk:wght@500;700&display=swap">
+    <link rel="stylesheet" href="book.css">
+    <link rel="icon" href="../static/img/favicon.png" type="image/png">
+    <script src="book.js"></script>
+    <link rel="prev" href="animal-classification.html">
+    <link rel="next" href="from-zero-to-hero.html">
+</head>
+<body>
+<div class="progress" aria-hidden="true"></div>
+<header class="topbar">
+    <a class="brand" href="../index.html">MAV. <span>/ notebook</span></a>
+    <nav aria-label="Notebook">
+        <a href="index.html">index</a>
+        <a href="../index.html">home</a>
+        <button id="lang-toggle" type="button" aria-label="Switch language">TR</button>
+    </nav>
+</header>
+<a class="side-nav prev" href="animal-classification.html">← <span lang="en">Chapter</span><span lang="tr">Bölüm</span> 7: Animal Classification</a>
+<a class="side-nav next" href="from-zero-to-hero.html"><span lang="en">Chapter</span><span lang="tr">Bölüm</span> 9: FromZeroToHero →</a>
+<main class="notebook">
+<div class="nb-header">
+    <div><span class="label"><span lang="en">date</span><span lang="tr">tarih</span></span><span class="value">sep 25 – jun 26</span></div>
+    <span class="status-chip"><span lang="en">industry</span><span lang="tr">endüstri</span></span>
+</div>
+<article class="nb-box">
+<div class="nb-title-row">
+    <span><span class="prefix"><span lang="en">Industry & Community</span><span lang="tr">Endüstri ve Topluluk</span> — </span><span lang="en">Chapter</span><span lang="tr">Bölüm</span> 8</span>
+    <span class="meta">~2 <span lang="en">min read</span><span lang="tr">dk okuma</span></span>
+</div>
+<div class="nb-content">
+<p class="kicker">TRK Technology</p>
+<h1><span class="hl"><span lang="en">How do you take a team from days of setup to ten minutes?</span><span lang="tr">Bir ekibi günlerce süren kurulumdan on dakikaya nasıl indirirsiniz?</span></span></h1>
+<span class="annotation"><span lang="en">*building an internal MLOps platform from scratch — described at CV level only*</span><span lang="tr">*sıfırdan bir iç MLOps platformu kurmak — yalnızca CV düzeyinde anlatılmıştır*</span></span>
+<div class="note"><span class="hand"><span lang="en">A note on confidentiality:</span><span lang="tr">Gizlilik üzerine bir not:</span></span><div lang="en"><p>This was internal work for an employer. This chapter describes only what's on my CV — the problems, my decisions and the outcomes. No proprietary code, data, architecture details or client information appear here.</p></div>
+<div lang="tr"><p>Bu, bir işveren için yapılmış iç bir çalışmaydı. Bu bölüm yalnızca CV'mde yer alanları anlatır — problemleri, kararlarımı ve sonuçları. Burada hiçbir tescilli kod, veri, mimari detay veya müşteri bilgisi yer almaz.</p></div>
+</div>
+<dl class="facts"><dt><span lang="en">role</span><span lang="tr">rol</span></dt><dd><span lang="en">Software Engineer (AI Systems & MLOps Platform), Ankara</span><span lang="tr">Yazılım Mühendisi (AI Sistemleri ve MLOps Platformu), Ankara</span></dd><dt><span lang="en">period</span><span lang="tr">dönem</span></dt><dd><span lang="en">Sep 2025 – Jun 2026</span><span lang="tr">Eyl 2025 – Haz 2026</span></dd><dt><span lang="en">stack</span><span lang="tr">teknoloji</span></dt><dd>FastAPI · PostgreSQL · Vue.js · Vue Flow · Rust/WebAssembly</dd></dl>
+<div class="metrics"><div class="metric"><span class="num">days → ~10 min</span><span class="lbl"><span lang="en">pipeline setup time for 5+ data scientists</span><span lang="tr">5+ data scientist için pipeline kurulum süresi</span></span></div><div class="metric"><span class="num">~60%</span><span class="lbl"><span lang="en">estimated reduction in pipeline configuration time</span><span lang="tr">pipeline konfigürasyon süresinde tahmini azalma</span></span></div><div class="metric"><span class="num">5</span><span class="lbl"><span lang="en">model types compiled to Rust/WebAssembly</span><span lang="tr">Rust/WebAssembly'e derlenen model tipi</span></span></div><div class="metric"><span class="num">0</span><span class="lbl"><span lang="en">server round-trips for in-browser inference</span><span lang="tr">tarayıcı içi inference için sunucu gidiş-dönüşü</span></span></div></div>
+<h2><span lang="en">Four problems, four decisions</span><span lang="tr">Dört problem, dört karar</span></h2>
+<figure class="diagram"><svg class="dg" viewBox="0 0 760 210" width="760" height="210" role="img" aria-label="Generic view of the internal MLOps platform: Vue.js and Vue Flow UI, FastAPI orchestration, PostgreSQL, dataset management with lineage, and Rust/WebAssembly in-browser inference"><title>Generic view of the internal MLOps platform: Vue.js and Vue Flow UI, FastAPI orchestration, PostgreSQL, dataset management with lineage, and Rust/WebAssembly in-browser inference</title><defs><marker id="ah8" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path class="arrowhead" d="M0,0 L10,5 L0,10 z"/></marker></defs><line class="edge " x1="140.0" y1="105.0" x2="170.0" y2="105.0" marker-end="url(#ah8)"/><line class="edge " x1="320.0" y1="105.0" x2="350.0" y2="105.0" marker-end="url(#ah8)"/><line class="edge " x1="490.0" y1="84.2" x2="564.5" y2="62.0" marker-end="url(#ah8)"/><line class="edge " x1="490.0" y1="105.0" x2="520.0" y2="105.0" marker-end="url(#ah8)"/><line class="edge dash" x1="320.0" y1="117.5" x2="520.0" y2="150.8" marker-end="url(#ah8)"/><rect class="box blue" x="10" y="80" width="130" height="50" rx="6"/><text x="75.0" y="102.0" text-anchor="middle">Data scientists</text><text class="sub" x="75.0" y="117.0" text-anchor="middle">5+</text><rect class="box " x="170" y="80" width="150" height="50" rx="6"/><text x="245.0" y="102.0" text-anchor="middle">Vue.js + Vue Flow</text><text class="sub" x="245.0" y="117.0" text-anchor="middle">visual DAG builder</text><rect class="box acc" x="350" y="80" width="140" height="50" rx="6"/><text x="420.0" y="102.0" text-anchor="middle">FastAPI</text><text class="sub" x="420.0" y="117.0" text-anchor="middle">orchestration</text><rect class="box " x="520" y="20" width="230" height="42" rx="6"/><text x="635.0" y="45.0" text-anchor="middle">PostgreSQL</text><rect class="box green" x="520" y="80" width="230" height="50" rx="6"/><text x="635.0" y="102.0" text-anchor="middle">Dataset Management</text><text class="sub" x="635.0" y="117.0" text-anchor="middle">versioned branches · lineage</text><rect class="box pink" x="520" y="145" width="230" height="50" rx="6"/><text x="635.0" y="167.0" text-anchor="middle">Rust → WebAssembly</text><text class="sub" x="635.0" y="182.0" text-anchor="middle">5 model types, in-browser</text></svg><figcaption><span lang="en">a generic sketch of the platform's shape — not the internal design</span><span lang="tr">platformun genel bir taslağı — iç tasarım değil</span></figcaption></figure>
+<h3><span lang="en">1. Every experiment was run by hand</span><span lang="tr">1. Her deney elle yürütülüyordu</span></h3>
+<div lang="en"><p>A team of 5+ data scientists set up every deep-learning experiment manually. I built an internal MLOps platform from scratch (FastAPI + PostgreSQL + Vue.js), <span class='hl'>cutting pipeline setup time from days to ~10 minutes</span>.</p></div>
+<div lang="tr"><p>5+ kişilik bir data scientist ekibi her deep learning deneyini elle kuruyordu. Sıfırdan bir iç MLOps platformu (FastAPI + PostgreSQL + Vue.js) geliştirerek <span class='hl'>pipeline kurulum süresini günlerden ~10 dakikaya indirdim</span>.</p></div>
+<h3><span lang="en">2. Every pipeline needed the same boilerplate</span><span lang="tr">2. Her pipeline aynı boilerplate'i gerektiriyordu</span></h3>
+<div lang="en"><p>I designed a DAG-based orchestration engine (Vue Flow) to build and run preprocessing and evaluation pipelines visually, <span class='hl'>reducing configuration time by an estimated 60%</span>.</p></div>
+<div lang="tr"><p>Ön işleme ve değerlendirme pipeline'larını görsel olarak kurup çalıştırmak için DAG tabanlı bir orkestrasyon motoru (Vue Flow) tasarladım; <span class='hl'>konfigürasyon süresini tahmini %60 azalttım</span>.</p></div>
+<h3><span lang="en">3. A data-leakage risk nobody had flagged</span><span lang="tr">3. Kimsenin fark etmediği bir veri sızıntısı riski</span></h3>
+<div lang="en"><p>I identified a critical leakage risk in the team's train/test split strategy, <strong>aligned the team on a fix</strong>, and shipped a Dataset Management module with version-controlled branching and lineage tracking — <span class='hl-green'>preserving model validity across all downstream experiments</span>.</p></div>
+<div lang="tr"><p>Ekibin train/test ayırma stratejisinde kritik bir sızıntı riski tespit ettim, <strong>ekibi bir çözüm üzerinde uzlaştırdım</strong> ve sürüm kontrollü dallanma ile lineage takibi sunan bir Dataset Management modülü geliştirdim — <span class='hl-green'>tüm alt deneylerde model geçerliliğini korudum</span>.</p></div>
+<div class="note"><span class="hand"><span lang="en">The part I value most:</span><span lang="tr">En çok değer verdiğim kısım:</span></span><div lang="en"><p>Finding the leak was the easy part. Getting a whole team to change how they split data — and building a tool so it couldn't regress — was the real work.</p></div>
+<div lang="tr"><p>Sızıntıyı bulmak kolay kısımdı. Bütün bir ekibin veriyi bölme şeklini değiştirmesini sağlamak — ve geri dönemeyeceği bir araç kurmak — asıl işti.</p></div>
+</div>
+<h3><span lang="en">4. Comparing variants meant editing config by hand</span><span lang="tr">4. Varyantları karşılaştırmak konfigürasyonu elle düzenlemek demekti</span></h3>
+<div lang="en"><p>I built a layer-by-layer architecture configurator and compiled 5 model types to Rust/WebAssembly, <span class='hl'>enabling UI-driven tuning and in-browser inference with zero server round-trips</span>.</p></div>
+<div lang="tr"><p>Katman katman bir mimari konfigüratörü geliştirdim ve 5 model tipini Rust/WebAssembly'e derleyerek <span class='hl'>arayüzden ayarlamayı ve sunucuya gitmeden tarayıcı içi inference'ı mümkün kıldım</span>.</p></div>
+<ul class="tags"><li>MLOps</li><li>FastAPI</li><li>PostgreSQL</li><li>Vue.js</li><li>Vue Flow</li><li>DAG Orchestration</li><li>Data Lineage</li><li>Rust</li><li>WebAssembly</li></ul>
+
+</div>
+</article>
+<nav class="chapter-nav" aria-label="Chapters">
+<a class="prev" href="animal-classification.html"><span class="dir">← <span lang="en">Previous</span><span lang="tr">Önceki</span></span><span class="ttl">7. Animal Classification</span></a>
+<a class="next" href="from-zero-to-hero.html"><span class="dir"><span lang="en">Next</span><span lang="tr">Sonraki</span> →</span><span class="ttl">9. FromZeroToHero</span></a>
+</nav>
+</main>
+<footer class="book-footer">
+    <p>© 2026 Muhammet Ali Varlık · <a href="https://github.com/MuhammetAliVarlik" target="_blank" rel="noopener noreferrer">GitHub</a> · <a href="https://www.linkedin.com/in/muhammet-ali-varlik/" target="_blank" rel="noopener noreferrer">LinkedIn</a></p>
+    <p><span lang="en">Every number in this notebook comes from the project's own README, tests or CV — nothing is estimated for effect.</span><span lang="tr">Bu defterdeki her sayı projenin kendi README'sinden, testlerinden veya CV'den gelir — etki için uydurulmuş rakam yoktur.</span></p>
+</footer>
+</body>
+</html>

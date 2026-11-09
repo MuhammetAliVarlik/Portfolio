@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en" data-title-en="Engineering Notebook — Muhammet Ali Varlık" data-title-tr="Mühendislik Defteri — Muhammet Ali Varlık">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://raw.githubusercontent.com; connect-src 'none'; object-src 'none'; base-uri 'self'; form-action 'none'; upgrade-insecure-requests">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <title>Engineering Notebook — Muhammet Ali Varlık</title>
+    <meta name="description" content="Engineering Notebook by Muhammet Ali Varlık: chapter-by-chapter case studies of agentic AI, LLM evaluation, MLOps and time-series research projects.">
+    <meta name="author" content="Muhammet Ali Varlık">
+    <link rel="canonical" href="https://muhammetalivarlik.github.io/Portfolio/book/">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Engineering Notebook — Muhammet Ali Varlık">
+    <meta property="og:description" content="Engineering Notebook by Muhammet Ali Varlık: chapter-by-chapter case studies of agentic AI, LLM evaluation, MLOps and time-series research projects.">
+    <meta property="og:url" content="https://muhammetalivarlik.github.io/Portfolio/book/">
+    <meta property="og:image" content="https://muhammetalivarlik.github.io/Portfolio/static/img/cvImage.png">
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Book", "name": "Engineering Notebook", "author": {"@type": "Person", "name": "Muhammet Ali Varlık", "url": "https://muhammetalivarlik.github.io/Portfolio/", "jobTitle": "AI / LLM Engineer"}, "url": "https://muhammetalivarlik.github.io/Portfolio/book/", "inLanguage": ["en", "tr"], "numberOfPages": 9, "hasPart": [{"@type": "TechArticle", "name": "Agentic Investing Engine: Can an LLM analyst be trusted with numbers it didn't compute?", "url": "https://muhammetalivarlik.github.io/Portfolio/book/agentic-investing-engine.html"}, {"@type": "TechArticle", "name": "LLMOps Studio: Why was I writing a throwaway script for every LLM experiment?", "url": "https://muhammetalivarlik.github.io/Portfolio/book/llmops-studio.html"}, {"@type": "TechArticle", "name": "Symbolic-TS: Does a stock chart and a factory sensor speak the same language?", "url": "https://muhammetalivarlik.github.io/Portfolio/book/symbolic-ts.html"}, {"@type": "TechArticle", "name": "Finwise Scribe: Can a 4GB GPU run a market-reasoning LLM without freezing the app?", "url": "https://muhammetalivarlik.github.io/Portfolio/book/finwise-scribe.html"}, {"@type": "TechArticle", "name": "MovieScout: Why did my recommender ignore the third movie you picked?", "url": "https://muhammetalivarlik.github.io/Portfolio/book/moviescout.html"}, {"@type": "TechArticle", "name": "Real Estate AI: What if classical ML models were tools an agent could call?", "url": "https://muhammetalivarlik.github.io/Portfolio/book/real-estate-ai.html"}, {"@type": "TechArticle", "name": "Animal Classification: How much does a colour cast break a CNN?", "url": "https://muhammetalivarlik.github.io/Portfolio/book/animal-classification.html"}, {"@type": "TechArticle", "name": "TRK Technology: How do you take a team from days of setup to ten minutes?", "url": "https://muhammetalivarlik.github.io/Portfolio/book/trk-mlops-platform.html"}, {"@type": "TechArticle", "name": "FromZeroToHero: What would one continuous path from Python to GPU kernels look like?", "url": "https://muhammetalivarlik.github.io/Portfolio/book/from-zero-to-hero.html"}]}</script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Inter:wght@400;600&family=Space+Grotesk:wght@500;700&display=swap">
+    <link rel="stylesheet" href="book.css">
+    <link rel="icon" href="../static/img/favicon.png" type="image/png">
+    <script src="book.js"></script>
+</head>
+<body>
+<div class="progress" aria-hidden="true"></div>
+<header class="topbar">
+    <a class="brand" href="../index.html">MAV. <span>/ notebook</span></a>
+    <nav aria-label="Notebook">
+        <a href="index.html">index</a>
+        <a href="../index.html">home</a>
+        <button id="lang-toggle" type="button" aria-label="Switch language">TR</button>
+    </nav>
+</header>
+<main class="notebook">
+<div class="nb-header">
+    <div><span class="label"><span lang="en">date</span><span lang="tr">tarih</span></span><span class="value">nov / 26</span></div>
+    <span class="status-chip">9 <span lang="en">chapters</span><span lang="tr">bölüm</span></span>
+</div>
+<article class="nb-box">
+<div class="nb-title-row"><span><span class="prefix"><span lang="en">Engineering Notebook</span><span lang="tr">Mühendislik Defteri</span> — </span><span lang="en">Index</span><span lang="tr">İçindekiler</span></span><span class="meta">EN / TR</span></div>
+<div class="nb-content">
+<h1><span class="hl"><span lang="en">Engineering Notebook</span><span lang="tr">Mühendislik Defteri</span></span></h1>
+<span class="annotation"><span lang="en">*the projects behind the CV, worked out one question at a time*</span><span lang="tr">*CV'nin arkasındaki projeler, her seferinde bir soru üzerinden*</span></span>
+<div lang="en"><p>A CV line says what happened. Each chapter here says <strong>why</strong>: the problem, the constraints, the architecture, the decisions I'd defend in an interview, and the numbers — including the parts that didn't work.</p></div>
+<div lang="tr"><p>Bir CV satırı ne olduğunu söyler. Buradaki her bölüm ise <strong>nedenini</strong> anlatır: problem, kısıtlar, mimari, bir mülakatta savunacağım kararlar ve rakamlar — işe yaramayan kısımlar dahil.</p></div>
+<div class="note"><span class="hand"><span lang="en">Short on time?</span><span lang="tr">Vaktiniz kısıtlı mı?</span></span><div lang="en"><p>Start with Chapter 1 (agentic systems + guardrails) and Chapter 8 (industry impact). Use ← → keys to flip between chapters.</p></div>
+<div lang="tr"><p>Bölüm 1 (agentic sistemler + guardrail'ler) ve Bölüm 8 (endüstri etkisi) ile başlayın. Bölümler arasında ← → tuşlarıyla geçiş yapabilirsiniz.</p></div>
+</div>
+<section class="toc-part">
+<h2><span lang="en">Part</span><span lang="tr">Kısım</span> I — <span lang="en">Agentic & LLM Systems</span><span lang="tr">Agentic ve LLM Sistemleri</span></h2>
+<p class="part-blurb"><span lang="en">Systems where an LLM does real work — and is never trusted blindly.</span><span lang="tr">Bir LLM'in gerçek iş yaptığı — ve asla körü körüne güvenilmediği sistemler.</span></p>
+<ol class="toc-list">
+<li><a href="agentic-investing-engine.html"><span class="no">01</span><span class="t">Agentic Investing Engine</span><span class="rt">~5 <span lang="en">min</span><span lang="tr">dk</span></span><span class="q"><span lang="en">Can an LLM analyst be trusted with numbers it didn't compute?</span><span lang="tr">Hesaplamadığı rakamlar konusunda bir LLM analiste güvenilebilir mi?</span></span></a></li>
+<li><a href="llmops-studio.html"><span class="no">02</span><span class="t">LLMOps Studio</span><span class="rt">~3 <span lang="en">min</span><span lang="tr">dk</span></span><span class="q"><span lang="en">Why was I writing a throwaway script for every LLM experiment?</span><span lang="tr">Neden her LLM deneyi için tek kullanımlık bir script yazıyordum?</span></span></a></li>
+</ol>
+</section>
+<section class="toc-part">
+<h2><span lang="en">Part</span><span lang="tr">Kısım</span> II — <span lang="en">Thesis: Time Series as Language</span><span lang="tr">Tez: Dil Olarak Zaman Serileri</span></h2>
+<p class="part-blurb"><span lang="en">My M.Sc. thesis: the research library and its applied demo.</span><span lang="tr">Yüksek lisans tezim: araştırma kütüphanesi ve uygulamalı demosu.</span></p>
+<ol class="toc-list">
+<li><a href="symbolic-ts.html"><span class="no">03</span><span class="t">Symbolic-TS</span><span class="rt">~3 <span lang="en">min</span><span lang="tr">dk</span></span><span class="q"><span lang="en">Does a stock chart and a factory sensor speak the same language?</span><span lang="tr">Bir hisse grafiği ile bir fabrika sensörü aynı dili konuşur mu?</span></span></a></li>
+<li><a href="finwise-scribe.html"><span class="no">04</span><span class="t">Finwise Scribe</span><span class="rt">~3 <span lang="en">min</span><span lang="tr">dk</span></span><span class="q"><span lang="en">Can a 4GB GPU run a market-reasoning LLM without freezing the app?</span><span lang="tr">4GB'lık bir GPU, uygulamayı dondurmadan piyasa üzerine akıl yürüten bir LLM çalıştırabilir mi?</span></span></a></li>
+</ol>
+</section>
+<section class="toc-part">
+<h2><span lang="en">Part</span><span lang="tr">Kısım</span> III — <span lang="en">Applied ML</span><span lang="tr">Uygulamalı ML</span></h2>
+<p class="part-blurb"><span lang="en">Smaller end-to-end projects, each with one lesson worth keeping.</span><span lang="tr">Her biri saklamaya değer bir ders içeren, daha küçük uçtan uca projeler.</span></p>
+<ol class="toc-list">
+<li><a href="moviescout.html"><span class="no">05</span><span class="t">MovieScout</span><span class="rt">~2 <span lang="en">min</span><span lang="tr">dk</span></span><span class="q"><span lang="en">Why did my recommender ignore the third movie you picked?</span><span lang="tr">Önerici neden seçtiğiniz üçüncü filmi görmezden geliyordu?</span></span></a></li>
+<li><a href="real-estate-ai.html"><span class="no">06</span><span class="t">Real Estate AI</span><span class="rt">~2 <span lang="en">min</span><span lang="tr">dk</span></span><span class="q"><span lang="en">What if classical ML models were tools an agent could call?</span><span lang="tr">Klasik ML modelleri bir ajanın çağırabileceği araçlar olsaydı?</span></span></a></li>
+<li><a href="animal-classification.html"><span class="no">07</span><span class="t">Animal Classification</span><span class="rt">~2 <span lang="en">min</span><span lang="tr">dk</span></span><span class="q"><span lang="en">How much does a colour cast break a CNN?</span><span lang="tr">Bir renk kayması bir CNN'i ne kadar bozar?</span></span></a></li>
+</ol>
+</section>
+<section class="toc-part">
+<h2><span lang="en">Part</span><span lang="tr">Kısım</span> IV — <span lang="en">Industry & Community</span><span lang="tr">Endüstri ve Topluluk</span></h2>
+<p class="part-blurb"><span lang="en">Work for an employer, and work given away.</span><span lang="tr">Bir işveren için yapılan iş ve ücretsiz paylaşılan iş.</span></p>
+<ol class="toc-list">
+<li><a href="trk-mlops-platform.html"><span class="no">08</span><span class="t">TRK Technology</span><span class="rt">~2 <span lang="en">min</span><span lang="tr">dk</span></span><span class="q"><span lang="en">How do you take a team from days of setup to ten minutes?</span><span lang="tr">Bir ekibi günlerce süren kurulumdan on dakikaya nasıl indirirsiniz?</span></span></a></li>
+<li><a href="from-zero-to-hero.html"><span class="no">09</span><span class="t">FromZeroToHero</span><span class="rt">~2 <span lang="en">min</span><span lang="tr">dk</span></span><span class="q"><span lang="en">What would one continuous path from Python to GPU kernels look like?</span><span lang="tr">Python'dan GPU kernel'larına tek ve kesintisiz bir yol neye benzerdi?</span></span></a></li>
+</ol>
+</section>
+</div>
+</article>
+</main>
+<footer class="book-footer">
+    <p>© 2026 Muhammet Ali Varlık · <a href="https://github.com/MuhammetAliVarlik" target="_blank" rel="noopener noreferrer">GitHub</a> · <a href="https://www.linkedin.com/in/muhammet-ali-varlik/" target="_blank" rel="noopener noreferrer">LinkedIn</a></p>
+    <p><span lang="en">Every number in this notebook comes from the project's own README, tests or CV — nothing is estimated for effect.</span><span lang="tr">Bu defterdeki her sayı projenin kendi README'sinden, testlerinden veya CV'den gelir — etki için uydurulmuş rakam yoktur.</span></p>
+</footer>
+</body>
+</html>
