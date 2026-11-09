@@ -1,0 +1,12 @@
+flowchart LR
+    U(("User")) --> ST["Streamlit UI"]
+    ST -->|REST| REST["FastAPI<br/>5 model endpoints"]
+    ST -->|chat| STREAM["FastAPI /stream"]
+    STREAM --> AG["LangChain<br/>tool-calling agent"]
+    AG <--> LLM[("Ollama · Qwen2.5")]
+    AG --> T1["predict_home_price<br/>XGBoost"]
+    AG --> T2["predict_anomalies<br/>Isolation Forest"]
+    AG --> T3["predict_home_type<br/>KMeans"]
+    AG --> T4["predict_investment<br/>RidgeClassifier"]
+    AG --> T5["view_dataframe"]
+    REST --> T1 & T2 & T3 & T4

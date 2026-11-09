@@ -1,0 +1,9 @@
+flowchart TB
+    TR["Training images"] --> M1["Manually tuned CNN"]
+    TR --> M2["Bayesian-optimised CNN"]
+    TS["Test images"] --> SH["Colour shift<br/>purple · yellow · green"]
+    SH --> M1
+    SH --> WB["White balance correction"] --> M1
+    SH --> M2
+    M1 --> R1["Clean 75% · shifted 11–33%<br/>after WB ~73%"]
+    M2 --> R2["Clean 73% · shifted 71–73%"]

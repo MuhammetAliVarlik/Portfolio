@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en" data-title-en="TRK Technology: An internal MLOps platform built from scratch | Project deep dive — Muhammet Ali Varlık" data-title-tr="TRK Technology: Sıfırdan kurulmuş bir iç MLOps platformu | Proje incelemesi — Muhammet Ali Varlık">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://raw.githubusercontent.com; connect-src 'none'; object-src 'none'; base-uri 'self'; form-action 'none'; upgrade-insecure-requests">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <title>TRK Technology: An internal MLOps platform built from scratch | Project deep dive — Muhammet Ali Varlık</title>
+    <meta name="description" content="Deep dive: an internal MLOps platform at TRK Technology (FastAPI, PostgreSQL, Vue.js) that decreased pipeline setup time from days to about 10 minutes for 5+ data scientists.">
+    <meta name="author" content="Muhammet Ali Varlık">
+    <link rel="canonical" href="https://muhammetalivarlik.github.io/Portfolio/projects/trk-mlops-platform.html">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="TRK Technology: An internal MLOps platform built from scratch | Project deep dive — Muhammet Ali Varlık">
+    <meta property="og:description" content="Deep dive: an internal MLOps platform at TRK Technology (FastAPI, PostgreSQL, Vue.js) that decreased pipeline setup time from days to about 10 minutes for 5+ data scientists.">
+    <meta property="og:url" content="https://muhammetalivarlik.github.io/Portfolio/projects/trk-mlops-platform.html">
+    <meta property="og:image" content="https://muhammetalivarlik.github.io/Portfolio/static/img/cvImage.png">
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "headline": "TRK Technology: An internal MLOps platform built from scratch", "description": "Deep dive: an internal MLOps platform at TRK Technology (FastAPI, PostgreSQL, Vue.js) that decreased pipeline setup time from days to about 10 minutes for 5+ data scientists.", "author": {"@type": "Person", "name": "Muhammet Ali Varlık", "url": "https://muhammetalivarlik.github.io/Portfolio/", "jobTitle": "AI / LLM Engineer"}, "inLanguage": ["en", "tr"], "url": "https://muhammetalivarlik.github.io/Portfolio/projects/trk-mlops-platform.html"}</script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Inter:wght@400;600&family=Space+Grotesk:wght@500;700&display=swap">
+    <link rel="stylesheet" href="project.css">
+    <link rel="icon" href="../static/img/favicon.png" type="image/png">
+    <script src="project.js"></script>
+    <link rel="prev" href="animal-classification.html">
+    <link rel="next" href="from-zero-to-hero.html">
+</head>
+<body>
+<div class="progress" aria-hidden="true"></div>
+<header class="topbar">
+    <a class="brand" href="../index.html">MAV. <span>/ projects</span></a>
+    <nav aria-label="Projects">
+        <a href="index.html"><span lang="en">all projects</span><span lang="tr">tüm projeler</span></a>
+        <a href="../index.html"><span lang="en">home</span><span lang="tr">ana sayfa</span></a>
+        <button id="lang-toggle" type="button" aria-label="Switch language">TR</button>
+    </nav>
+</header>
+<a class="side-nav prev" href="animal-classification.html">← Animal Classification</a>
+<a class="side-nav next" href="from-zero-to-hero.html">FromZeroToHero →</a>
+<main class="notebook">
+<div class="nb-header">
+    <div><span class="label"><span lang="en">date</span><span lang="tr">tarih</span></span><span class="value">sep 25 – jun 26</span></div>
+    <span class="status-chip"><span lang="en">industry</span><span lang="tr">endüstri</span></span>
+</div>
+<article class="nb-box">
+<div class="nb-title-row">
+    <span><span class="prefix"><span lang="en">Industry & community</span><span lang="tr">Endüstri ve topluluk</span> — </span><span lang="en">Project deep dive</span><span lang="tr">Proje incelemesi</span></span>
+    <span class="meta">~2 <span lang="en">min read</span><span lang="tr">dk okuma</span></span>
+</div>
+<div class="nb-content">
+<p class="kicker">TRK Technology</p>
+<h1><span class="hl"><span lang="en">An internal MLOps platform built from scratch</span><span lang="tr">Sıfırdan kurulmuş bir iç MLOps platformu</span></span></h1>
+<span class="annotation"><span lang="en">*from days of setup to about ten minutes (CV-level description)*</span><span lang="tr">*günlerce süren kurulumdan yaklaşık on dakikaya (CV düzeyinde anlatım)*</span></span>
+<div class="tldr"><span class="tldr-label">TL;DR</span><div lang="en"><p>At TRK Technology, I built an internal MLOps platform from scratch. Pipeline setup time decreased from days to about 10 minutes for 5+ data scientists. I also found a data-leakage risk and shipped a Dataset Management module to prevent it.</p></div>
+<div lang="tr"><p>TRK Technology'de sıfırdan bir iç MLOps platformu geliştirdim. 5+ data scientist için pipeline kurulum süresi günlerden yaklaşık 10 dakikaya indi. Ayrıca bir veri sızıntısı riski buldum ve bunu önlemek için bir Dataset Management modülü yayına aldım.</p></div>
+</div>
+<dl class="facts"><dt><span lang="en">role</span><span lang="tr">rol</span></dt><dd><span lang="en">Software Engineer (AI Systems & MLOps Platform), Ankara · Sep 2025 – Jun 2026</span><span lang="tr">Yazılım Mühendisi (AI Sistemleri ve MLOps Platformu), Ankara · Eyl 2025 – Haz 2026</span></dd><dt><span lang="en">stack</span><span lang="tr">teknoloji</span></dt><dd>FastAPI · PostgreSQL · Vue.js · Vue Flow · Rust/WebAssembly</dd></dl>
+
+<nav class="page-toc" aria-label="On this page"><p class="page-toc-title"><span lang="en">On this page</span><span lang="tr">Bu sayfada</span></p><ol><li><a href="#problem"><span lang="en">1. The problems</span><span lang="tr">1. Problemler</span></a></li><li><a href="#architecture"><span lang="en">2. Platform overview</span><span lang="tr">2. Platforma genel bakış</span></a></li><li><a href="#decisions"><span lang="en">3. What I built</span><span lang="tr">3. Ne geliştirdim</span></a></li><li><a href="#results"><span lang="en">4. Results</span><span lang="tr">4. Sonuçlar</span></a></li><li><a href="#qa"><span lang="en">5. Design Q&A</span><span lang="tr">5. Tasarım Soru-Cevap</span></a></li></ol></nav>
+<div class="note"><span class="hand"><span lang="en">Confidentiality</span><span lang="tr">Gizlilik</span></span><div lang="en"><p>This was internal work for an employer. This page gives only the information on my CV: the problems, my decisions and the results. It contains no proprietary code, data, internal architecture or client information.</p></div>
+<div lang="tr"><p>Bu, bir işveren için yapılmış iç bir çalışmaydı. Bu sayfa yalnızca CV'mdeki bilgileri verir: problemleri, kararlarımı ve sonuçları. Sayfada hiçbir tescilli kod, veri, iç mimari veya müşteri bilgisi yoktur.</p></div>
+</div>
+<h2 id="problem"><span lang="en">1. The problems</span><span lang="tr">1. Problemler</span></h2>
+<div lang="en"><ul><li>A team of 5+ data scientists ran every deep-learning experiment by hand.</li><li>Each pipeline needed the same boilerplate code.</li><li>The train/test split strategy of the team had a data-leakage risk.</li><li>A comparison of model variants needed hardcoded configuration changes.</li></ul></div>
+<div lang="tr"><ul><li>5+ kişilik bir data scientist ekibi her deep learning deneyini elle yürütüyordu.</li><li>Her pipeline aynı boilerplate kodu gerektiriyordu.</li><li>Ekibin train/test ayırma stratejisinde bir veri sızıntısı riski vardı.</li><li>Model varyantlarının karşılaştırılması hardcoded konfigürasyon değişiklikleri gerektiriyordu.</li></ul></div>
+<h2 id="architecture"><span lang="en">2. Platform overview</span><span lang="tr">2. Platforma genel bakış</span></h2>
+<figure class="diagram"><a href="diagrams/trk-platform.svg" target="_blank" rel="noopener noreferrer" title="Open full size"><img src="diagrams/trk-platform.svg" alt="Generic platform overview" width="947" height="391" loading="lazy"></a><figcaption><span lang="en">A generic overview from the CV, not the internal design</span><span lang="tr">CV'deki bilgilere dayanan genel bir görünüm, iç tasarım değildir</span> · <a href="diagrams/trk-platform.svg" target="_blank" rel="noopener noreferrer"><span lang="en">open full size</span><span lang="tr">tam boyut aç</span></a> · <a href="https://github.com/MuhammetAliVarlik/Portfolio/blob/main/diagrams/trk-platform.mmd" target="_blank" rel="noopener noreferrer">Mermaid</a></figcaption></figure>
+<h2 id="decisions"><span lang="en">3. What I built</span><span lang="tr">3. Ne geliştirdim</span></h2>
+<div lang="en"><ul><li>I built an internal MLOps platform from scratch with FastAPI, PostgreSQL and Vue.js. Pipeline setup time decreased from days to about 10 minutes.</li><li>I designed a DAG-based orchestration engine with Vue Flow. Users build and run preprocessing and evaluation pipelines visually. Configuration time decreased by an estimated 60%.</li><li>I built a layer-by-layer architecture configurator. I compiled 5 model types to Rust/WebAssembly for in-browser inference with no server round-trip.</li></ul></div>
+<div lang="tr"><ul><li>FastAPI, PostgreSQL ve Vue.js ile sıfırdan bir iç MLOps platformu geliştirdim. Pipeline kurulum süresi günlerden yaklaşık 10 dakikaya indi.</li><li>Vue Flow ile DAG tabanlı bir orkestrasyon motoru tasarladım. Kullanıcılar ön işleme ve değerlendirme pipeline'larını görsel olarak kurar ve çalıştırır. Konfigürasyon süresi tahmini %60 azaldı.</li><li>Katman katman bir mimari konfigüratörü geliştirdim. 5 model tipini, sunucuya gitmeden tarayıcıda inference için Rust/WebAssembly'e derledim.</li></ul></div>
+<h3><span lang="en">The data-leakage fix</span><span lang="tr">Veri sızıntısı düzeltmesi</span></h3>
+<figure class="diagram"><a href="diagrams/trk-leakage.svg" target="_blank" rel="noopener noreferrer" title="Open full size"><img src="diagrams/trk-leakage.svg" alt="Data leakage fix process" width="438" height="462" loading="lazy"></a><figcaption><span lang="en">From the risk to valid downstream experiments</span><span lang="tr">Riskten geçerli alt deneylere</span> · <a href="diagrams/trk-leakage.svg" target="_blank" rel="noopener noreferrer"><span lang="en">open full size</span><span lang="tr">tam boyut aç</span></a> · <a href="https://github.com/MuhammetAliVarlik/Portfolio/blob/main/diagrams/trk-leakage.mmd" target="_blank" rel="noopener noreferrer">Mermaid</a></figcaption></figure>
+<div lang="en"><p>I found a critical leakage risk in the split strategy of the team. I explained the risk and aligned the team on a fix. Then I shipped a Dataset Management module with version-controlled branches and lineage tracking. This module kept the models valid in all downstream experiments.</p></div>
+<div lang="tr"><p>Ekibin ayırma stratejisinde kritik bir sızıntı riski buldum. Riski açıkladım ve ekibi bir çözüm üzerinde uzlaştırdım. Ardından sürüm kontrollü dallar ve lineage takibi sunan bir Dataset Management modülü yayına aldım. Bu modül, tüm alt deneylerde modellerin geçerli kalmasını sağladı.</p></div>
+<h2 id="results"><span lang="en">4. Results</span><span lang="tr">4. Sonuçlar</span></h2>
+<div class="metrics"><div class="metric"><span class="num">days → ~10 min</span><span class="lbl"><span lang="en">pipeline setup time for 5+ data scientists</span><span lang="tr">5+ data scientist için pipeline kurulum süresi</span></span></div><div class="metric"><span class="num">~60%</span><span class="lbl"><span lang="en">estimated decrease in configuration time</span><span lang="tr">konfigürasyon süresinde tahmini azalma</span></span></div><div class="metric"><span class="num">5</span><span class="lbl"><span lang="en">model types compiled to Rust/WebAssembly</span><span lang="tr">Rust/WebAssembly'e derlenen model tipi</span></span></div><div class="metric"><span class="num">0</span><span class="lbl"><span lang="en">server round-trips for in-browser inference</span><span lang="tr">tarayıcı içi inference için sunucu gidiş-dönüşü</span></span></div></div>
+<h2 id="qa"><span lang="en">5. Design Q&A</span><span lang="tr">5. Tasarım Soru-Cevap</span></h2>
+<div class="qa"><details><summary><span lang="en">How did you convince the team about the leakage risk?</span><span lang="tr">Ekibi sızıntı riski konusunda nasıl ikna ettin?</span></summary><div lang="en"><p>I explained the risk to the team and proposed a fix. After the team agreed, I built the Dataset Management module. Thus the correct process became part of the tool.</p></div>
+<div lang="tr"><p>Riski ekibe açıkladım ve bir çözüm önerdim. Ekip kabul ettikten sonra Dataset Management modülünü geliştirdim. Böylece doğru süreç aracın bir parçası oldu.</p></div>
+</details><details><summary><span lang="en">Why WebAssembly for inference?</span><span lang="tr">Inference için neden WebAssembly?</span></summary><div lang="en"><p>Users tuned model variants in the UI. In-browser inference gave immediate results with no server round-trip.</p></div>
+<div lang="tr"><p>Kullanıcılar model varyantlarını arayüzde ayarlıyordu. Tarayıcı içi inference, sunucuya gitmeden anında sonuç verdi.</p></div>
+</details><details><summary><span lang="en">Is the 60% decrease a measured value?</span><span lang="tr">%60'lık azalma ölçülmüş bir değer mi?</span></summary><div lang="en"><p>The 60% value is an estimate, not a controlled measurement. My CV states it as an estimate for this reason.</p></div>
+<div lang="tr"><p>%60 değeri kontrollü bir ölçüm değil, bir tahmindir. CV'm bu nedenle onu tahmin olarak belirtir.</p></div>
+</details></div>
+<ul class="tags"><li>MLOps</li><li>FastAPI</li><li>PostgreSQL</li><li>Vue.js</li><li>Vue Flow</li><li>DAG Orchestration</li><li>Data Lineage</li><li>Rust</li><li>WebAssembly</li></ul>
+
+</div>
+</article>
+<nav class="chapter-nav" aria-label="Projects">
+<a class="prev" href="animal-classification.html"><span class="dir">← <span lang="en">Previous project</span><span lang="tr">Önceki proje</span></span><span class="ttl">Animal Classification</span></a>
+<a class="next" href="from-zero-to-hero.html"><span class="dir"><span lang="en">Next project</span><span lang="tr">Sonraki proje</span> →</span><span class="ttl">FromZeroToHero</span></a>
+</nav>
+</main>
+<footer class="book-footer">
+    <p>© 2026 Muhammet Ali Varlık · <a href="https://github.com/MuhammetAliVarlik" target="_blank" rel="noopener noreferrer">GitHub</a> · <a href="https://www.linkedin.com/in/muhammet-ali-varlik/" target="_blank" rel="noopener noreferrer">LinkedIn</a></p>
+    <p><span lang="en">All numbers on this page come from the README files, the tests or the CV of the project.</span><span lang="tr">Bu sayfadaki tüm sayılar projenin README dosyalarından, testlerinden veya CV'den gelir.</span></p>
+</footer>
+</body>
+</html>

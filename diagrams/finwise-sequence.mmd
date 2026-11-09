@@ -1,0 +1,20 @@
+sequenceDiagram
+    participant UI as React UI
+    participant API as FastAPI
+    participant Q as Redis queue
+    participant W as Celery worker
+    participant M as Ollama (warm)
+    participant ML as MLflow
+    UI->>API: POST /api/v1/forecast/predict {symbol}
+    API->>Q: Enqueue task
+    API-->>UI: 202 Accepted {task_id}
+    Q->>W: Deliver task
+    W->>W: OHLCV → 10x10 decile tokens
+    W->>M: Symbolic sequence
+    M-->>W: Next token
+    W->>W: LSTM shadow prediction
+    W->>ML: Log is_divergent
+    loop Every few seconds
+        UI->>API: GET task status
+    end
+    API-->>UI: {prediction, confidence, divergence}

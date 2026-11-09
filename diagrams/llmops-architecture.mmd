@@ -1,0 +1,23 @@
+flowchart TB
+    UI["Studio UI<br/>React Flow canvas"] -->|JSON DAG| CORE["Studio Core API<br/>FastAPI · DAG engine"]
+    subgraph InProcess["In-process nodes"]
+        RAG["RAG Benchmark Lab<br/>grid search"]
+        PROMPT["PromptOps Lab<br/>A/B regression"]
+        SCHEMA["Schema Lab<br/>Pydantic extraction"]
+        JUDGE["LLM-as-Judge scorer<br/>faithfulness · relevance"]
+    end
+    subgraph OverHTTP["Agentic nodes (microservices)"]
+        REVIEW["Review Lab"]
+        MEMORY["Memory Lab"]
+    end
+    CORE --> RAG & PROMPT & SCHEMA & JUDGE
+    CORE -->|POST /review| REVIEW
+    CORE -->|POST /chat| MEMORY
+    subgraph Platform["llmops-platform (shared infrastructure)"]
+        LLM[("Ollama")]
+        CHROMA[("ChromaDB")]
+        MLFLOW[("MLflow")]
+    end
+    RAG & PROMPT & SCHEMA & REVIEW & MEMORY --> LLM
+    RAG & MEMORY --> CHROMA
+    RAG & PROMPT & JUDGE -.->|metrics| MLFLOW

@@ -1,0 +1,8 @@
+flowchart LR
+    DS["Data scientists (5+)"] --> UI["Vue.js UI<br/>Vue Flow DAG builder"]
+    UI --> API["FastAPI<br/>orchestration"]
+    API --> PG[("PostgreSQL")]
+    API --> DM["Dataset Management<br/>versioned branches · lineage"]
+    API --> RUN["Preprocessing and<br/>evaluation pipelines"]
+    UI --> CFG["Layer-by-layer<br/>architecture configurator"]
+    CFG --> WASM["Rust → WebAssembly<br/>in-browser inference"]

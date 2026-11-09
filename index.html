@@ -65,7 +65,7 @@
                 <li><a href="#experience" data-i18n="nav.experience">Experience</a></li>
                 <li><a href="#projects" data-i18n="nav.projects">Projects</a></li>
                 <li><a href="#education" data-i18n="nav.education">Education</a></li>
-                <li><a href="book/index.html" data-i18n="nav.book">Notebook</a></li>
+                <li><a href="projects/index.html" data-i18n="nav.book">Deep dives</a></li>
             </ul>
             <div class="nav-actions">
                 <button id="lang-toggle" class="btn-secondary" type="button" aria-label="Switch language">TR</button>
@@ -80,14 +80,14 @@
             <div class="hero-grid">
                 <div class="hero-text">
                     <div class="profile-badge">
-                        <span class="status-dot"></span> <span data-i18n="hero.badge">Open to AI / LLM Engineer roles</span>
+                        <span class="status-dot"></span> <span data-i18n="hero.badge">I am open to AI / LLM Engineer roles.</span>
                     </div>
                     <h1 id="hero-name">Muhammet Ali <span class="gradient-text">Varlık</span></h1>
                     <p class="hero-role">AI / LLM Engineer · Agentic Systems · LLM Evaluation &amp; Guardrails · MLOps</p>
                     <p class="hero-location"><i class="fas fa-location-dot" aria-hidden="true"></i> <span data-i18n="hero.location">Ankara, Turkey</span></p>
                     <p class="hero-subtitle" data-i18n-html="hero.summary">AI/LLM Engineer building agentic systems, RAG pipelines, and LLM evaluation tooling end to end, with a foundation in classical ML and MLOps. At TRK Technology, built an enterprise MLOps platform from scratch that <strong>cut pipeline setup time from days to ~10 minutes</strong> for a team of 5+ data scientists. Recent work includes an MCP-native multi-agent research system with prompt-injection guardrails and numeric grounding, and an M.Sc. thesis (GPA 4.00) on modelling time series as a symbolic language for small language models on edge hardware.</p>
                     <div class="hero-buttons">
-                        <a href="book/index.html" class="btn-primary"><i class="fas fa-book-open" aria-hidden="true"></i> <span data-i18n="hero.readBook">Engineering Notebook</span></a>
+                        <a href="projects/index.html" class="btn-primary"><i class="fas fa-book-open" aria-hidden="true"></i> <span data-i18n="hero.readBook">Project deep dives</span></a>
                         <a href="https://github.com/MuhammetAliVarlik" target="_blank" rel="noopener noreferrer" class="btn-secondary"><i class="fab fa-github" aria-hidden="true"></i> GitHub</a>
                         <a href="https://www.linkedin.com/in/muhammet-ali-varlik/" target="_blank" rel="noopener noreferrer" class="btn-secondary"><i class="fab fa-linkedin" aria-hidden="true"></i> LinkedIn</a>
                         <button id="print-cv" type="button" class="btn-secondary"><i class="fas fa-print" aria-hidden="true"></i> <span data-i18n="hero.printCv">Print-friendly CV</span></button>
@@ -109,15 +109,15 @@
             <div class="currently-bar">
                 <div class="currently-item">
                     <i class="fas fa-flask" aria-hidden="true"></i>
-                    <span data-i18n="currently.thesis">M.Sc. thesis: feasibility phase complete, now building the core symbolic time-series library</span>
+                    <span data-i18n="currently.thesis">My M.Sc. thesis completed its feasibility phase. I now build its core symbolic time-series library.</span>
                 </div>
                 <div class="currently-item">
                     <i class="fas fa-shield-halved" aria-hidden="true"></i>
-                    <span data-i18n="currently.agentic">Agentic Investing Engine: release-ready, on hold pending a KVKK data protection review</span>
+                    <span data-i18n="currently.agentic">The Agentic Investing Engine is release-ready. Its cloud release waits for a KVKK data protection review.</span>
                 </div>
                 <div class="currently-item">
                     <i class="fas fa-briefcase" aria-hidden="true"></i>
-                    <span data-i18n="currently.jobsearch">Open to AI / LLM Engineer roles</span>
+                    <span data-i18n="currently.jobsearch">I am open to AI / LLM Engineer roles.</span>
                 </div>
             </div>
         </section>
@@ -168,7 +168,7 @@
                             <li data-i18n-html="exp1.b3">Identified a critical data-leakage risk in the team's train/test split strategy, aligned the team on a fix, and shipped a Dataset Management module with version-controlled branching and lineage tracking, <strong>preserving model validity across all downstream experiments</strong>.</li>
                             <li data-i18n-html="exp1.b4">Comparing model variants required hardcoded configuration changes. Built a layer-by-layer architecture configurator and compiled 5 model types to Rust/WebAssembly, <strong>enabling UI-driven tuning and in-browser inference with zero server round-trips</strong>.</li>
                         </ul>
-                        <a class="text-link" href="book/trk-mlops-platform.html"><span data-i18n="exp.caseStudy">Read the case study</span> →</a>
+                        <a class="text-link" href="projects/trk-mlops-platform.html"><span data-i18n="exp.caseStudy">Read the deep dive</span> →</a>
                     </div>
                 </article>
 
@@ -222,15 +222,15 @@
 
         <section id="projects" class="projects-section" aria-labelledby="projects-heading">
             <h2 id="projects-heading" class="section-heading" data-i18n="projects.heading">Projects</h2>
-            <p class="section-subheading" data-i18n="projects.subheading">Each project has a full chapter in the Engineering Notebook: problem, constraints, architecture, decisions and results.</p>
+            <p class="section-subheading" data-i18n="projects.subheading">Each project has a deep-dive page with Mermaid architecture diagrams, design decisions, trade-offs and results.</p>
 
             <div class="bento-grid">
 
-                <a class="bento-card large" href="book/agentic-investing-engine.html">
+                <a class="bento-card large" href="projects/agentic-investing-engine.html">
                     <div class="card-content">
                         <div class="card-tags"><span>LangGraph</span><span>MCP</span><span>Guardrails</span><span>React/TS</span></div>
                         <h3>Agentic Investing Engine</h3>
-                        <p data-i18n="proj.agentic.desc">MCP-native multi-agent research system for Borsa Istanbul: a LangGraph supervisor routes to four specialist agents, with prompt-injection screening and numeric grounding.</p>
+                        <p data-i18n="proj.agentic.desc">A LangGraph supervisor sends each request to four specialist agents for Borsa Istanbul research. All tools are on an MCP server, and guardrails screen third-party text and check each number.</p>
                         <ul class="card-metrics">
                             <li><strong>19/19</strong> <span data-i18n="proj.agentic.m1">red-team attacks detected, 0 false positives</span></li>
                             <li><strong>220+</strong> <span data-i18n="proj.agentic.m2">tests, &gt;90% coverage</span></li>
@@ -240,27 +240,27 @@
                     <div class="card-image-wrapper gradient-bg" aria-hidden="true"><i class="fas fa-diagram-project"></i></div>
                 </a>
 
-                <a class="bento-card" href="book/symbolic-ts.html">
+                <a class="bento-card" href="projects/symbolic-ts.html">
                     <div class="card-content">
                         <div class="card-tags"><span data-i18n="tag.thesis">M.Sc. Thesis</span><span>Time Series</span><span>SLM</span></div>
                         <h3>Symbolic-TS</h3>
-                        <p data-i18n="proj.symbolic.desc">Time series as a symbolic language: a fixed 25-token vocabulary with train-only binning, purged walk-forward splits and leakage-guarding invariant tests in CI.</p>
+                        <p data-i18n="proj.symbolic.desc">My M.Sc. thesis changes time series into a fixed vocabulary of 25 tokens. Train-only binning, purged walk-forward splits and invariant tests in CI prevent leakage.</p>
                     </div>
                 </a>
 
-                <a class="bento-card" href="book/llmops-studio.html">
+                <a class="bento-card" href="projects/llmops-studio.html">
                     <div class="card-content">
                         <div class="card-tags"><span>Open-Source</span><span>LLMOps</span><span>React Flow</span></div>
                         <h3>LLMOps Studio</h3>
-                        <p data-i18n="proj.llmops.desc">9-repository open-source platform: RAG grid search, prompt A/B regression, schema extraction, code review and memory experiments as drag-and-drop DAG nodes, MLflow-tracked.</p>
+                        <p data-i18n="proj.llmops.desc">This 9-repository open-source platform runs RAG, prompt, schema, code-review and memory experiments as drag-and-drop DAG nodes. MLflow records each run.</p>
                     </div>
                 </a>
 
-                <a class="bento-card large" href="book/finwise-scribe.html">
+                <a class="bento-card large" href="projects/finwise-scribe.html">
                     <div class="card-content">
                         <div class="card-tags"><span data-i18n="tag.thesisDemo">Applied Thesis Demo</span><span>Celery/Redis</span><span>LoRA</span><span>Shadow Mode</span></div>
                         <h3>Finwise Scribe</h3>
-                        <p data-i18n="proj.finwise.desc">8-service neuro-symbolic GenAI engine: an LSTM tokenizes price and volume changes and a LoRA fine-tuned Llama 3 reasons over them, with full LLM inference on 4GB VRAM edge hardware.</p>
+                        <p data-i18n="proj.finwise.desc">An LSTM changes price and volume changes into tokens, and a LoRA fine-tuned Llama 3 reasons over them. The 8-service system runs full LLM inference on 4GB of VRAM.</p>
                         <ul class="card-metrics">
                             <li><strong>8</strong> <span data-i18n="proj.finwise.m1">Docker Compose services</span></li>
                             <li><strong>4GB</strong> <span data-i18n="proj.finwise.m2">VRAM edge inference</span></li>
@@ -270,41 +270,41 @@
                     <div class="card-image-wrapper gradient-bg" aria-hidden="true"><i class="fas fa-network-wired"></i></div>
                 </a>
 
-                <a class="bento-card" href="book/moviescout.html">
+                <a class="bento-card" href="projects/moviescout.html">
                     <div class="card-content">
                         <div class="card-tags"><span>RAG</span><span>ChromaDB</span><span>Flask</span></div>
                         <h3>MovieScout</h3>
-                        <p data-i18n="proj.moviescout.desc">RAG recommender over the 10,000 most popular TMDB films; imports Letterboxd history to exclude films a user has already watched.</p>
+                        <p data-i18n="proj.moviescout.desc">This RAG recommender searches the 10,000 most popular TMDB films. It imports Letterboxd history and removes films that the user already watched.</p>
                     </div>
                 </a>
 
-                <a class="bento-card" href="book/real-estate-ai.html">
+                <a class="bento-card" href="projects/real-estate-ai.html">
                     <div class="card-content">
                         <div class="card-tags"><span>LangChain</span><span>Qwen2.5</span><span>XGBoost</span></div>
                         <h3>Real Estate AI</h3>
-                        <p data-i18n="proj.realestate.desc">LangChain tool-calling agent on Qwen2.5 serving four ML models (XGBoost at R² = 0.81) through a chat interface and 5 REST endpoints.</p>
+                        <p data-i18n="proj.realestate.desc">A LangChain tool-calling agent on Qwen2.5 serves four ML models through a chat interface and 5 REST endpoints. The XGBoost price model reaches R² = 0.81.</p>
                     </div>
                 </a>
 
-                <a class="bento-card" href="book/from-zero-to-hero.html">
+                <a class="bento-card" href="projects/from-zero-to-hero.html">
                     <div class="card-content">
                         <div class="card-tags"><span>Open-Source</span><span data-i18n="tag.curriculum">Curriculum</span></div>
                         <h3>FromZeroToHero</h3>
-                        <p data-i18n="proj.fzth.desc">Free 27-section, 355+ notebook curriculum for Data Science, AI and Cloud, with role-based learning paths.</p>
+                        <p data-i18n="proj.fzth.desc">This free curriculum has 27 sections and more than 355 notebooks for data science, AI and cloud. Six role-based paths show the order for each job.</p>
                     </div>
                 </a>
 
-                <a class="bento-card" href="book/animal-classification.html">
+                <a class="bento-card" href="projects/animal-classification.html">
                     <div class="card-content">
                         <div class="card-tags"><span>CNN</span><span data-i18n="tag.robustness">Robustness</span></div>
                         <h3>Animal Classification</h3>
-                        <p data-i18n="proj.animal.desc">How much does a colour shift break a CNN? A robustness study with white-balance correction and Bayesian hyperparameter search.</p>
+                        <p data-i18n="proj.animal.desc">This study measures how colour casts change the accuracy of a CNN. White balance and Bayesian optimisation recover the accuracy.</p>
                     </div>
                 </a>
 
             </div>
 
-            <p class="book-cta"><a href="book/index.html" class="btn-secondary"><i class="fas fa-book-open" aria-hidden="true"></i> <span data-i18n="projects.allChapters">Open the Engineering Notebook (all chapters)</span></a></p>
+            <p class="book-cta"><a href="projects/index.html" class="btn-secondary"><i class="fas fa-book-open" aria-hidden="true"></i> <span data-i18n="projects.allChapters">Open all project deep dives</span></a></p>
         </section>
 
         <section id="education" class="experience-section" aria-labelledby="education-heading">

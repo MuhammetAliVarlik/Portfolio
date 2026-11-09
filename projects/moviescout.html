@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en" data-title-en="MovieScout: A RAG movie recommender with Letterboxd import | Project deep dive — Muhammet Ali Varlık" data-title-tr="MovieScout: Letterboxd içe aktarımlı bir RAG film önerici | Proje incelemesi — Muhammet Ali Varlık">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://raw.githubusercontent.com; connect-src 'none'; object-src 'none'; base-uri 'self'; form-action 'none'; upgrade-insecure-requests">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <title>MovieScout: A RAG movie recommender with Letterboxd import | Project deep dive — Muhammet Ali Varlık</title>
+    <meta name="description" content="Deep dive: MovieScout, a RAG movie recommender over the 10,000 most popular TMDB films with ChromaDB, Sentence-Transformers, Letterboxd import and a local LLM chat.">
+    <meta name="author" content="Muhammet Ali Varlık">
+    <link rel="canonical" href="https://muhammetalivarlik.github.io/Portfolio/projects/moviescout.html">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="MovieScout: A RAG movie recommender with Letterboxd import | Project deep dive — Muhammet Ali Varlık">
+    <meta property="og:description" content="Deep dive: MovieScout, a RAG movie recommender over the 10,000 most popular TMDB films with ChromaDB, Sentence-Transformers, Letterboxd import and a local LLM chat.">
+    <meta property="og:url" content="https://muhammetalivarlik.github.io/Portfolio/projects/moviescout.html">
+    <meta property="og:image" content="https://muhammetalivarlik.github.io/Portfolio/static/img/cvImage.png">
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "headline": "MovieScout: A RAG movie recommender with Letterboxd import", "description": "Deep dive: MovieScout, a RAG movie recommender over the 10,000 most popular TMDB films with ChromaDB, Sentence-Transformers, Letterboxd import and a local LLM chat.", "author": {"@type": "Person", "name": "Muhammet Ali Varlık", "url": "https://muhammetalivarlik.github.io/Portfolio/", "jobTitle": "AI / LLM Engineer"}, "inLanguage": ["en", "tr"], "url": "https://muhammetalivarlik.github.io/Portfolio/projects/moviescout.html", "about": {"@type": "SoftwareSourceCode", "name": "MovieScout", "codeRepository": "https://github.com/MuhammetAliVarlik/MovieScout"}}</script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Inter:wght@400;600&family=Space+Grotesk:wght@500;700&display=swap">
+    <link rel="stylesheet" href="project.css">
+    <link rel="icon" href="../static/img/favicon.png" type="image/png">
+    <script src="project.js"></script>
+    <link rel="prev" href="finwise-scribe.html">
+    <link rel="next" href="real-estate-ai.html">
+</head>
+<body>
+<div class="progress" aria-hidden="true"></div>
+<header class="topbar">
+    <a class="brand" href="../index.html">MAV. <span>/ projects</span></a>
+    <nav aria-label="Projects">
+        <a href="index.html"><span lang="en">all projects</span><span lang="tr">tüm projeler</span></a>
+        <a href="../index.html"><span lang="en">home</span><span lang="tr">ana sayfa</span></a>
+        <button id="lang-toggle" type="button" aria-label="Switch language">TR</button>
+    </nav>
+</header>
+<a class="side-nav prev" href="finwise-scribe.html">← Finwise Scribe</a>
+<a class="side-nav next" href="real-estate-ai.html">Real Estate AI →</a>
+<main class="notebook">
+<div class="nb-header">
+    <div><span class="label"><span lang="en">date</span><span lang="tr">tarih</span></span><span class="value">aug / 26</span></div>
+    <span class="status-chip"><span lang="en">complete</span><span lang="tr">tamamlandı</span></span>
+</div>
+<article class="nb-box">
+<div class="nb-title-row">
+    <span><span class="prefix"><span lang="en">Applied ML</span><span lang="tr">Uygulamalı ML</span> — </span><span lang="en">Project deep dive</span><span lang="tr">Proje incelemesi</span></span>
+    <span class="meta">~2 <span lang="en">min read</span><span lang="tr">dk okuma</span></span>
+</div>
+<div class="nb-content">
+<p class="kicker">MovieScout</p>
+<h1><span class="hl"><span lang="en">A RAG movie recommender with Letterboxd import</span><span lang="tr">Letterboxd içe aktarımlı bir RAG film önerici</span></span></h1>
+<span class="annotation"><span lang="en">*semantic search over 10,000 films and a fix for silent truncation*</span><span lang="tr">*10.000 film üzerinde anlamsal arama ve sessiz kırpma için bir düzeltme*</span></span>
+<div class="tldr"><span class="tldr-label">TL;DR</span><div lang="en"><p>I built a RAG recommender over the 10,000 most popular TMDB films. It imports Letterboxd history and removes films that the user already watched. I found and fixed a bug in which the embedding model ignored the last selected films.</p></div>
+<div lang="tr"><p>En popüler 10.000 TMDB filmi üzerinde bir RAG önerici geliştirdim. Sistem Letterboxd geçmişini içe aktarır ve kullanıcının zaten izlediği filmleri çıkarır. Embedding modelinin son seçilen filmleri görmezden geldiği bir hatayı bulup düzelttim.</p></div>
+</div>
+<dl class="facts"><dt><span lang="en">stack</span><span lang="tr">teknoloji</span></dt><dd>Flask · ChromaDB · Sentence-Transformers · Ollama · LangChain · Bootstrap 5 · pytest · GitHub Actions</dd></dl>
+
+<nav class="page-toc" aria-label="On this page"><p class="page-toc-title"><span lang="en">On this page</span><span lang="tr">Bu sayfada</span></p><ol><li><a href="#problem"><span lang="en">1. The problem</span><span lang="tr">1. Problem</span></a></li><li><a href="#architecture"><span lang="en">2. Architecture</span><span lang="tr">2. Mimari</span></a></li><li><a href="#flow"><span lang="en">3. How a recommendation works</span><span lang="tr">3. Bir öneri nasıl çalışır</span></a></li><li><a href="#decisions"><span lang="en">4. Key decisions and trade-offs</span><span lang="tr">4. Kilit kararlar ve trade-off'lar</span></a></li><li><a href="#testing"><span lang="en">5. Testing and security</span><span lang="tr">5. Test ve güvenlik</span></a></li><li><a href="#results"><span lang="en">6. Results</span><span lang="tr">6. Sonuçlar</span></a></li><li><a href="#qa"><span lang="en">7. Design Q&A</span><span lang="tr">7. Tasarım Soru-Cevap</span></a></li></ol></nav>
+<h2 id="problem"><span lang="en">1. The problem</span><span lang="tr">1. Problem</span></h2>
+<div lang="en"><p>Most movie recommenders do not know which films a user already watched. MovieScout imports the Letterboxd history of the user and removes the watched films from the recommendations. The user can upload a Letterboxd ZIP export or a <code>ratings.csv</code> file, or type a public username.</p></div>
+<div lang="tr"><p>Çoğu film önerici, kullanıcının hangi filmleri izlediğini bilmez. MovieScout, kullanıcının Letterboxd geçmişini içe aktarır ve izlenmiş filmleri önerilerden çıkarır. Kullanıcı bir Letterboxd ZIP dışa aktarımı veya <code>ratings.csv</code> dosyası yükleyebilir ya da herkese açık bir kullanıcı adı yazabilir.</p></div>
+<h2 id="architecture"><span lang="en">2. Architecture</span><span lang="tr">2. Mimari</span></h2>
+<div lang="en"><p>A Flask app has four blueprints: home, discover, chat and api. The recommendation engine uses Sentence-Transformers embeddings in ChromaDB. The chat uses the same index and sends the retrieved films to a local LLM through Ollama.</p></div>
+<div lang="tr"><p>Bir Flask uygulamasında dört blueprint vardır: home, discover, chat ve api. Öneri motoru ChromaDB'deki Sentence-Transformers embedding'lerini kullanır. Sohbet aynı indeksi kullanır ve getirilen filmleri Ollama üzerinden yerel bir LLM'e gönderir.</p></div>
+<figure class="diagram"><a href="diagrams/moviescout-architecture.svg" target="_blank" rel="noopener noreferrer" title="Open full size"><img src="diagrams/moviescout-architecture.svg" alt="MovieScout architecture" width="588" height="518" loading="lazy"></a><figcaption><span lang="en">Flask blueprints, services and data stores</span><span lang="tr">Flask blueprint'leri, servisler ve veri depoları</span> · <a href="diagrams/moviescout-architecture.svg" target="_blank" rel="noopener noreferrer"><span lang="en">open full size</span><span lang="tr">tam boyut aç</span></a> · <a href="https://github.com/MuhammetAliVarlik/Portfolio/blob/main/diagrams/moviescout-architecture.mmd" target="_blank" rel="noopener noreferrer">Mermaid</a></figcaption></figure>
+<h2 id="flow"><span lang="en">3. How a recommendation works</span><span lang="tr">3. Bir öneri nasıl çalışır</span></h2>
+<figure class="diagram"><a href="diagrams/moviescout-recommend.svg" target="_blank" rel="noopener noreferrer" title="Open full size"><img src="diagrams/moviescout-recommend.svg" alt="Recommendation flow" width="220" height="778" loading="lazy"></a><figcaption><span lang="en">From the selected films to cached results</span><span lang="tr">Seçilen filmlerden önbelleğe alınmış sonuçlara</span> · <a href="diagrams/moviescout-recommend.svg" target="_blank" rel="noopener noreferrer"><span lang="en">open full size</span><span lang="tr">tam boyut aç</span></a> · <a href="https://github.com/MuhammetAliVarlik/Portfolio/blob/main/diagrams/moviescout-recommend.mmd" target="_blank" rel="noopener noreferrer">Mermaid</a></figcaption></figure>
+<div lang="en"><ol><li>The engine embeds the title, overview and genres of each selected film separately with <code>all-MiniLM-L6-v2</code>.</li><li>The engine calculates the average of these vectors. The average is one query vector.</li><li>ChromaDB returns the nearest films. The engine requests three times the limit, or ten times the limit when a filter is active.</li><li>The engine removes watched and selected films, applies the genre and rating filters and removes duplicates.</li><li>The engine keeps the result in a cache for 10 minutes.</li></ol></div>
+<div lang="tr"><ol><li>Motor, seçilen her filmin başlığını, özetini ve türlerini <code>all-MiniLM-L6-v2</code> ile ayrı ayrı embed eder.</li><li>Motor bu vektörlerin ortalamasını hesaplar. Ortalama tek bir sorgu vektörüdür.</li><li>ChromaDB en yakın filmleri döndürür. Motor limitin üç katını, bir filtre aktifse on katını ister.</li><li>Motor izlenmiş ve seçilmiş filmleri çıkarır, tür ve puan filtrelerini uygular ve tekrarları kaldırır.</li><li>Motor sonucu 10 dakika önbellekte tutar.</li></ol></div>
+<h2 id="decisions"><span lang="en">4. Key decisions and trade-offs</span><span lang="tr">4. Kilit kararlar ve trade-off'lar</span></h2>
+<div class="table-wrap"><table class="decisions"><thead><tr><th><span lang="en">Decision</span><span lang="tr">Karar</span></th><th><span lang="en">Alternative I considered</span><span lang="tr">Değerlendirdiğim alternatif</span></th><th><span lang="en">Reason</span><span lang="tr">Gerekçe</span></th></tr></thead><tbody><tr><td><span lang="en">Embed each film separately and average</span><span lang="tr">Her filmi ayrı embed edip ortalamasını almak</span></td><td><span lang="en">Join all films into one text</span><span lang="tr">Tüm filmleri tek bir metinde birleştirmek</span></td><td><span lang="en">The model has a 256-token limit. A joined text lost the last films without an error.</span><span lang="tr">Modelin 256 token sınırı vardır. Birleştirilmiş metin, son filmleri hata vermeden kaybediyordu.</span></td></tr><tr><td><span lang="en">Filter after retrieval with over-fetch</span><span lang="tr">Fazla aday çekip getirmeden sonra filtrelemek</span></td><td><span lang="en">Filter inside the vector query</span><span lang="tr">Vektör sorgusu içinde filtrelemek</span></td><td><span lang="en">Genre data is a list of words. A larger candidate pool keeps enough results after the filters.</span><span lang="tr">Tür verisi bir kelime listesidir. Daha büyük bir aday havuzu, filtrelerden sonra yeterli sonuç bırakır.</span></td></tr><tr><td><span lang="en">Local LLM through Ollama</span><span lang="tr">Ollama ile yerel LLM</span></td><td><span lang="en">A paid cloud API</span><span lang="tr">Ücretli bir bulut API'si</span></td><td><span lang="en">The project has no running cost, and user history stays on the machine.</span><span lang="tr">Projenin işletim maliyeti yoktur ve kullanıcı geçmişi makinede kalır.</span></td></tr></tbody></table></div>
+<h3><span lang="en">The truncation bug</span><span lang="tr">Kırpma hatası</span></h3>
+<div lang="en"><p>The first version joined the text of all selected films and embedded the result. When a user selected more than about two films, the tokenizer cut the text at 256 tokens. Thus the last films had no effect on the result. The fix embeds each film separately and averages the vectors.</p></div>
+<div lang="tr"><p>İlk sürüm, seçilen tüm filmlerin metnini birleştirip sonucu embed ediyordu. Kullanıcı yaklaşık ikiden fazla film seçtiğinde tokenizer metni 256 token'da kesiyordu. Bu yüzden son filmlerin sonuca hiçbir etkisi olmuyordu. Düzeltme, her filmi ayrı embed eder ve vektörlerin ortalamasını alır.</p></div>
+<h2 id="testing"><span lang="en">5. Testing and security</span><span lang="tr">5. Test ve güvenlik</span></h2>
+<div lang="en"><ul><li>CI runs route tests for home, search, discover, import and export on each push. Unit tests cover the models and the Letterboxd importer.</li><li><code>MAX_CONTENT_LENGTH</code> limits each request to 25MB.</li><li>The ZIP importer checks the declared uncompressed size before it reads the archive. Thus a zip bomb cannot fill the memory.</li></ul></div>
+<div lang="tr"><ul><li>CI, her push'ta home, search, discover, import ve export için route testleri çalıştırır. Birim testleri modelleri ve Letterboxd içe aktarıcısını kapsar.</li><li><code>MAX_CONTENT_LENGTH</code> her isteği 25MB ile sınırlar.</li><li>ZIP içe aktarıcısı arşivi okumadan önce beyan edilen açılmış boyutu kontrol eder. Böylece bir zip bombası belleği dolduramaz.</li></ul></div>
+<h2 id="results"><span lang="en">6. Results</span><span lang="tr">6. Sonuçlar</span></h2>
+<div class="metrics"><div class="metric"><span class="num">~10,000</span><span class="lbl"><span lang="en">most popular TMDB films in the index</span><span lang="tr">indeksteki en popüler TMDB filmi</span></span></div><div class="metric"><span class="num">384-d</span><span class="lbl"><span lang="en">embeddings with all-MiniLM-L6-v2</span><span lang="tr">all-MiniLM-L6-v2 ile embedding</span></span></div><div class="metric"><span class="num">10 min</span><span class="lbl"><span lang="en">result cache for the same query</span><span lang="tr">aynı sorgu için sonuç önbelleği</span></span></div></div>
+<h2 id="qa"><span lang="en">7. Design Q&A</span><span lang="tr">7. Tasarım Soru-Cevap</span></h2>
+<div class="qa"><details><summary><span lang="en">Why do you average the embeddings?</span><span lang="tr">Embedding'lerin ortalamasını neden alıyorsun?</span></summary><div lang="en"><p>The embedding model has a 256-token limit. One joined text loses the last films. Separate embeddings give each film the same weight in the query.</p></div>
+<div lang="tr"><p>Embedding modelinin 256 token sınırı vardır. Tek bir birleşik metin son filmleri kaybeder. Ayrı embedding'ler, sorguda her filme aynı ağırlığı verir.</p></div>
+</details><details><summary><span lang="en">Why do you request more candidates than the limit?</span><span lang="tr">Neden limitten fazla aday istiyorsun?</span></summary><div lang="en"><p>The filters run after the vector search. Without extra candidates, the filters can remove most of the results.</p></div>
+<div lang="tr"><p>Filtreler vektör aramasından sonra çalışır. Ek adaylar olmadan filtreler sonuçların çoğunu kaldırabilir.</p></div>
+</details><details><summary><span lang="en">How does the chat use RAG?</span><span lang="tr">Sohbet RAG'i nasıl kullanıyor?</span></summary><div lang="en"><p>FilmRAG embeds the message of the user and queries the same ChromaDB collection. It adds the 10 most relevant films to the system prompt of the local model.</p></div>
+<div lang="tr"><p>FilmRAG kullanıcının mesajını embed eder ve aynı ChromaDB koleksiyonunu sorgular. En ilgili 10 filmi yerel modelin sistem prompt'una ekler.</p></div>
+</details></div>
+<ul class="tags"><li>RAG</li><li>Semantic Search</li><li>ChromaDB</li><li>Sentence-Transformers</li><li>Ollama</li><li>LangChain</li><li>Flask</li><li>pytest</li><li>GitHub Actions</li></ul>
+<p class="links"><a class="btn" href="https://github.com/MuhammetAliVarlik/MovieScout" target="_blank" rel="noopener noreferrer"><span lang="en">View the repository</span><span lang="tr">Repoyu görüntüle</span> ↗</a></p>
+
+</div>
+</article>
+<nav class="chapter-nav" aria-label="Projects">
+<a class="prev" href="finwise-scribe.html"><span class="dir">← <span lang="en">Previous project</span><span lang="tr">Önceki proje</span></span><span class="ttl">Finwise Scribe</span></a>
+<a class="next" href="real-estate-ai.html"><span class="dir"><span lang="en">Next project</span><span lang="tr">Sonraki proje</span> →</span><span class="ttl">Real Estate AI</span></a>
+</nav>
+</main>
+<footer class="book-footer">
+    <p>© 2026 Muhammet Ali Varlık · <a href="https://github.com/MuhammetAliVarlik" target="_blank" rel="noopener noreferrer">GitHub</a> · <a href="https://www.linkedin.com/in/muhammet-ali-varlik/" target="_blank" rel="noopener noreferrer">LinkedIn</a></p>
+    <p><span lang="en">All numbers on this page come from the README files, the tests or the CV of the project.</span><span lang="tr">Bu sayfadaki tüm sayılar projenin README dosyalarından, testlerinden veya CV'den gelir.</span></p>
+</footer>
+</body>
+</html>

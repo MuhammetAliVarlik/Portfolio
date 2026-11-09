@@ -1,0 +1,11 @@
+flowchart TB
+    UI["React dashboard<br/>Vite · Tailwind"] -->|POST /forecast| API["FastAPI gateway<br/>AsyncPG · auth · rate limit"]
+    API -->|HTTP 202 + task_id| UI
+    API --> REDIS[("Redis<br/>broker")]
+    REDIS --> CEL["Celery workers"]
+    CEL --> OLL["Ollama<br/>LoRA Llama 3 (GGUF) · kept warm"]
+    CEL --> LSTM["LSTM baseline<br/>shadow control"]
+    API --> PG[("PostgreSQL")]
+    CEL -.-> MLF[("MLflow<br/>divergence flags")]
+    API -.-> LOKI["Loki + Grafana"]
+    UI -.->|poll task_id| API

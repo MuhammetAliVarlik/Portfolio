@@ -1,0 +1,10 @@
+flowchart LR
+    subgraph Old["Prototype (leaked)"]
+        O1["Full series"] --> O2["Fit bins"] --> O3["Tokens contain<br/>future information"]
+    end
+    subgraph New["Library (guarded)"]
+        N1["Purged walk-forward split"] --> N2["Fit sigma bins<br/>on train only"]
+        N2 --> N3["Tokenize train / test"]
+        N4["Hashed test-set lock"] --> N3
+        N3 --> N5["Invariant tests in CI<br/>leakage · determinism · splits"]
+    end

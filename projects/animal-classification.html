@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en" data-title-en="Animal Classification: The effect of colour casts on a CNN | Project deep dive — Muhammet Ali Varlık" data-title-tr="Animal Classification: Renk kaymalarının bir CNN üzerindeki etkisi | Proje incelemesi — Muhammet Ali Varlık">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://raw.githubusercontent.com; connect-src 'none'; object-src 'none'; base-uri 'self'; form-action 'none'; upgrade-insecure-requests">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <title>Animal Classification: The effect of colour casts on a CNN | Project deep dive — Muhammet Ali Varlık</title>
+    <meta name="description" content="Deep dive: a CNN robustness study on animal image classification under purple, yellow and green colour casts, with white-balance correction and Bayesian hyperparameter optimisation.">
+    <meta name="author" content="Muhammet Ali Varlık">
+    <link rel="canonical" href="https://muhammetalivarlik.github.io/Portfolio/projects/animal-classification.html">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Animal Classification: The effect of colour casts on a CNN | Project deep dive — Muhammet Ali Varlık">
+    <meta property="og:description" content="Deep dive: a CNN robustness study on animal image classification under purple, yellow and green colour casts, with white-balance correction and Bayesian hyperparameter optimisation.">
+    <meta property="og:url" content="https://muhammetalivarlik.github.io/Portfolio/projects/animal-classification.html">
+    <meta property="og:image" content="https://muhammetalivarlik.github.io/Portfolio/static/img/cvImage.png">
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "headline": "Animal Classification: The effect of colour casts on a CNN", "description": "Deep dive: a CNN robustness study on animal image classification under purple, yellow and green colour casts, with white-balance correction and Bayesian hyperparameter optimisation.", "author": {"@type": "Person", "name": "Muhammet Ali Varlık", "url": "https://muhammetalivarlik.github.io/Portfolio/", "jobTitle": "AI / LLM Engineer"}, "inLanguage": ["en", "tr"], "url": "https://muhammetalivarlik.github.io/Portfolio/projects/animal-classification.html", "about": {"@type": "SoftwareSourceCode", "name": "Animal Classification", "codeRepository": "https://github.com/MuhammetAliVarlik/AnimalClassification"}}</script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Inter:wght@400;600&family=Space+Grotesk:wght@500;700&display=swap">
+    <link rel="stylesheet" href="project.css">
+    <link rel="icon" href="../static/img/favicon.png" type="image/png">
+    <script src="project.js"></script>
+    <link rel="prev" href="real-estate-ai.html">
+    <link rel="next" href="trk-mlops-platform.html">
+</head>
+<body>
+<div class="progress" aria-hidden="true"></div>
+<header class="topbar">
+    <a class="brand" href="../index.html">MAV. <span>/ projects</span></a>
+    <nav aria-label="Projects">
+        <a href="index.html"><span lang="en">all projects</span><span lang="tr">tüm projeler</span></a>
+        <a href="../index.html"><span lang="en">home</span><span lang="tr">ana sayfa</span></a>
+        <button id="lang-toggle" type="button" aria-label="Switch language">TR</button>
+    </nav>
+</header>
+<a class="side-nav prev" href="real-estate-ai.html">← Real Estate AI</a>
+<a class="side-nav next" href="trk-mlops-platform.html">TRK Technology →</a>
+<main class="notebook">
+<div class="nb-header">
+    <div><span class="label"><span lang="en">date</span><span lang="tr">tarih</span></span><span class="value">dec / 24</span></div>
+    <span class="status-chip"><span lang="en">early study</span><span lang="tr">erken dönem çalışma</span></span>
+</div>
+<article class="nb-box">
+<div class="nb-title-row">
+    <span><span class="prefix"><span lang="en">Applied ML</span><span lang="tr">Uygulamalı ML</span> — </span><span lang="en">Project deep dive</span><span lang="tr">Proje incelemesi</span></span>
+    <span class="meta">~2 <span lang="en">min read</span><span lang="tr">dk okuma</span></span>
+</div>
+<div class="nb-content">
+<p class="kicker">Animal Classification</p>
+<h1><span class="hl"><span lang="en">The effect of colour casts on a CNN</span><span lang="tr">Renk kaymalarının bir CNN üzerindeki etkisi</span></span></h1>
+<span class="annotation"><span lang="en">*75% on clean images and 11% on green images*</span><span lang="tr">*temiz görüntülerde %75, yeşil görüntülerde %11*</span></span>
+<div class="tldr"><span class="tldr-label">TL;DR</span><div lang="en"><p>I trained a CNN for animal classification and changed the colour of the test images. The accuracy dropped from 75% to 11% on green images. A white-balance step and a Bayesian-optimised model both recovered the accuracy to about 71–73%.</p></div>
+<div lang="tr"><p>Hayvan sınıflandırması için bir CNN eğittim ve test görüntülerinin rengini değiştirdim. Doğruluk, yeşil görüntülerde %75'ten %11'e düştü. Bir white balance adımı ve Bayesian optimizasyonlu bir model, doğruluğu yaklaşık %71–73'e geri getirdi.</p></div>
+</div>
+<dl class="facts"><dt><span lang="en">stack</span><span lang="tr">teknoloji</span></dt><dd>TensorFlow · Keras · OpenCV · scikit-learn · Matplotlib</dd></dl>
+
+<nav class="page-toc" aria-label="On this page"><p class="page-toc-title"><span lang="en">On this page</span><span lang="tr">Bu sayfada</span></p><ol><li><a href="#problem"><span lang="en">1. The question</span><span lang="tr">1. Soru</span></a></li><li><a href="#experiment"><span lang="en">2. The experiment</span><span lang="tr">2. Deney</span></a></li><li><a href="#results"><span lang="en">3. Results</span><span lang="tr">3. Sonuçlar</span></a></li><li><a href="#qa"><span lang="en">4. Design Q&A</span><span lang="tr">4. Tasarım Soru-Cevap</span></a></li></ol></nav>
+<h2 id="problem"><span lang="en">1. The question</span><span lang="tr">1. Soru</span></h2>
+<div lang="en"><p>A cheap camera or bad light can add a colour cast to an image. I measured how much a colour cast changes the accuracy of a CNN. I also tested two methods to recover the accuracy.</p></div>
+<div lang="tr"><p>Ucuz bir kamera veya kötü ışık bir görüntüye renk kayması ekleyebilir. Bir renk kaymasının bir CNN'in doğruluğunu ne kadar değiştirdiğini ölçtüm. Doğruluğu geri kazanmak için iki yöntemi de test ettim.</p></div>
+<h2 id="experiment"><span lang="en">2. The experiment</span><span lang="tr">2. Deney</span></h2>
+<figure class="diagram"><a href="diagrams/animal-experiment.svg" target="_blank" rel="noopener noreferrer" title="Open full size"><img src="diagrams/animal-experiment.svg" alt="Robustness experiment" width="626" height="447" loading="lazy"></a><figcaption><span lang="en">Two models, three colour casts and one correction</span><span lang="tr">İki model, üç renk kayması ve bir düzeltme</span> · <a href="diagrams/animal-experiment.svg" target="_blank" rel="noopener noreferrer"><span lang="en">open full size</span><span lang="tr">tam boyut aç</span></a> · <a href="https://github.com/MuhammetAliVarlik/Portfolio/blob/main/diagrams/animal-experiment.mmd" target="_blank" rel="noopener noreferrer">Mermaid</a></figcaption></figure>
+<div lang="en"><ul><li>The CNN has Conv2D, MaxPooling, Dense and Dropout layers. The dataset is Animals with Attributes 2 from Kaggle.</li><li>I changed the colour of the test images to purple, yellow and green.</li><li>I compared a manually tuned model with a Bayesian-optimised model.</li></ul></div>
+<div lang="tr"><ul><li>CNN'de Conv2D, MaxPooling, Dense ve Dropout katmanları vardır. Veri seti Kaggle'daki Animals with Attributes 2'dir.</li><li>Test görüntülerinin rengini mor, sarı ve yeşil yaptım.</li><li>Elle ayarlanmış bir modeli Bayesian optimizasyonlu bir modelle karşılaştırdım.</li></ul></div>
+<h2 id="results"><span lang="en">3. Results</span><span lang="tr">3. Sonuçlar</span></h2>
+<div class="metrics"><div class="metric"><span class="num">75.2%</span><span class="lbl"><span lang="en">manual model on the original images</span><span lang="tr">orijinal görüntülerde elle ayarlanmış model</span></span></div><div class="metric"><span class="num">11.1%</span><span class="lbl"><span lang="en">the same model on green images</span><span lang="tr">aynı model, yeşil görüntülerde</span></span></div><div class="metric"><span class="num">73.5%</span><span class="lbl"><span lang="en">the same model after white balance</span><span lang="tr">aynı model, white balance sonrası</span></span></div><div class="metric"><span class="num">70.8–73.3%</span><span class="lbl"><span lang="en">Bayesian-optimised model on shifted images without correction</span><span lang="tr">Bayesian optimizasyonlu model, düzeltme olmadan kaydırılmış görüntülerde</span></span></div></div>
+<div lang="en"><p>The manual model dropped to 25%, 33% and 11% on the purple, yellow and green images. A white-balance correction brought it back to about 73%. The Bayesian-optimised model stayed at 71–73% on the shifted images without a correction.</p></div>
+<div lang="tr"><p>Elle ayarlanmış model mor, sarı ve yeşil görüntülerde %25, %33 ve %11'e düştü. Bir white balance düzeltmesi onu yaklaşık %73'e geri getirdi. Bayesian optimizasyonlu model, kaydırılmış görüntülerde düzeltme olmadan %71–73'te kaldı.</p></div>
+<div class="note"><span class="hand"><span lang="en">The lesson</span><span lang="tr">Ders</span></span><div lang="en"><p>One test-set accuracy does not describe the data that a model meets in use. This lesson also guides the leakage checks in my thesis.</p></div>
+<div lang="tr"><p>Tek bir test seti doğruluğu, bir modelin kullanımda karşılaştığı veriyi tanımlamaz. Bu ders tezimdeki sızıntı kontrollerine de yön verir.</p></div>
+</div>
+<h2 id="qa"><span lang="en">4. Design Q&A</span><span lang="tr">4. Tasarım Soru-Cevap</span></h2>
+<div class="qa"><details><summary><span lang="en">Is it better to fix the input or the model?</span><span lang="tr">Girdiyi mi düzeltmek daha iyi, modeli mi?</span></summary><div lang="en"><p>Both methods recovered about the same accuracy. A white-balance step is cheap and needs no training. A model that is less sensitive to colour needs no extra step at inference time. The selection depends on the deployment.</p></div>
+<div lang="tr"><p>İki yöntem de yaklaşık aynı doğruluğu geri kazandı. White balance adımı ucuzdur ve eğitim gerektirmez. Daha dayanıklı bir model ise inference sırasında ek adım gerektirmez. Seçim dağıtım ortamına bağlıdır.</p></div>
+</details><details><summary><span lang="en">Which changes do you make in a new version?</span><span lang="tr">Yeni bir sürümde hangi değişiklikleri yaparsın?</span></summary><div lang="en"><p>I start from a pre-trained model with transfer learning. I also add colour augmentation to the training data. The README of the project gives the same recommendation.</p></div>
+<div lang="tr"><p>Transfer learning ile önceden eğitilmiş bir modelden başlarım. Eğitim verisine renk augmentation'ı da eklerim. Projenin README dosyası da aynı öneriyi verir.</p></div>
+</details></div>
+<ul class="tags"><li>CNN</li><li>TensorFlow</li><li>Keras</li><li>OpenCV</li><li>Robustness</li><li>White Balance</li><li>Bayesian Optimisation</li></ul>
+<p class="links"><a class="btn" href="https://github.com/MuhammetAliVarlik/AnimalClassification" target="_blank" rel="noopener noreferrer"><span lang="en">View the repository</span><span lang="tr">Repoyu görüntüle</span> ↗</a></p>
+
+</div>
+</article>
+<nav class="chapter-nav" aria-label="Projects">
+<a class="prev" href="real-estate-ai.html"><span class="dir">← <span lang="en">Previous project</span><span lang="tr">Önceki proje</span></span><span class="ttl">Real Estate AI</span></a>
+<a class="next" href="trk-mlops-platform.html"><span class="dir"><span lang="en">Next project</span><span lang="tr">Sonraki proje</span> →</span><span class="ttl">TRK Technology</span></a>
+</nav>
+</main>
+<footer class="book-footer">
+    <p>© 2026 Muhammet Ali Varlık · <a href="https://github.com/MuhammetAliVarlik" target="_blank" rel="noopener noreferrer">GitHub</a> · <a href="https://www.linkedin.com/in/muhammet-ali-varlik/" target="_blank" rel="noopener noreferrer">LinkedIn</a></p>
+    <p><span lang="en">All numbers on this page come from the README files, the tests or the CV of the project.</span><span lang="tr">Bu sayfadaki tüm sayılar projenin README dosyalarından, testlerinden veya CV'den gelir.</span></p>
+</footer>
+</body>
+</html>

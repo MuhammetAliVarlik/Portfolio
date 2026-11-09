@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en" data-title-en="Real Estate AI: Classical ML models as tools for an LLM agent | Project deep dive — Muhammet Ali Varlık" data-title-tr="Real Estate AI: Bir LLM ajanı için araç olarak klasik ML modelleri | Proje incelemesi — Muhammet Ali Varlık">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://raw.githubusercontent.com; connect-src 'none'; object-src 'none'; base-uri 'self'; form-action 'none'; upgrade-insecure-requests">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <title>Real Estate AI: Classical ML models as tools for an LLM agent | Project deep dive — Muhammet Ali Varlık</title>
+    <meta name="description" content="Deep dive: Real Estate AI, a LangChain tool-calling agent on Qwen2.5 that serves four ML models (XGBoost R² 0.81, Isolation Forest, KMeans, RidgeClassifier) for Istanbul housing through chat and REST.">
+    <meta name="author" content="Muhammet Ali Varlık">
+    <link rel="canonical" href="https://muhammetalivarlik.github.io/Portfolio/projects/real-estate-ai.html">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Real Estate AI: Classical ML models as tools for an LLM agent | Project deep dive — Muhammet Ali Varlık">
+    <meta property="og:description" content="Deep dive: Real Estate AI, a LangChain tool-calling agent on Qwen2.5 that serves four ML models (XGBoost R² 0.81, Isolation Forest, KMeans, RidgeClassifier) for Istanbul housing through chat and REST.">
+    <meta property="og:url" content="https://muhammetalivarlik.github.io/Portfolio/projects/real-estate-ai.html">
+    <meta property="og:image" content="https://muhammetalivarlik.github.io/Portfolio/static/img/cvImage.png">
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "headline": "Real Estate AI: Classical ML models as tools for an LLM agent", "description": "Deep dive: Real Estate AI, a LangChain tool-calling agent on Qwen2.5 that serves four ML models (XGBoost R² 0.81, Isolation Forest, KMeans, RidgeClassifier) for Istanbul housing through chat and REST.", "author": {"@type": "Person", "name": "Muhammet Ali Varlık", "url": "https://muhammetalivarlik.github.io/Portfolio/", "jobTitle": "AI / LLM Engineer"}, "inLanguage": ["en", "tr"], "url": "https://muhammetalivarlik.github.io/Portfolio/projects/real-estate-ai.html", "about": {"@type": "SoftwareSourceCode", "name": "Real Estate AI", "codeRepository": "https://github.com/MuhammetAliVarlik/RealEstateAI"}}</script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Inter:wght@400;600&family=Space+Grotesk:wght@500;700&display=swap">
+    <link rel="stylesheet" href="project.css">
+    <link rel="icon" href="../static/img/favicon.png" type="image/png">
+    <script src="project.js"></script>
+    <link rel="prev" href="moviescout.html">
+    <link rel="next" href="animal-classification.html">
+</head>
+<body>
+<div class="progress" aria-hidden="true"></div>
+<header class="topbar">
+    <a class="brand" href="../index.html">MAV. <span>/ projects</span></a>
+    <nav aria-label="Projects">
+        <a href="index.html"><span lang="en">all projects</span><span lang="tr">tüm projeler</span></a>
+        <a href="../index.html"><span lang="en">home</span><span lang="tr">ana sayfa</span></a>
+        <button id="lang-toggle" type="button" aria-label="Switch language">TR</button>
+    </nav>
+</header>
+<a class="side-nav prev" href="moviescout.html">← MovieScout</a>
+<a class="side-nav next" href="animal-classification.html">Animal Classification →</a>
+<main class="notebook">
+<div class="nb-header">
+    <div><span class="label"><span lang="en">date</span><span lang="tr">tarih</span></span><span class="value">aug / 26</span></div>
+    <span class="status-chip"><span lang="en">complete</span><span lang="tr">tamamlandı</span></span>
+</div>
+<article class="nb-box">
+<div class="nb-title-row">
+    <span><span class="prefix"><span lang="en">Applied ML</span><span lang="tr">Uygulamalı ML</span> — </span><span lang="en">Project deep dive</span><span lang="tr">Proje incelemesi</span></span>
+    <span class="meta">~2 <span lang="en">min read</span><span lang="tr">dk okuma</span></span>
+</div>
+<div class="nb-content">
+<p class="kicker">Real Estate AI</p>
+<h1><span class="hl"><span lang="en">Classical ML models as tools for an LLM agent</span><span lang="tr">Bir LLM ajanı için araç olarak klasik ML modelleri</span></span></h1>
+<span class="annotation"><span lang="en">*four models behind one chat interface (Akbank ML bootcamp)*</span><span lang="tr">*tek bir sohbet arayüzünün arkasında dört model (Akbank ML bootcamp)*</span></span>
+<div class="tldr"><span class="tldr-label">TL;DR</span><div lang="en"><p>I trained four models on Istanbul housing data and put them behind a LangChain tool-calling agent on Qwen2.5. Users ask questions in natural language, and programs call the same models through five REST endpoints. The price model reaches R² = 0.81.</p></div>
+<div lang="tr"><p>İstanbul konut verisi üzerinde dört model eğittim ve onları Qwen2.5 üzerinde çalışan bir LangChain tool-calling ajanının arkasına koydum. Kullanıcılar doğal dilde soru sorar, programlar aynı modelleri beş REST endpoint ile çağırır. Fiyat modeli R² = 0,81'e ulaşır.</p></div>
+</div>
+<dl class="facts"><dt><span lang="en">stack</span><span lang="tr">teknoloji</span></dt><dd>scikit-learn · XGBoost · LangChain · Ollama (Qwen2.5) · FastAPI · Streamlit · Docker Compose</dd></dl>
+
+<nav class="page-toc" aria-label="On this page"><p class="page-toc-title"><span lang="en">On this page</span><span lang="tr">Bu sayfada</span></p><ol><li><a href="#problem"><span lang="en">1. The problem</span><span lang="tr">1. Problem</span></a></li><li><a href="#architecture"><span lang="en">2. Architecture</span><span lang="tr">2. Mimari</span></a></li><li><a href="#models"><span lang="en">3. Model selection</span><span lang="tr">3. Model seçimi</span></a></li><li><a href="#decisions"><span lang="en">4. Key decisions and trade-offs</span><span lang="tr">4. Kilit kararlar ve trade-off'lar</span></a></li><li><a href="#results"><span lang="en">5. Results</span><span lang="tr">5. Sonuçlar</span></a></li><li><a href="#limits"><span lang="en">6. Limitations and next steps</span><span lang="tr">6. Sınırlamalar ve sonraki adımlar</span></a></li><li><a href="#qa"><span lang="en">7. Design Q&A</span><span lang="tr">7. Tasarım Soru-Cevap</span></a></li></ol></nav>
+<h2 id="problem"><span lang="en">1. The problem</span><span lang="tr">1. Problem</span></h2>
+<div lang="en"><p>Classical ML models give good answers, but a normal user cannot call them easily. This project puts four models behind a LangChain agent. The user asks a question in natural language, and the agent calls the correct model. Programs can call the same models through REST.</p></div>
+<div lang="tr"><p>Klasik ML modelleri iyi cevaplar verir, ancak normal bir kullanıcı onları kolayca çağıramaz. Bu proje dört modeli bir LangChain ajanının arkasına koyar. Kullanıcı doğal dilde bir soru sorar ve ajan doğru modeli çağırır. Programlar aynı modelleri REST ile çağırabilir.</p></div>
+<h2 id="architecture"><span lang="en">2. Architecture</span><span lang="tr">2. Mimari</span></h2>
+<figure class="diagram"><a href="diagrams/realestate-architecture.svg" target="_blank" rel="noopener noreferrer" title="Open full size"><img src="diagrams/realestate-architecture.svg" alt="Real Estate AI architecture" width="892" height="593" loading="lazy"></a><figcaption><span lang="en">Streamlit, FastAPI, the agent and the model tools</span><span lang="tr">Streamlit, FastAPI, ajan ve model araçları</span> · <a href="diagrams/realestate-architecture.svg" target="_blank" rel="noopener noreferrer"><span lang="en">open full size</span><span lang="tr">tam boyut aç</span></a> · <a href="https://github.com/MuhammetAliVarlik/Portfolio/blob/main/diagrams/realestate-architecture.mmd" target="_blank" rel="noopener noreferrer">Mermaid</a></figcaption></figure>
+<div lang="en"><p>The Streamlit UI calls FastAPI. FastAPI has five REST endpoints for direct model queries and one streaming endpoint for the chat. The agent runs on Qwen2.5 through Ollama and uses five tools.</p></div>
+<div lang="tr"><p>Streamlit arayüzü FastAPI'yi çağırır. FastAPI'de doğrudan model sorguları için beş REST endpoint ve sohbet için bir akış endpoint'i vardır. Ajan, Ollama üzerinden Qwen2.5 ile çalışır ve beş araç kullanır.</p></div>
+<h2 id="models"><span lang="en">3. Model selection</span><span lang="tr">3. Model seçimi</span></h2>
+<figure class="diagram"><a href="diagrams/realestate-selection.svg" target="_blank" rel="noopener noreferrer" title="Open full size"><img src="diagrams/realestate-selection.svg" alt="Model selection process" width="944" height="313" loading="lazy"></a><figcaption><span lang="en">How I selected each of the four models</span><span lang="tr">Dört modelin her birini nasıl seçtiğim</span> · <a href="diagrams/realestate-selection.svg" target="_blank" rel="noopener noreferrer"><span lang="en">open full size</span><span lang="tr">tam boyut aç</span></a> · <a href="https://github.com/MuhammetAliVarlik/Portfolio/blob/main/diagrams/realestate-selection.mmd" target="_blank" rel="noopener noreferrer">Mermaid</a></figcaption></figure>
+<div lang="en"><ul><li><strong>Price:</strong> I compared 7 regressors on R² and training time. XGBoost gave the best balance. <code>RandomizedSearchCV</code> tuned it to R² = 0.81.</li><li><strong>Anomalies:</strong> Isolation Forest needs no labels. With <code>contamination=0.01</code>, it flagged 95 of 9,940 listings.</li><li><strong>Home type:</strong> KMeans had a higher silhouette score than Agglomerative Clustering. The elbow method gave k = 5.</li><li><strong>Investment:</strong> I compared 8 classifiers on F1. RidgeClassifier with α = 0.1 gave the best balance of speed and accuracy.</li></ul></div>
+<div lang="tr"><ul><li><strong>Fiyat:</strong> 7 regresörü R² ve eğitim süresine göre karşılaştırdım. XGBoost en iyi dengeyi verdi. <code>RandomizedSearchCV</code> onu R² = 0,81'e ayarladı.</li><li><strong>Anomaliler:</strong> Isolation Forest etiket gerektirmez. <code>contamination=0.01</code> ile 9.940 ilandan 95'ini işaretledi.</li><li><strong>Konut tipi:</strong> KMeans, Agglomerative Clustering'den daha yüksek silhouette skoru verdi. Elbow yöntemi k = 5 verdi.</li><li><strong>Yatırım:</strong> 8 sınıflandırıcıyı F1'e göre karşılaştırdım. α = 0,1 ile RidgeClassifier en iyi hız ve doğruluk dengesini verdi.</li></ul></div>
+<h2 id="decisions"><span lang="en">4. Key decisions and trade-offs</span><span lang="tr">4. Kilit kararlar ve trade-off'lar</span></h2>
+<div class="table-wrap"><table class="decisions"><thead><tr><th><span lang="en">Decision</span><span lang="tr">Karar</span></th><th><span lang="en">Alternative I considered</span><span lang="tr">Değerlendirdiğim alternatif</span></th><th><span lang="en">Reason</span><span lang="tr">Gerekçe</span></th></tr></thead><tbody><tr><td><span lang="en">Models as agent tools</span><span lang="tr">Ajan aracı olarak modeller</span></td><td><span lang="en">One UI form for each model</span><span lang="tr">Her model için bir arayüz formu</span></td><td><span lang="en">The user asks one question. The agent selects the correct model.</span><span lang="tr">Kullanıcı tek bir soru sorar. Ajan doğru modeli seçer.</span></td></tr><tr><td><span lang="en">REST endpoints next to the chat</span><span lang="tr">Sohbetin yanında REST endpoint'leri</span></td><td><span lang="en">Chat only</span><span lang="tr">Yalnızca sohbet</span></td><td><span lang="en">Programs need deterministic answers without an LLM in the path.</span><span lang="tr">Programlar, yolda LLM olmadan deterministik cevaplara ihtiyaç duyar.</span></td></tr><tr><td><span lang="en">Two investment classes</span><span lang="tr">İki yatırım sınıfı</span></td><td><span lang="en">Three original classes</span><span lang="tr">Üç orijinal sınıf</span></td><td><span lang="en">The class "Not suitable" had only 12 records. A model cannot learn this class.</span><span lang="tr">"Uygun değil" sınıfında yalnızca 12 kayıt vardı. Bir model bu sınıfı öğrenemez.</span></td></tr></tbody></table></div>
+<div class="note"><span class="hand"><span lang="en">A known limit</span><span lang="tr">Bilinen bir sınır</span></span><div lang="en"><p>The investment classifier has F1 ≈ 0.61. The labels limit this score. The class "Unknown" contains suitable listings without clean labels, so a different algorithm does not fix the problem.</p></div>
+<div lang="tr"><p>Yatırım sınıflandırıcısının F1 değeri yaklaşık 0,61'dir. Bu skoru etiketler sınırlar. "Bilinmiyor" sınıfı, temiz etiketi olmayan uygun ilanlar içerir; bu yüzden farklı bir algoritma sorunu çözmez.</p></div>
+</div>
+<figure class="shot"><img src="https://raw.githubusercontent.com/MuhammetAliVarlik/RealEstateAI/main/docs/screenshoots/MainScreen.png" alt="Real Estate AI Streamlit chat interface" width="1600" height="900" loading="lazy" referrerpolicy="no-referrer"><figcaption><span lang="en">The Streamlit chat interface</span><span lang="tr">Streamlit sohbet arayüzü</span></figcaption></figure>
+<h2 id="results"><span lang="en">5. Results</span><span lang="tr">5. Sonuçlar</span></h2>
+<div class="metrics"><div class="metric"><span class="num">R² 0.81</span><span class="lbl"><span lang="en">XGBoost price model</span><span lang="tr">XGBoost fiyat modeli</span></span></div><div class="metric"><span class="num">95</span><span class="lbl"><span lang="en">anomalies in 9,940 listings (about 1%)</span><span lang="tr">9.940 ilanda anomali (yaklaşık %1)</span></span></div><div class="metric"><span class="num">k = 5</span><span class="lbl"><span lang="en">home-type clusters</span><span lang="tr">konut tipi kümesi</span></span></div><div class="metric"><span class="num">5</span><span class="lbl"><span lang="en">REST endpoints and one chat stream</span><span lang="tr">REST endpoint ve bir sohbet akışı</span></span></div></div>
+<h2 id="limits"><span lang="en">6. Limitations and next steps</span><span lang="tr">6. Sınırlamalar ve sonraki adımlar</span></h2>
+<div lang="en"><ul><li>The chat memory is one session for the whole process. It is not safe for many users at the same time.</li><li>The data comes from a static CSV file. A data-ingestion API and more cities are the next steps.</li></ul></div>
+<div lang="tr"><ul><li>Sohbet hafızası tüm süreç için tek bir oturumdur. Aynı anda çok sayıda kullanıcı için güvenli değildir.</li><li>Veri statik bir CSV dosyasından gelir. Bir veri alım API'si ve daha fazla şehir sonraki adımlardır.</li></ul></div>
+<h2 id="qa"><span lang="en">7. Design Q&A</span><span lang="tr">7. Tasarım Soru-Cevap</span></h2>
+<div class="qa"><details><summary><span lang="en">Why use an agent instead of a normal API?</span><span lang="tr">Neden normal bir API yerine ajan kullandın?</span></summary><div lang="en"><p>A user does not know which model answers a question. The agent selects the tool. The REST API stays available for programs that need a direct call.</p></div>
+<div lang="tr"><p>Kullanıcı bir soruyu hangi modelin cevapladığını bilmez. Ajan aracı seçer. REST API, doğrudan çağrı gerektiren programlar için kullanılabilir kalır.</p></div>
+</details><details><summary><span lang="en">Why is the investment F1 score low?</span><span lang="tr">Yatırım F1 skoru neden düşük?</span></summary><div lang="en"><p>The class "Unknown" contains suitable listings without clean labels. I joined it with "Not suitable" into "Risky". This label noise limits the score more than the algorithm does.</p></div>
+<div lang="tr"><p>"Bilinmiyor" sınıfı, temiz etiketi olmayan uygun ilanlar içerir. Onu "Uygun değil" sınıfıyla "Riskli" altında birleştirdim. Bu etiket gürültüsü skoru algoritmadan daha fazla sınırlar.</p></div>
+</details><details><summary><span lang="en">Why does XGBoost have a high MAE with R² = 0.81?</span><span lang="tr">R² = 0,81 iken XGBoost'un MAE değeri neden yüksek?</span></summary><div lang="en"><p>R² measures explained variance. Some listings have prices that are much higher than the median. These listings give large absolute errors. The price distribution has outliers and imbalance.</p></div>
+<div lang="tr"><p>R² açıklanan varyansı ölçer. Az sayıda çok pahalı ilan büyük mutlak hatalar verir. Fiyat dağılımında aykırı değerler ve dengesizlik vardır.</p></div>
+</details></div>
+<ul class="tags"><li>LangChain</li><li>Tool Calling</li><li>Qwen2.5</li><li>Ollama</li><li>XGBoost</li><li>Isolation Forest</li><li>KMeans</li><li>scikit-learn</li><li>FastAPI</li><li>Streamlit</li></ul>
+<p class="links"><a class="btn" href="https://github.com/MuhammetAliVarlik/RealEstateAI" target="_blank" rel="noopener noreferrer"><span lang="en">View the repository</span><span lang="tr">Repoyu görüntüle</span> ↗</a></p>
+
+</div>
+</article>
+<nav class="chapter-nav" aria-label="Projects">
+<a class="prev" href="moviescout.html"><span class="dir">← <span lang="en">Previous project</span><span lang="tr">Önceki proje</span></span><span class="ttl">MovieScout</span></a>
+<a class="next" href="animal-classification.html"><span class="dir"><span lang="en">Next project</span><span lang="tr">Sonraki proje</span> →</span><span class="ttl">Animal Classification</span></a>
+</nav>
+</main>
+<footer class="book-footer">
+    <p>© 2026 Muhammet Ali Varlık · <a href="https://github.com/MuhammetAliVarlik" target="_blank" rel="noopener noreferrer">GitHub</a> · <a href="https://www.linkedin.com/in/muhammet-ali-varlik/" target="_blank" rel="noopener noreferrer">LinkedIn</a></p>
+    <p><span lang="en">All numbers on this page come from the README files, the tests or the CV of the project.</span><span lang="tr">Bu sayfadaki tüm sayılar projenin README dosyalarından, testlerinden veya CV'den gelir.</span></p>
+</footer>
+</body>
+</html>

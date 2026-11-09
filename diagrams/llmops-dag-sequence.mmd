@@ -1,0 +1,17 @@
+sequenceDiagram
+    participant UI as React canvas
+    participant Core as Studio Core API
+    participant Engine as DAG engine
+    participant Node as Evaluation node
+    participant MLflow
+    UI->>Core: POST /api/v1/run-dag {nodes, edges}
+    Core->>Engine: Build graph, topological sort
+    loop For each node in order
+        Engine->>Node: execute(upstream state)
+        Node->>Node: Run lab logic
+        Node-->>Engine: {context, response, metrics}
+        Engine->>Engine: state[node_id] = output
+    end
+    Engine-->>Core: Final state
+    Core-->>UI: 200 OK {results}
+    Core-->>MLflow: log_metrics (per lab)

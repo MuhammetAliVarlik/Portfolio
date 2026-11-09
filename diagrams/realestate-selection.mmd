@@ -1,0 +1,9 @@
+flowchart TB
+    D["Istanbul listings<br/>~9,940 rows"] --> P["Price: 7 regressors<br/>R² + training time"]
+    D --> A["Anomalies: Isolation Forest<br/>contamination 0.01"]
+    D --> K["Clusters: KMeans vs Agglomerative<br/>k = 2…10, silhouette"]
+    D --> C["Investment: 8 classifiers<br/>F1 + training time"]
+    P --> P2["XGBoost + RandomizedSearchCV<br/>R² 0.81"]
+    A --> A2["95 anomalies (~1%)"]
+    K --> K2["KMeans, elbow → k = 5"]
+    C --> C2["RidgeClassifier α = 0.1<br/>F1 ≈ 0.61 (label-limited)"]

@@ -1,0 +1,8 @@
+flowchart TB
+    P["Selected films<br/>or top 5 Letterboxd"] --> E["Embed each film<br/>separately"]
+    E --> A["Average vectors<br/>one query"]
+    A --> Q["ChromaDB ANN search<br/>limit × 3 (× 10 with filters)"]
+    Q --> X["Exclude watched<br/>and selected films"]
+    X --> F["Genre and rating filters"]
+    F --> D["Deduplicate · cap"]
+    D --> R["Results<br/>cached 10 min"]

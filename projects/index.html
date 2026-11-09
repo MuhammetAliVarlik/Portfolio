@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en" data-title-en="Project deep dives — Muhammet Ali Varlık" data-title-tr="Proje incelemeleri — Muhammet Ali Varlık">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://raw.githubusercontent.com; connect-src 'none'; object-src 'none'; base-uri 'self'; form-action 'none'; upgrade-insecure-requests">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <title>Project deep dives — Muhammet Ali Varlık</title>
+    <meta name="description" content="Project deep dives by Muhammet Ali Varlık: architecture with Mermaid diagrams, design decisions, trade-offs, results and design Q&amp;A for agentic AI, LLMOps, MLOps and time-series projects.">
+    <meta name="author" content="Muhammet Ali Varlık">
+    <link rel="canonical" href="https://muhammetalivarlik.github.io/Portfolio/projects/">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Project deep dives — Muhammet Ali Varlık">
+    <meta property="og:description" content="Project deep dives by Muhammet Ali Varlık: architecture with Mermaid diagrams, design decisions, trade-offs, results and design Q&amp;A for agentic AI, LLMOps, MLOps and time-series projects.">
+    <meta property="og:url" content="https://muhammetalivarlik.github.io/Portfolio/projects/">
+    <meta property="og:image" content="https://muhammetalivarlik.github.io/Portfolio/static/img/cvImage.png">
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "CollectionPage", "name": "Project deep dives — Muhammet Ali Varlık", "url": "https://muhammetalivarlik.github.io/Portfolio/projects/", "author": {"@type": "Person", "name": "Muhammet Ali Varlık", "url": "https://muhammetalivarlik.github.io/Portfolio/", "jobTitle": "AI / LLM Engineer"}, "hasPart": [{"@type": "TechArticle", "name": "Agentic Investing Engine: An MCP-native multi-agent research system", "url": "https://muhammetalivarlik.github.io/Portfolio/projects/agentic-investing-engine.html"}, {"@type": "TechArticle", "name": "LLMOps Studio: A DAG-based evaluation platform for local LLMs", "url": "https://muhammetalivarlik.github.io/Portfolio/projects/llmops-studio.html"}, {"@type": "TechArticle", "name": "Symbolic-TS: Time series as a symbolic language", "url": "https://muhammetalivarlik.github.io/Portfolio/projects/symbolic-ts.html"}, {"@type": "TechArticle", "name": "Finwise Scribe: A neuro-symbolic GenAI engine on 4GB of VRAM", "url": "https://muhammetalivarlik.github.io/Portfolio/projects/finwise-scribe.html"}, {"@type": "TechArticle", "name": "MovieScout: A RAG movie recommender with Letterboxd import", "url": "https://muhammetalivarlik.github.io/Portfolio/projects/moviescout.html"}, {"@type": "TechArticle", "name": "Real Estate AI: Classical ML models as tools for an LLM agent", "url": "https://muhammetalivarlik.github.io/Portfolio/projects/real-estate-ai.html"}, {"@type": "TechArticle", "name": "Animal Classification: The effect of colour casts on a CNN", "url": "https://muhammetalivarlik.github.io/Portfolio/projects/animal-classification.html"}, {"@type": "TechArticle", "name": "TRK Technology: An internal MLOps platform built from scratch", "url": "https://muhammetalivarlik.github.io/Portfolio/projects/trk-mlops-platform.html"}, {"@type": "TechArticle", "name": "FromZeroToHero: A free curriculum for data science, AI and cloud", "url": "https://muhammetalivarlik.github.io/Portfolio/projects/from-zero-to-hero.html"}]}</script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Inter:wght@400;600&family=Space+Grotesk:wght@500;700&display=swap">
+    <link rel="stylesheet" href="project.css">
+    <link rel="icon" href="../static/img/favicon.png" type="image/png">
+    <script src="project.js"></script>
+</head>
+<body>
+<div class="progress" aria-hidden="true"></div>
+<header class="topbar">
+    <a class="brand" href="../index.html">MAV. <span>/ projects</span></a>
+    <nav aria-label="Projects">
+        <a href="index.html"><span lang="en">all projects</span><span lang="tr">tüm projeler</span></a>
+        <a href="../index.html"><span lang="en">home</span><span lang="tr">ana sayfa</span></a>
+        <button id="lang-toggle" type="button" aria-label="Switch language">TR</button>
+    </nav>
+</header>
+<main class="notebook">
+<div class="nb-header">
+    <div><span class="label"><span lang="en">date</span><span lang="tr">tarih</span></span><span class="value">nov / 26</span></div>
+    <span class="status-chip">9 <span lang="en">projects</span><span lang="tr">proje</span></span>
+</div>
+<article class="nb-box">
+<div class="nb-title-row"><span><span class="prefix"><span lang="en">Projects</span><span lang="tr">Projeler</span> — </span><span lang="en">Index</span><span lang="tr">Liste</span></span><span class="meta">EN / TR</span></div>
+<div class="nb-content">
+<h1><span class="hl"><span lang="en">Project deep dives</span><span lang="tr">Proje incelemeleri</span></span></h1>
+<span class="annotation"><span lang="en">*architecture, decisions, trade-offs and results for each project*</span><span lang="tr">*her proje için mimari, kararlar, trade-off'lar ve sonuçlar*</span></span>
+<div lang="en"><p>Each page explains one project in the same structure. The structure is the problem, the constraints, the architecture, the key decisions, the tests, the results and the limitations. Each page has Mermaid diagrams and a short design Q&A.</p></div>
+<div lang="tr"><p>Her sayfa bir projeyi aynı yapıda anlatır. Bu yapı; problem, kısıtlar, mimari, kilit kararlar, testler, sonuçlar ve sınırlamalardır. Her sayfada Mermaid diyagramları ve kısa bir tasarım soru-cevap bölümü vardır.</p></div>
+<div class="note"><span class="hand"><span lang="en">Where to start</span><span lang="tr">Nereden başlamalı</span></span><div lang="en"><p>Start with the Agentic Investing Engine for agentic systems and guardrails. Read TRK Technology for industry impact. Use the arrow keys to move between projects.</p></div>
+<div lang="tr"><p>Agentic sistemler ve guardrail'ler için Agentic Investing Engine ile başlayın. Endüstri etkisi için TRK Technology sayfasını okuyun. Projeler arasında geçiş için ok tuşlarını kullanın.</p></div>
+</div>
+<section class="toc-part">
+<h2><span lang="en">Agentic & LLM systems</span><span lang="tr">Agentic ve LLM sistemleri</span></h2>
+<p class="part-blurb"><span lang="en">Systems in which an LLM does real work and the system checks its output.</span><span lang="tr">Bir LLM'in gerçek iş yaptığı ve sistemin çıktısını kontrol ettiği sistemler.</span></p>
+<ul class="toc-list">
+<li><a href="agentic-investing-engine.html"><span class="no">→</span><span class="t">Agentic Investing Engine</span><span class="rt">~5 <span lang="en">min</span><span lang="tr">dk</span></span><span class="q"><span lang="en">An MCP-native multi-agent research system</span><span lang="tr">MCP-native bir multi-agent araştırma sistemi</span></span></a></li>
+<li><a href="llmops-studio.html"><span class="no">→</span><span class="t">LLMOps Studio</span><span class="rt">~4 <span lang="en">min</span><span lang="tr">dk</span></span><span class="q"><span lang="en">A DAG-based evaluation platform for local LLMs</span><span lang="tr">Yerel LLM'ler için DAG tabanlı bir değerlendirme platformu</span></span></a></li>
+</ul>
+</section>
+<section class="toc-part">
+<h2><span lang="en">M.Sc. thesis</span><span lang="tr">Yüksek lisans tezi</span></h2>
+<p class="part-blurb"><span lang="en">The research library of my thesis and its applied demo.</span><span lang="tr">Tezimin araştırma kütüphanesi ve uygulamalı demosu.</span></p>
+<ul class="toc-list">
+<li><a href="symbolic-ts.html"><span class="no">→</span><span class="t">Symbolic-TS</span><span class="rt">~4 <span lang="en">min</span><span lang="tr">dk</span></span><span class="q"><span lang="en">Time series as a symbolic language</span><span lang="tr">Sembolik bir dil olarak zaman serileri</span></span></a></li>
+<li><a href="finwise-scribe.html"><span class="no">→</span><span class="t">Finwise Scribe</span><span class="rt">~4 <span lang="en">min</span><span lang="tr">dk</span></span><span class="q"><span lang="en">A neuro-symbolic GenAI engine on 4GB of VRAM</span><span lang="tr">4GB VRAM üzerinde neuro-symbolic bir GenAI motoru</span></span></a></li>
+</ul>
+</section>
+<section class="toc-part">
+<h2><span lang="en">Applied ML</span><span lang="tr">Uygulamalı ML</span></h2>
+<p class="part-blurb"><span lang="en">Smaller end-to-end projects. Each project has one clear lesson.</span><span lang="tr">Daha küçük uçtan uca projeler. Her projenin net bir dersi vardır.</span></p>
+<ul class="toc-list">
+<li><a href="moviescout.html"><span class="no">→</span><span class="t">MovieScout</span><span class="rt">~2 <span lang="en">min</span><span lang="tr">dk</span></span><span class="q"><span lang="en">A RAG movie recommender with Letterboxd import</span><span lang="tr">Letterboxd içe aktarımlı bir RAG film önerici</span></span></a></li>
+<li><a href="real-estate-ai.html"><span class="no">→</span><span class="t">Real Estate AI</span><span class="rt">~2 <span lang="en">min</span><span lang="tr">dk</span></span><span class="q"><span lang="en">Classical ML models as tools for an LLM agent</span><span lang="tr">Bir LLM ajanı için araç olarak klasik ML modelleri</span></span></a></li>
+<li><a href="animal-classification.html"><span class="no">→</span><span class="t">Animal Classification</span><span class="rt">~2 <span lang="en">min</span><span lang="tr">dk</span></span><span class="q"><span lang="en">The effect of colour casts on a CNN</span><span lang="tr">Renk kaymalarının bir CNN üzerindeki etkisi</span></span></a></li>
+</ul>
+</section>
+<section class="toc-part">
+<h2><span lang="en">Industry & community</span><span lang="tr">Endüstri ve topluluk</span></h2>
+<p class="part-blurb"><span lang="en">Work for an employer and a free curriculum.</span><span lang="tr">Bir işveren için yapılan iş ve ücretsiz bir müfredat.</span></p>
+<ul class="toc-list">
+<li><a href="trk-mlops-platform.html"><span class="no">→</span><span class="t">TRK Technology</span><span class="rt">~2 <span lang="en">min</span><span lang="tr">dk</span></span><span class="q"><span lang="en">An internal MLOps platform built from scratch</span><span lang="tr">Sıfırdan kurulmuş bir iç MLOps platformu</span></span></a></li>
+<li><a href="from-zero-to-hero.html"><span class="no">→</span><span class="t">FromZeroToHero</span><span class="rt">~2 <span lang="en">min</span><span lang="tr">dk</span></span><span class="q"><span lang="en">A free curriculum for data science, AI and cloud</span><span lang="tr">Veri bilimi, AI ve cloud için ücretsiz bir müfredat</span></span></a></li>
+</ul>
+</section>
+</div>
+</article>
+</main>
+<footer class="book-footer">
+    <p>© 2026 Muhammet Ali Varlık · <a href="https://github.com/MuhammetAliVarlik" target="_blank" rel="noopener noreferrer">GitHub</a> · <a href="https://www.linkedin.com/in/muhammet-ali-varlik/" target="_blank" rel="noopener noreferrer">LinkedIn</a></p>
+    <p><span lang="en">All numbers on this page come from the README files, the tests or the CV of the project.</span><span lang="tr">Bu sayfadaki tüm sayılar projenin README dosyalarından, testlerinden veya CV'den gelir.</span></p>
+</footer>
+</body>
+</html>

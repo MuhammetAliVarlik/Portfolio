@@ -1,0 +1,34 @@
+flowchart TB
+    subgraph Clients
+        WEB["React web app"]
+        EXT["Claude Desktop / Cursor<br/>any MCP client"]
+    end
+    GW["Web gateway<br/>sign-in · allowlist · CSRF"]
+    subgraph Engine["Investing Engine"]
+        API["FastAPI<br/>auth · budgets · SSE · PDF"]
+        subgraph Agents["LangGraph supervisor (MCP client)"]
+            SUP{"Supervisor"}
+            TA["Technical"]
+            NA["News"]
+            MA["Macro"]
+            DA["Disclosure"]
+            SUP <--> TA & NA & MA & DA
+        end
+        MCP[["MCP server<br/>8 tools · 3 resources · 1 prompt"]]
+        GR["Guardrails<br/>screening · grounding"]
+        SVC["Services<br/>allowlist · OCR · uploads"]
+    end
+    subgraph Sources["Licensed sources"]
+        EVDS["TCMB EVDS"]
+        GDELT["GDELT"]
+        UP["User files"]
+    end
+    OBS[("Langfuse traces")]
+    WEB --> GW
+    GW -->|"internal token + user id"| API
+    API --> Agents
+    Agents -->|MCP| MCP
+    EXT -->|"MCP stdio"| MCP
+    MCP --> SVC --> GR
+    SVC --> EVDS & GDELT & UP
+    Agents -.->|traces| OBS

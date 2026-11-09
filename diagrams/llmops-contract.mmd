@@ -1,0 +1,12 @@
+flowchart LR
+    subgraph Before["Before: no contract"]
+        direction TB
+        B1["RAG node"] -->|"{metrics}"| BJ["Judge"]
+        BJ --> BS["Score = 0 or 1<br/>on empty strings"]
+    end
+    subgraph After["After: output contract"]
+        direction TB
+        A1["Any node"] -->|"{context, response, metrics}"| AJ["Judge"]
+        AJ --> AS["Valid faithfulness<br/>and relevance score"]
+    end
+    Before -.->|fix| After

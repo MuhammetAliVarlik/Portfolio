@@ -1,0 +1,6 @@
+flowchart TB
+    R["Risk found in the<br/>train/test split strategy"] --> A["Team aligned<br/>on a fix"]
+    A --> M["Dataset Management module"]
+    M --> V["Version-controlled branches"]
+    M --> L["Lineage tracking"]
+    V & L --> O["Valid models across all<br/>downstream experiments"]

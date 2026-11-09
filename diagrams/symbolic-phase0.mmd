@@ -1,0 +1,10 @@
+flowchart TB
+    S["Frozen, hashed datasets<br/>finance + ETT"] --> ST["Stationarity<br/>ADF · KPSS"]
+    ST --> V["Vocabulary overlap<br/>Cramér's V = 0.108"]
+    V --> E["Sequential structure<br/>entropy rate"]
+    E --> TM["Transition-matrix similarity"]
+    TM --> W["Context window<br/>PACF → 50 steps"]
+    W --> MK["Markov baselines<br/>in-domain vs cross-domain"]
+    MK --> G{"Phase 0 gate"}
+    G -->|"proceed with 2 caveats"| P1["Phase 1: core library"]
+    G -.->|"if no shared structure"| X["Stop: do not train"]

@@ -1,0 +1,15 @@
+flowchart TB
+    B["Browser"] --> H["home · discover"] & C["chat"] & I["api: import / export"]
+    subgraph Flask["Flask app (blueprints)"]
+        H
+        C
+        I
+    end
+    H --> RE["MovieRecommendationEngine"]
+    C --> RAG["FilmRAG"]
+    RAG --> RE
+    RAG --> OL["Ollama<br/>local LLM"]
+    I --> LB["LetterboxdImporter"]
+    RE --> CH[("ChromaDB")]
+    RE --> ST["Sentence-Transformers"]
+    RE --> CSV[("TMDB dataset<br/>~10,000 films")]

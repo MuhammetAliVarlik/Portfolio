@@ -1,0 +1,16 @@
+stateDiagram-v2
+    [*] --> Plan
+    Plan: Supervisor reads the request and past results
+    Plan --> Technical: needs price indicators
+    Plan --> News: needs headline risk
+    Plan --> Macro: needs macro data
+    Plan --> Disclosure: a document is attached
+    Technical --> Plan: result
+    News --> Plan: result
+    Macro --> Plan: result
+    Disclosure --> Plan: result
+    Plan --> Write: all necessary results are available
+    Write: Supervisor writes the report
+    Write --> Checks
+    Checks: Numbers, scope and disclaimer are examined
+    Checks --> [*]

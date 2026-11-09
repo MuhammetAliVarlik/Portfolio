@@ -1,0 +1,23 @@
+sequenceDiagram
+    autonumber
+    participant U as User
+    participant GW as Web gateway
+    participant API as FastAPI
+    participant S as Supervisor
+    participant D as Disclosure agent
+    participant M as MCP server
+    participant G as Guardrails
+    U->>GW: Upload a KAP filing (PDF)
+    GW->>API: POST /documents (token + identity)
+    API->>M: Extract text (text layer or OCR)
+    M->>G: Remove injected instructions
+    U->>GW: Start the analysis
+    GW->>API: POST /analyses/stream
+    API->>API: Check auth, allowlist, budget, cache
+    S->>D: Hand over
+    D->>M: disclosure_document(symbol)
+    Note over M: The server adds the document ID.<br/>The model never sees it.
+    M-->>D: Marked and screened text
+    S-->>API: Report
+    API->>G: Check numbers, scope, disclaimer
+    API-->>U: SSE events and final result

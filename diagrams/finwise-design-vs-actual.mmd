@@ -1,0 +1,13 @@
+flowchart LR
+    subgraph Designed["Designed path"]
+        direction TB
+        D1["Symbolic sequence"] --> D2["Token-only completion<br/>temperature 0 · top_k 1"]
+        D2 --> D3["One deterministic token"]
+    end
+    subgraph Actual["Shipped path (documented gap)"]
+        direction TB
+        A1["Tokens + RSI/MACD + news<br/>in one prompt"] --> A2["JSON completion<br/>temperature 0.1"]
+        A2 --> A3{"JSON valid?"}
+        A3 -->|yes| A4["signal · confidence · reasoning"]
+        A3 -->|no| A5["Rule-based fallback"]
+    end

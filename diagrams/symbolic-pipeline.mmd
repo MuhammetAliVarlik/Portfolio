@@ -1,0 +1,12 @@
+flowchart TB
+    A["Raw time series<br/>N input channels"] --> B["project()<br/>ProjectionConfig"]
+    B --> C["change channel"]
+    B --> D["volatility channel"]
+    C --> E["SigmaBinner<br/>train-only fit"]
+    D --> E
+    E --> F["Compound token<br/>e.g. C2_V1"]
+    G["Event adapter<br/>calendar context"] --> I["Event tokens E_*"]
+    F --> H["Token sequence"]
+    I --> H
+    H --> J["SequenceEncoder"]
+    J --> K["Prompt string<br/>for a small LM"]

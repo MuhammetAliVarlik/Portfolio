@@ -1,0 +1,13 @@
+flowchart TB
+    T["Third-party text<br/>headlines, filings, OCR output"] --> H["Pattern scan<br/>English and Turkish"]
+    H -->|flagged sentence| Q["Quarantine marker"]
+    H --> C{"Prompt Guard classifier<br/>(optional)"}
+    C -->|score above threshold| Q
+    C --> SP["Spotlight<br/>random boundary per request"]
+    Q --> SP
+    SP --> A["Agents<br/>read-only tools"]
+    A --> R["Report"]
+    R --> NG["Numeric grounding<br/>against tool data"]
+    NG --> SC["Scope check<br/>requested symbols only"]
+    SC --> DC["Disclaimer added"]
+    DC --> OUT["Response and trace scores"]
